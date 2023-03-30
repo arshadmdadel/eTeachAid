@@ -11,15 +11,16 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.Objects;
 
 public class InstituteAccountController {
-
     @FXML
     private TextField addresstf;
+
 
     @FXML
     private PasswordField cnfpasswordtf;
@@ -44,9 +45,11 @@ public class InstituteAccountController {
 
     @FXML
     private TextField nametf;
-
     @FXML
     private PasswordField passwordtf;
+    String username,email;
+
+
 
     @FXML
     void backbtn(ActionEvent event) throws IOException {
@@ -64,10 +67,35 @@ public class InstituteAccountController {
     void rememberbtn(ActionEvent event) {
 
     }
-
+    void setText(String username,String email){
+        this.username=username;
+        this.email=email;
+        emailtf.setText(email);
+    }
     @FXML
-    void submitbtn(ActionEvent event) {
+    void submitbtn(ActionEvent event) throws IOException {
+        UsernameController x=new UsernameController();
+        String address=addresstf.getText();
+        String name=nametf.getText();
+        String password=passwordtf.getText();
+        String cnfpassword=cnfpasswordtf.getText();
+        String contact=contacttf.getText();
+        emailtf.setText(email);
+        String job=jobtf.getText();
+        if (password.equals(cnfpassword)) {
 
+            FileWriter f = new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt");
+            PrintWriter write = new PrintWriter(f);
+            write.println("intstitute||" + username + "||" + email + "||" + password);
+            write.close();
+            f.close();
+            PrintWriter wr = new PrintWriter(new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//InstituteAccountinfo.txt"));
+            wr.println(username + "||" + email + "||" + password + "||" + name + "||" + address + "||" + contact + "||" + job);
+            wr.close();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
+            Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+            loginStage.setScene(new Scene(root));
+        }
     }
 
     @FXML

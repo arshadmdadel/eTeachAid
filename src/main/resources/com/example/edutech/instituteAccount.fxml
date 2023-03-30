@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,11 +22,24 @@
          <image>
             <Image url="@images/webhomeblank.png" />
          </image>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="10.0" radius="2.0" spread="0.21" width="0.0">
+               <input>
+                  <InnerShadow />
+               </input>
+               <color>
+                  <Color opacity="0.32824426889419556" />
+               </color>
+            </DropShadow>
+         </effect>
       </ImageView>
       <ImageView fx:id="image2" fitHeight="794.0" fitWidth="1600.0" layoutY="107.0" opacity="0.95" pickOnBounds="true">
          <image>
             <Image url="@images/Home2.jpg" />
          </image>
+         <effect>
+            <InnerShadow height="32.72" radius="12.93" />
+         </effect>
       </ImageView>
       <ImageView fx:id="image3" fitHeight="333.0" fitWidth="370.0" layoutX="650.0" layoutY="134.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -40,7 +54,7 @@
             <ColorAdjust />
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="684.0" layoutY="102.0" prefHeight="28.0" prefWidth="253.0" text=" Institute Account Info" textFill="#0f99fffa" underline="true">
+      <Label alignment="CENTER" layoutX="684.0" layoutY="134.0" prefHeight="28.0" prefWidth="253.0" text=" Institute Account Info" textFill="#0f99fffa" underline="true">
          <font>
             <Font name="Bauhaus 93" size="24.0" />
          </font>
@@ -97,7 +111,7 @@
             <Font name="Perpetua Titling MT Bold" size="14.0" />
          </font>
       </Text>
-      <TextArea fx:id="jobtf" layoutX="1122.0" layoutY="198.0" prefHeight="333.0" prefWidth="282.0">
+      <TextArea fx:id="jobtf" layoutX="1122.0" layoutY="198.0" prefHeight="333.0" prefWidth="311.0">
          <effect>
             <DropShadow spread="0.34">
                <color>
