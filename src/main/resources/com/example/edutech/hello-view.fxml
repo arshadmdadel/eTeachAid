@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.HelloController">
+   <children>
+      <ImageView fitHeight="331.0" fitWidth="597.0" layoutX="-2.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/signinblank.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="36.0" layoutY="14.0" text="Create Account as">
+         <font>
+            <Font name="Georgia Bold" size="33.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="68.0" mnemonicParsing="false" onAction="#switchtoparent" prefHeight="39.0" prefWidth="160.0" style="-fx-background-color: #81d4fa;" text="Parent" AnchorPane.bottomAnchor="224.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="416.0" AnchorPane.topAnchor="68.0">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onAction="#switchtostudent" prefHeight="39.0" prefWidth="160.0" style="-fx-background-color: #81d4fa;" text="Student">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="159.0" mnemonicParsing="false" onAction="#switchtotutor" prefHeight="39.0" prefWidth="160.0" style="-fx-background-color: #81d4fa;" text="Tutor">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="262.0" layoutY="284.0" mnemonicParsing="false" onAction="#backbtn" prefHeight="33.0" prefWidth="67.0" style="-fx-background-color: #81d4fa;" text="Go Back" textFill="#bf5959">
+         <font>
+            <Font name="Georgia Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="206.0" mnemonicParsing="false" onAction="#switchtocoaching" prefHeight="39.0" prefWidth="160.0" style="-fx-background-color: #81d4fa;" text="Coaching">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="15.0" layoutY="253.0" mnemonicParsing="false" onAction="#switchtocoinstitution" prefHeight="39.0" prefWidth="160.0" style="-fx-background-color: #81d4fa;" text="Institution">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="335.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.Caochingcontroller">
+   <children>
+      <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="4.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../hello.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="414.0" layoutY="57.0" text="Coaching" textFill="#f8e5e5">
+         <font>
+            <Font name="Georgia Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <TextField layoutX="14.0" layoutY="95.0" prefHeight="25.0" prefWidth="199.0" promptText="Location" style="-fx-border-color: Black;" />
+      <TextField layoutX="14.0" layoutY="61.0" prefHeight="25.0" prefWidth="199.0" promptText="Enter Your Coaching Name" style="-fx-border-color: Black;" />
+      <Button layoutX="281.0" layoutY="288.0" mnemonicParsing="false" onAction="#goback" prefHeight="27.0" prefWidth="73.0" text="Go Back">
+         <font>
+            <Font name="Georgia Bold" size="10.0" />
+         </font>
+      </Button>
+      <TextField layoutX="14.0" layoutY="127.0" prefHeight="25.0" prefWidth="199.0" promptText="Enter THe Phone Number" style="-fx-border-color: Black;" />
+      <TextField layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="199.0" promptText="Enter The Email Address" style="-fx-border-color: Black;" />
+      <ListView layoutX="14.0" layoutY="196.0" prefHeight="27.0" prefWidth="199.0" />
+      <Button layoutX="184.0" layoutY="288.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" text="Add The Coaching">
+         <font>
+            <Font name="Georgia Bold" size="10.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
