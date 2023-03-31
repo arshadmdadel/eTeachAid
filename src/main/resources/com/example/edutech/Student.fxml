@@ -50,7 +50,8 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <CheckBox fx:id="c1" layoutX="164.0" layoutY="233.0" mnemonicParsing="false" text="Male">
+
+      <CheckBox fx:id="c1" layoutX="164.0" layoutY="233.0" mnemonicParsing="false" onAction="#male" text="Male">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -65,7 +66,8 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <CheckBox fx:id="c2" layoutX="256.0" layoutY="233.0" mnemonicParsing="false" text="Female">
+
+      <CheckBox fx:id="c2" layoutX="256.0" layoutY="233.0" mnemonicParsing="false" onAction="#female" text="Female">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -77,7 +79,8 @@
             <Font name="Britannic Bold" size="29.0" />
          </font>
       </Label>
-      <Button fx:id="button" layoutX="551.0" layoutY="480.0" mnemonicParsing="false" onAction="#nextbtn" text="Next" textFill="#3365c9">
+
+      <Button fx:id="next" layoutX="551.0" layoutY="480.0" mnemonicParsing="false" onAction="#onnextclick" text="Next" textFill="#3365c9">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -103,5 +106,14 @@
          </font>
       </Label>
       <TextField fx:id="t8" layoutX="164.0" layoutY="394.0" prefHeight="25.0" prefWidth="287.0" promptText="Contract" />
+
+      <Button fx:id="back" layoutX="634.0" layoutY="480.0" mnemonicParsing="false" onAction="#onbackclick" text="Back" textFill="#3365c9">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.09" contrast="0.31" />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>

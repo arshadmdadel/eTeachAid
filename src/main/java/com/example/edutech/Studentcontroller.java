@@ -12,13 +12,19 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import java.util.Objects;
 
 public class Studentcontroller {
 
+
   @FXML
-  private Button button;
+  private Button next,back;
+
 
   @FXML
   private CheckBox c1;
@@ -86,11 +92,62 @@ public class Studentcontroller {
   @FXML
   private TextField t9;
 
+  String username;
+  String email;
+  String gender;
+
+  void setText(String username,String email){
+    this.username=username;
+    this.email=email;
+    t5.setText(email);
+  }
+
   @FXML
-  void nextbtn(ActionEvent event) throws IOException {
+  void onnextclick(ActionEvent event) throws IOException {
+    String name=t1.getText();
+    String clas=t2.getText();
+    String age=t3.getText();
+    String institue=t4.getText();
+    email=t5.getText();
+    String pass=t6.getText();
+    String confirmpass=t7.getText();
+    String phone=t8.getText();
+    String address=t9.getText();
+    if(pass.equals(confirmpass)){
+      FileWriter f = new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//Accountinformation.txt");
+      PrintWriter write = new PrintWriter(f);
+      write.println("Student||" + username + "||" + email + "||" + pass);
+      write.close();
+      f.close();
+      PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt"));
+      wr.print(username + "||" + email + "||" + pass + "||" + name + "||" + address + "||" + phone + "||" + age+"||"+ clas +"||"+ gender +"||");
+      wr.close();
+    }
+
     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Studentnext.fxml")));
     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
     loginStage.setScene(new Scene(root));
   }
+
+  @FXML
+  void onbackclick(ActionEvent event) throws IOException {
+    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
+    Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+    loginStage.setScene(new Scene(root));
+  }
+  @FXML
+  void female(ActionEvent event) {
+    gender="female";
+
+
+  }
+
+  @FXML
+  void male(ActionEvent event) {
+gender="male";
+  }
+
+
+
 
 }

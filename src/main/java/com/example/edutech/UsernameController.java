@@ -49,9 +49,12 @@ public class UsernameController {
                      loginStage.setScene(new Scene(root));
                  }
                     else if (x == 3) {
-                        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Student.fxml")));
-                        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                        loginStage.setScene(new Scene(root));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("student.fxml"));
+                     Parent root = loader.load();
+                     InstituteAccountController d = loader.getController();
+                     d.setText(username,email);
+                     Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                     msgStage.setScene(new Scene(root));
                     }
                     else if (x == 4) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("instituteAccount.fxml"));
