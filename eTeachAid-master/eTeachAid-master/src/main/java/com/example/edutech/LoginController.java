@@ -55,7 +55,7 @@ public class LoginController {
     void signinbtn(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
-        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow(); // then cast to stage to get the window
         loginStage.setScene(new Scene(root));
 
     }
@@ -64,8 +64,7 @@ public class LoginController {
     void signupbtn(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
-        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-
+        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow(); // then cast to stage to get the window
         loginStage.setScene(new Scene(root));
     }
 

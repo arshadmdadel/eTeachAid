@@ -6,8 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -15,46 +13,30 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class LoginController {
+public class StartingController {
 
     @FXML
-    private ImageView id;
+    private ImageView myimageview;
 
     @FXML
-    private ImageView pass;
-
-    @FXML
-    private PasswordField passwordtextfield;
-
-    @FXML
-    private ImageView signin;
-
-    @FXML
-    private TextField usertxtfeidl;
-
-    @FXML
-    void backbtn(ActionEvent event) throws IOException {
-
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("starting.fxml")));
-        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        loginStage.setScene(new Scene(root));
+    void about(MouseEvent event) {
 
     }
 
     @FXML
-    void forgetbtn(MouseEvent event) {
+    void contact(MouseEvent event) {
 
     }
 
     @FXML
-    void rememberbtn(ActionEvent event) {
+    void services(MouseEvent event) {
 
     }
 
     @FXML
     void signinbtn(ActionEvent event) throws IOException {
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         loginStage.setScene(new Scene(root));
 
@@ -62,11 +44,12 @@ public class LoginController {
 
     @FXML
     void signupbtn(ActionEvent event) throws IOException {
-
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-
         loginStage.setScene(new Scene(root));
+
     }
 
 }
+
+

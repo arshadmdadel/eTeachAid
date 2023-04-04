@@ -12,15 +12,19 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java.util.Objects;
 
 public class Studentcontroller {
 
+
   @FXML
   private Button next,back;
+
 
   @FXML
   private CheckBox c1;
@@ -87,6 +91,7 @@ public class Studentcontroller {
 
   @FXML
   private TextField t9;
+
   String username;
   String email;
   String gender;
@@ -103,7 +108,7 @@ public class Studentcontroller {
     String clas=t2.getText();
     String age=t3.getText();
     String institue=t4.getText();
-    String email=t5.getText();
+    email=t5.getText();
     String pass=t6.getText();
     String confirmpass=t7.getText();
     String phone=t8.getText();
@@ -119,11 +124,11 @@ public class Studentcontroller {
       wr.close();
     }
 
-
     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Studentnext.fxml")));
     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
     loginStage.setScene(new Scene(root));
   }
+
   @FXML
   void onbackclick(ActionEvent event) throws IOException {
     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
