@@ -16,12 +16,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Objects;
 
-public class studentnextController {
+public class TutornextController {
     @FXML
     private RadioButton BIO;
 
     @FXML
     private RadioButton CHEM;
+
+    @FXML
+    private RadioButton EVENING;
 
     @FXML
     private RadioButton GM;
@@ -31,6 +34,12 @@ public class studentnextController {
 
     @FXML
     private RadioButton HM;
+
+    @FXML
+    private RadioButton MORNING;
+
+    @FXML
+    private RadioButton OTHER;
 
     @FXML
     private RadioButton PHY;
@@ -45,140 +54,155 @@ public class studentnextController {
     private RadioButton bang;
 
     @FXML
-    private TextField des;
-
-    @FXML
     private RadioButton eng;
 
     @FXML
-    private RadioButton evening;
+    private TextField exprn;
 
     @FXML
-    private RadioButton female;
+    private RadioButton four;
 
     @FXML
-    private RadioButton male;
+    private RadioButton one;
 
     @FXML
-    private RadioButton morning;
-
-    @FXML
-    private RadioButton other;
+    private TextField parea;
 
     @FXML
     private Button submit;
 
     @FXML
-    private TextField salary;
+    private RadioButton three;
 
-    String gender;
+    @FXML
+    private RadioButton two;
 
     @FXML
     void BIO(ActionEvent event) throws IOException {
-       filewrite("BIOLOGY");
-
+        filewrite("BIOLOGY");
 
     }
 
     @FXML
     void CHEM(ActionEvent event) throws IOException {
-      filewrite("CHEMISTRY");
+        filewrite("CHEMISTRY");
+
+    }
+
+    @FXML
+    void EVENING(ActionEvent event) throws IOException {
+        filewrite("EVENING");
 
     }
 
     @FXML
     void GM(ActionEvent event) throws IOException {
-       filewrite("GENERAL MATH");
+        filewrite("GENERAL MATH");
+
     }
 
     @FXML
     void GS(ActionEvent event) throws IOException {
-      filewrite("GENERAL SCIENCE");
+        filewrite("GENERAL SCIENCE");
+
     }
 
     @FXML
     void HM(ActionEvent event) throws IOException {
-     filewrite("HIGHER MATH");
-    }
-
-    @FXML
-    void PHY(ActionEvent event) throws IOException {
-        filewrite("PHYSICS");
-    }
-
-    @FXML
-    void SS(ActionEvent event) throws IOException {
-      filewrite("SOCIAL SCIENCE");
-    }
-
-    @FXML
-    void back(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("student.fxml")));
-        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        loginStage.setScene(new Scene(root));
-
+        filewrite("HIGHER MATH");
 
     }
 
     @FXML
-    void bang(ActionEvent event) throws IOException {
-       filewrite("BANGLA");
-    }
-
-
-
-    @FXML
-    void eng(ActionEvent event) throws IOException {
-      filewrite("ENglish");
-    }
-
-    @FXML
-    void evening(ActionEvent event) throws IOException {
-        filewrite("Evening");
-    }
-
-    @FXML
-    void female(ActionEvent event) throws IOException {
-        filewrite("FEMALE");
-
-    }
-
-    @FXML
-    void male(ActionEvent event) throws IOException {
-        filewrite("MALE");
-
-    }
-
-    @FXML
-    void morning(ActionEvent event) throws IOException {
+    void MORNING(ActionEvent event) throws IOException {
         filewrite("MORNING");
 
     }
 
     @FXML
-    void other(ActionEvent event) throws IOException {
-        filewrite("OTHERS");
+    void OTHER(ActionEvent event) throws IOException {
+        filewrite("OTHER");
 
     }
 
     @FXML
-    void submit(ActionEvent event)throws IOException {
-        String dsicrp=des.getText();
-        String expsal=salary.getText();
-        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
-        wr.println("Salary:||" + expsal + "||||" + dsicrp);
+    void PHY(ActionEvent event) throws IOException {
+        filewrite("PHYSICS");
+
+    }
+
+    @FXML
+    void SS(ActionEvent event) throws IOException {
+        filewrite("SOCIAL SCIENCE");
+
+    }
+
+    @FXML
+    void back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Tutor.fxml")));
+        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        loginStage.setScene(new Scene(root));
+
+    }
+
+    @FXML
+    void bang(ActionEvent event) throws IOException {
+        filewrite("BANGLA");
+
+    }
+
+    @FXML
+    void eng(ActionEvent event) throws IOException {
+        filewrite("ENGLISH");
+
+    }
+
+
+
+    @FXML
+    void four(ActionEvent event) throws IOException {
+        filewrite("XI-XII");
+
+    }
+
+    @FXML
+    void one(ActionEvent event) throws IOException {
+        filewrite("I-IV");
+
+    }
+
+    @FXML
+    void submit(ActionEvent event) throws IOException {
+
+        String Experience=exprn.getText();
+        String area=parea.getText();
+        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//tutor.txt",true));
+        wr.println("Tutor:||" + area + "||" + Experience);
         wr.close();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         loginStage.setScene(new Scene(root));
 
 
+
+
     }
 
+    @FXML
+    void three(ActionEvent event) throws IOException {
+        filewrite("IX-X");
 
+    }
+
+    @FXML
+    void two(ActionEvent event) throws IOException {
+        filewrite("V-VIII");
+
+    }
     String name;
+
     void filewrite(String name) throws IOException{
-        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
+        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//tutor.txt",true));
         wr.write(name+"||");
         wr.close();
 

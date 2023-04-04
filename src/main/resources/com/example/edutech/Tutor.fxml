@@ -47,45 +47,50 @@
             <Font name="Britannic Bold" size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="174.0" layoutY="112.0" prefHeight="25.0" prefWidth="302.0" promptText="name" />
-      <TextField layoutX="174.0" layoutY="143.0" prefHeight="25.0" prefWidth="61.0" promptText="age" />
-      <TextField layoutX="174.0" layoutY="176.0" prefHeight="25.0" prefWidth="141.0" promptText="work" />
-      <TextField layoutX="174.0" layoutY="209.0" prefHeight="25.0" prefWidth="302.0" promptText="place" />
-      <TextField layoutX="174.0" layoutY="240.0" prefHeight="25.0" prefWidth="302.0" promptText="email" />
+      <TextField fx:id="name" layoutX="174.0" layoutY="112.0" prefHeight="25.0" prefWidth="302.0" promptText="name" />
+      <TextField fx:id="age" layoutX="174.0" layoutY="143.0" prefHeight="25.0" prefWidth="61.0" promptText="age" />
+      <TextField fx:id="work" layoutX="174.0" layoutY="176.0" prefHeight="25.0" prefWidth="141.0" promptText="work" />
+      <TextField fx:id="institue" layoutX="174.0" layoutY="209.0" prefHeight="25.0" prefWidth="302.0" promptText="place" />
+      <TextField fx:id="email" layoutX="174.0" layoutY="240.0" prefHeight="25.0" prefWidth="302.0" promptText="email" />
       <Label layoutX="50.0" layoutY="399.0" text="Address :">
          <font>
             <Font name="Britannic Bold" size="25.0" />
          </font>
       </Label>
-      <TextField alignment="TOP_LEFT" layoutX="169.0" layoutY="399.0" prefHeight="90.0" prefWidth="333.0" promptText="address" />
+      <TextField fx:id="address" alignment="TOP_LEFT" layoutX="169.0" layoutY="399.0" prefHeight="90.0" prefWidth="333.0" promptText="address" />
       <Label layoutX="31.0" layoutY="319.0" text="Password :">
          <font>
             <Font name="Britannic Bold" size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="174.0" layoutY="319.0" prefHeight="25.0" prefWidth="302.0" promptText="password" />
+      <TextField fx:id="pass" layoutX="174.0" layoutY="319.0" prefHeight="25.0" prefWidth="302.0" promptText="password" />
       <Label layoutX="6.0" layoutY="357.0" prefHeight="17.0" prefWidth="152.0" text="Confirm Pass :">
          <font>
             <Font name="Britannic Bold" size="22.0" />
          </font>
       </Label>
-      <TextField layoutX="174.0" layoutY="356.0" prefHeight="25.0" prefWidth="302.0" promptText="confirm password" />
+      <TextField fx:id="conpass" layoutX="174.0" layoutY="356.0" prefHeight="25.0" prefWidth="302.0" promptText="confirm password" />
       <Label layoutX="54.0" layoutY="276.0" text="Gender :">
          <font>
             <Font name="Britannic Bold" size="25.0" />
          </font>
       </Label>
-      <CheckBox layoutX="174.0" layoutY="275.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="Male">
+      <CheckBox fx:id="male" layoutX="174.0" layoutY="275.0" mnemonicParsing="false" onAction="#male" prefHeight="23.0" prefWidth="76.0" text="Male">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="278.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="114.0" text="Female">
+      <CheckBox fx:id="female" layoutX="278.0" layoutY="275.0" mnemonicParsing="false" onAction="#female" prefHeight="27.0" prefWidth="114.0" text="Female">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </CheckBox>
       <Button fx:id="next" layoutX="556.0" layoutY="504.0" mnemonicParsing="false" onAction="#onnextclick" prefHeight="27.0" prefWidth="103.0" text="Next">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Back" layoutX="689.0" layoutY="505.0" mnemonicParsing="false" onAction="#onbackclick" prefHeight="43.0" prefWidth="103.0" text="Back">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

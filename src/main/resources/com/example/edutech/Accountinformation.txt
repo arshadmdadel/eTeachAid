@@ -1,1 +1,4 @@
-Student||null||sdfsdf||123
+
+Tutor||null||asdas||123
+Tutor||null||asiif32ahmed@gmail.com||1110
+Tutor||null||asdasd||123
