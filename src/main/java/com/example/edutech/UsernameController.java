@@ -39,14 +39,20 @@ public class UsernameController {
                 if(line==null ) {
 
                  if (x == 1) {
-                        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Parent.fxml")));
-                        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                        loginStage.setScene(new Scene(root));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Parent.fxml"));
+                     Parent root = loader.load();
+                     InstituteAccountController d = loader.getController();
+                     d.setText(username,email);
+                     Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                     msgStage.setScene(new Scene(root));
 
                     } else if (x == 2) {
-                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Coaching.fxml")));
-                     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                     loginStage.setScene(new Scene(root));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Coaching.fxml"));
+                     Parent root = loader.load();
+                     InstituteAccountController d = loader.getController();
+                     d.setText(username,email);
+                     Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                     msgStage.setScene(new Scene(root));
                  }
                     else if (x == 3) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("student.fxml"));
@@ -76,7 +82,8 @@ public class UsernameController {
                 else
                 {
                     String []parts =line.split("||");
-                    if(parts[1].equals(username)||parts[2].equals(email)){
+                    if (username.isEmpty()==true)
+                    if(parts[1].equals(username)||parts[1].equals(email)){
                         notification.setText("THis information already used \n please try another");
                         break;
                     }

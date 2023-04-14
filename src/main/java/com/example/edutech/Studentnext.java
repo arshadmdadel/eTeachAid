@@ -1,9 +1,5 @@
 package com.example.edutech;
-<<<<<<< HEAD
-
 import javafx.application.Application;
-=======
->>>>>>> c5c4e55533d75b7e7439fb89307fab94557bd349
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
