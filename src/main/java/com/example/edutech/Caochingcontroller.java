@@ -66,7 +66,7 @@ public class Caochingcontroller {
             write.println("intstitute||" + username + "||" + email + "||" + password);
             write.close();
             f.close();
-            PrintWriter wr = new PrintWriter(new FileWriter("C://Users//Nirab//Desktop//eTeachAid-master//eTeachAid-master//src//main//resources//com//example//edutech//Coachinginformation.txt"));
+            PrintWriter wr = new PrintWriter(new FileWriter("D://Project//eTeachAid//src//main//resources//com//example//edutech//Coachinginformation.txt"));
             wr.println(username + "||" + email + "||" + password + "||" + name + "||" + address + "||" + contact + "||" +coaching);
             wr.close();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
