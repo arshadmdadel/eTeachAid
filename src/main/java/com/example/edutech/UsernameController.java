@@ -39,14 +39,20 @@ public class UsernameController {
                 if(line==null ) {
 
                  if (x == 1) {
-                        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Parent.fxml")));
-                        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                        loginStage.setScene(new Scene(root));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Parent.fxml"));
+                     Parent root = loader.load();
+                     InstituteAccountController d = loader.getController();
+                     d.setText(username,email);
+                     Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                     msgStage.setScene(new Scene(root));
 
                     } else if (x == 2) {
-                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Coaching.fxml")));
-                     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                     loginStage.setScene(new Scene(root));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Coaching.fxml"));
+                     Parent root = loader.load();
+                     InstituteAccountController d = loader.getController();
+                     d.setText(username,email);
+                     Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                     msgStage.setScene(new Scene(root));
                  }
                     else if (x == 3) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("student.fxml"));
@@ -66,9 +72,12 @@ public class UsernameController {
 
                     }
                     else if (x == 5) {
-                        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Tutor.fxml")));
-                        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                        loginStage.setScene(new Scene(root));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Tutor.fxml"));
+                     Parent root = loader.load();
+                     InstituteAccountController d = loader.getController();
+                     d.setText(username,email);
+                     Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                     msgStage.setScene(new Scene(root));
 
                     }
                     break;

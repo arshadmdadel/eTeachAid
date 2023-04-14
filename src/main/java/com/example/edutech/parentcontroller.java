@@ -53,7 +53,7 @@ public class parentcontroller {
             write.println("Parent :||" + username + "||" + email + "||" + password);
             write.close();
             f.close();
-            PrintWriter wr = new PrintWriter(new FileWriter("C://Users//Nirab//Desktop//eTeachAid-master//eTeachAid-master//src//main//resources//com//example//edutech//Parentinfo.txt"));
+            PrintWriter wr = new PrintWriter(new FileWriter("D://Project//eTeachAid//src//main//resources//com//example//edutech//Parentinfo.txt"));
             wr.println(username + "||" + email + "||" + password + "||" + name + "||" + address + "||" + contact + "||");
             wr.close();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
