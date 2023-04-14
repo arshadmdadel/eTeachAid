@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 
@@ -104,6 +101,17 @@ public class Studentcontroller {
 
   @FXML
   void onnextclick(ActionEvent event) throws IOException {
+
+    if (t1.getText().isEmpty() || t2.getText().isEmpty() || t3.getText().isEmpty() || t4.getText().isEmpty() || t5.getText().isEmpty() || t6.getText().isEmpty() || t7.getText().isEmpty() || t8.getText().isEmpty() || t9.getText().isEmpty()  ){
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("Error");
+      alert.setContentText("Please fill all the fields");
+      alert.showAndWait();
+      return;
+    }
+
+
     String name=t1.getText();
     String clas=t2.getText();
     String age=t3.getText();

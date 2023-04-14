@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.FileWriter;
@@ -93,6 +90,15 @@ public class TutorController {
 
     @FXML
     void onnextclick(ActionEvent event) throws IOException {
+
+        if (name.getText().isEmpty() || pass.getText().isEmpty() || work.getText().isEmpty() || work.getText().isEmpty() || conpass.getText().isEmpty() || work.getText().isEmpty() || institue.getText().isEmpty() || email.getText().isEmpty() || age.getText().isEmpty() || address.getText().isEmpty()  ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please fill all the fields");
+            alert.showAndWait();
+            return;
+        }
 
         String Name = name.getText();
         String profession = work.getText();

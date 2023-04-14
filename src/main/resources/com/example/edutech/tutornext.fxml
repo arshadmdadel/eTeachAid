@@ -20,7 +20,7 @@
       </ImageView>
       <Label layoutX="567.0" layoutY="113.0" text="Tutor Work Information." textAlignment="CENTER" underline="true">
          <font>
-            <Font name="Britannic Bold" size="40.0" />
+            <Font name="Copperplate Gothic Bold" size="40.0" />
          </font>
          <effect>
             <DropShadow>
@@ -30,122 +30,134 @@
             </DropShadow>
          </effect>
       </Label>
-      <Label layoutX="112.0" layoutY="198.0" text="Pefer Area :">
+      <Label layoutX="113.0" layoutY="210.0" text="Pefer Area :">
          <font>
             <Font name="Arial Narrow Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="parea" layoutX="264.0" layoutY="195.0" prefHeight="35.0" prefWidth="292.0" />
-      <Label layoutX="106.0" layoutY="261.0" prefHeight="21.0" prefWidth="123.0" text="Pefer Class :">
+      <TextField fx:id="parea" layoutX="269.0" layoutY="210.0" prefHeight="35.0" prefWidth="323.0">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label layoutX="107.0" layoutY="286.0" prefHeight="21.0" prefWidth="123.0" text="Pefer Class :">
          <font>
             <Font name="Arial Narrow Bold" size="23.0" />
          </font>
       </Label>
-      <RadioButton fx:id="one" layoutX="265.0" layoutY="264.0" mnemonicParsing="false" onAction="#one" text="I - V">
+      <RadioButton fx:id="one" layoutX="281.0" layoutY="278.0" mnemonicParsing="false" onAction="#one" text="I - V">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="two" layoutX="264.0" layoutY="297.0" mnemonicParsing="false" onAction="#two" text="VI - VIII">
+      <RadioButton fx:id="two" layoutX="282.0" layoutY="329.0" mnemonicParsing="false" onAction="#two" text="VI - VIII">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="three" layoutX="263.0" layoutY="327.0" mnemonicParsing="false" onAction="#three" text="IX - X">
+      <RadioButton fx:id="three" layoutX="283.0" layoutY="379.0" mnemonicParsing="false" onAction="#three" text="IX - X">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="four" layoutX="263.0" layoutY="362.0" mnemonicParsing="false" onAction="#four" text="XI - XII">
+      <RadioButton fx:id="four" layoutX="283.0" layoutY="429.0" mnemonicParsing="false" onAction="#four" text="XI - XII">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <Label layoutX="88.0" layoutY="500.0" text="Pefer Subject :">
+      <Label layoutX="88.0" layoutY="563.0" text="Pefer Subject :">
          <font>
             <Font name="Arial Narrow Bold" size="24.0" />
          </font>
       </Label>
-      <RadioButton fx:id="eng" layoutX="551.0" layoutY="586.0" mnemonicParsing="false" onAction="#eng" text="English">
+      <RadioButton fx:id="eng" layoutX="602.0" layoutY="655.0" mnemonicParsing="false" onAction="#eng" text="English">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="bang" layoutX="410.0" layoutY="586.0" mnemonicParsing="false" onAction="#bang" text="Bangla">
+      <RadioButton fx:id="bang" layoutX="444.0" layoutY="655.0" mnemonicParsing="false" onAction="#bang" text="Bangla">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="GS" layoutX="260.0" layoutY="504.0" mnemonicParsing="false" onAction="#GS" text="General Science">
+      <RadioButton fx:id="GS" layoutX="267.0" layoutY="567.0" mnemonicParsing="false" onAction="#GS" text="General Science">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="SS" layoutX="551.0" layoutY="504.0" mnemonicParsing="false" onAction="#SS" text="Social Science">
+      <RadioButton fx:id="SS" layoutX="601.0" layoutY="567.0" mnemonicParsing="false" onAction="#SS" text="Social Science">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="GM" layoutX="410.0" layoutY="504.0" mnemonicParsing="false" onAction="#GM" text="General Math">
+      <RadioButton fx:id="GM" layoutX="443.0" layoutY="567.0" mnemonicParsing="false" onAction="#GM" text="General Math">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="CHEM" layoutX="409.0" layoutY="545.0" mnemonicParsing="false" onAction="#CHEM" text="Chemistry">
+      <RadioButton fx:id="CHEM" layoutX="442.0" layoutY="612.0" mnemonicParsing="false" onAction="#CHEM" text="Chemistry">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="PHY" layoutX="551.0" layoutY="546.0" mnemonicParsing="false" onAction="#PHY" text="Physics">
+      <RadioButton fx:id="PHY" layoutX="601.0" layoutY="612.0" mnemonicParsing="false" onAction="#PHY" text="Physics">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="HM" layoutX="260.0" layoutY="546.0" mnemonicParsing="false" onAction="#HM" text="Higher Math">
+      <RadioButton fx:id="HM" layoutX="270.0" layoutY="612.0" mnemonicParsing="false" onAction="#HM" text="Higher Math">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="BIO" layoutX="261.0" layoutY="586.0" mnemonicParsing="false" onAction="#BIO" text="Biology">
+      <RadioButton fx:id="BIO" layoutX="272.0" layoutY="655.0" mnemonicParsing="false" onAction="#BIO" text="Biology">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="OTHER" layoutX="411.0" layoutY="628.0" mnemonicParsing="false" onAction="#OTHER" text="Others">
+      <RadioButton fx:id="OTHER" layoutX="445.0" layoutY="698.0" mnemonicParsing="false" onAction="#OTHER" text="Others">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <Label layoutX="114.0" layoutY="402.0" text="Pefer time :">
+      <Label layoutX="114.0" layoutY="485.0" text="Pefer time :">
          <font>
             <Font name="Arial Narrow Bold" size="24.0" />
          </font>
       </Label>
-      <RadioButton fx:id="MORNING" layoutX="260.0" layoutY="406.0" mnemonicParsing="false" onAction="#MORNING" text="Morning">
+      <RadioButton fx:id="MORNING" layoutX="279.0" layoutY="486.0" mnemonicParsing="false" onAction="#MORNING" text="Morning">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="EVENING" layoutX="448.0" layoutY="406.0" mnemonicParsing="false" onAction="#EVENING" text="Evening">
+      <RadioButton fx:id="EVENING" layoutX="439.0" layoutY="486.0" mnemonicParsing="false" onAction="#EVENING" text="Evening">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </RadioButton>
-      <Label layoutX="64.0" layoutY="673.0" text="Work Experience :">
+      <Label layoutX="71.0" layoutY="747.0" text="Work Experience :">
          <font>
             <Font name="Arial Narrow Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="exprn" alignment="TOP_LEFT" layoutX="269.0" layoutY="673.0" prefHeight="86.0" prefWidth="453.0" />
-      <Button fx:id="submit" layoutX="800.0" layoutY="799.0" mnemonicParsing="false" onAction="#submit" prefHeight="56.0" prefWidth="115.0" text="Submit">
+      <TextField fx:id="exprn" alignment="TOP_LEFT" layoutX="269.0" layoutY="747.0" prefHeight="101.0" prefWidth="603.0">
+         <effect>
+            <DropShadow spread="0.31" />
+         </effect></TextField>
+      <Button fx:id="submit" layoutX="1023.0" layoutY="805.0" mnemonicParsing="false" onAction="#submit" prefHeight="56.0" prefWidth="115.0" text="Submit">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
+         <effect>
+            <DropShadow spread="0.31" />
+         </effect>
       </Button>
-      <Button fx:id="back" layoutX="982.0" layoutY="799.0" mnemonicParsing="false" onAction="#back" prefHeight="56.0" prefWidth="115.0" text="Back">
+      <Button fx:id="back" layoutX="1195.0" layoutY="805.0" mnemonicParsing="false" onAction="#back" prefHeight="56.0" prefWidth="115.0" text="Back">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
+         <effect>
+            <DropShadow spread="0.31" />
+         </effect>
       </Button>
    </children>
 </AnchorPane>

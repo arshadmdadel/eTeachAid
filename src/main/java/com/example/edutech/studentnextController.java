@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -163,6 +164,16 @@ public class studentnextController {
 
     @FXML
     void submit(ActionEvent event)throws IOException {
+
+        if (salary.getText().isEmpty()   ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please fill all the fields");
+            alert.showAndWait();
+            return;
+        }
+
         String dsicrp=des.getText();
         String expsal=salary.getText();
         PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));

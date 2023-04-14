@@ -4,115 +4,146 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.Studentcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.Studentcontroller">
    <children>
-      <ImageView fitHeight="614.0" fitWidth="969.0" layoutX="2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../hello.jpeg" />
          </image>
       </ImageView>
-      <Label fx:id="l2" layoutX="84.0" layoutY="104.0" text="Name :">
+      <Label fx:id="l2" layoutX="151.0" layoutY="251.0" text="Name :">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="l3" layoutX="87.0" layoutY="150.0" text="Class  :">
+      <Label fx:id="l3" layoutX="156.0" layoutY="295.0" text="Class  :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="l5" layoutX="65.0" layoutY="190.0" text="Institute :">
+      <Label fx:id="l5" layoutX="129.0" layoutY="384.0" text="Institute :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="l6" layoutX="68.0" layoutY="230.0" text="Gender   :">
+      <Label fx:id="l6" layoutX="129.0" layoutY="426.0" text="Gender   :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="t2" layoutX="161.0" layoutY="151.0" prefHeight="25.0" prefWidth="57.0" promptText="class" />
-      <TextField fx:id="t1" layoutX="161.0" layoutY="105.0" prefHeight="25.0" prefWidth="281.0" promptText="Name">
+      <TextField fx:id="t2" layoutX="252.0" layoutY="298.0" prefHeight="25.0" prefWidth="82.0" promptText="class">
          <effect>
-            <Blend />
+            <DropShadow />
          </effect></TextField>
-      <TextField fx:id="t4" layoutX="161.0" layoutY="191.0" prefHeight="25.0" prefWidth="351.0" />
-      <TextField fx:id="t3" layoutX="320.0" layoutY="151.0" prefHeight="25.0" prefWidth="57.0" promptText="Age" />
-      <Label fx:id="l4" layoutX="256.0" layoutY="150.0" text="Age  :">
+      <TextField fx:id="t1" layoutX="250.0" layoutY="251.0" prefHeight="30.0" prefWidth="364.0" promptText="Name">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <TextField fx:id="t4" layoutX="253.0" layoutY="387.0" prefHeight="30.0" prefWidth="386.0">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <TextField fx:id="t3" layoutX="252.0" layoutY="342.0" prefHeight="25.0" prefWidth="82.0" promptText="Age">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label fx:id="l4" layoutX="166.0" layoutY="339.0" text="Age  :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
 
-      <CheckBox fx:id="c1" layoutX="164.0" layoutY="233.0" mnemonicParsing="false" onAction="#male" text="Male">
+      <CheckBox fx:id="c1" layoutX="253.0" layoutY="430.0" mnemonicParsing="false" onAction="#male" text="Male">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </CheckBox>
-      <Label fx:id="l7" layoutX="85.0" layoutY="273.0" text="Email  :">
+      <Label fx:id="l7" layoutX="151.0" layoutY="490.0" text="Email  :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="l11" layoutX="67.0" layoutY="434.0" text="Address :">
+      <Label fx:id="l11" layoutX="129.0" layoutY="733.0" text="Address :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
 
-      <CheckBox fx:id="c2" layoutX="256.0" layoutY="233.0" mnemonicParsing="false" onAction="#female" text="Female">
+      <CheckBox fx:id="c2" layoutX="353.0" layoutY="430.0" mnemonicParsing="false" onAction="#female" text="Female">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </CheckBox>
-      <TextField fx:id="t5" layoutX="160.0" layoutY="274.0" prefHeight="25.0" prefWidth="301.0" promptText="Email" />
-      <TextField fx:id="t9" alignment="TOP_LEFT" layoutX="160.0" layoutY="434.0" prefHeight="67.0" prefWidth="351.0" promptText="Address" />
-      <Label fx:id="l1" layoutX="335.0" layoutY="52.0" prefHeight="30.0" prefWidth="281.0" text="Student Information." textAlignment="JUSTIFY" underline="true">
+      <TextField fx:id="t5" layoutX="252.0" layoutY="475.0" prefHeight="30.0" prefWidth="386.0" promptText="Email">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <TextField fx:id="t9" alignment="TOP_LEFT" layoutX="250.0" layoutY="733.0" prefHeight="92.0" prefWidth="691.0" promptText="Address">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label fx:id="l1" layoutX="458.0" layoutY="141.0" prefHeight="62.0" prefWidth="463.0" text="Student-- Information." textAlignment="JUSTIFY" underline="true">
          <font>
-            <Font name="Britannic Bold" size="29.0" />
+            <Font name="Copperplate Gothic Bold" size="29.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.8272904753684998" green="0.8421052694320679" blue="0.8265107274055481" opacity="0.6299999952316284" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
 
-      <Button fx:id="next" layoutX="551.0" layoutY="480.0" mnemonicParsing="false" onAction="#onnextclick" text="Next" textFill="#3365c9">
+      <Button fx:id="next" layoutX="1024.0" layoutY="821.0" mnemonicParsing="false" onAction="#onnextclick" prefHeight="52.0" prefWidth="101.0" text="Next" textFill="#3365c9">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
          <effect>
-            <ColorAdjust brightness="-0.09" contrast="0.31" />
+            <DropShadow spread="0.31" />
          </effect>
       </Button>
-      <Label fx:id="l8" layoutX="55.0" layoutY="313.0" text="Password :">
+      <Label fx:id="l8" layoutX="118.0" layoutY="544.0" text="Password :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="t6" layoutX="161.0" layoutY="314.0" prefHeight="25.0" prefWidth="294.0" promptText="set a pass" />
-      <Label fx:id="l9" layoutX="23.0" layoutY="351.0" text="Confirm P.W  :">
+      <TextField fx:id="t6" layoutX="253.0" layoutY="532.0" prefHeight="30.0" prefWidth="325.0" promptText="set a pass">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label fx:id="l9" layoutX="82.0" layoutY="611.0" text="Confirm P.W  :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="t7" layoutX="162.0" layoutY="352.0" prefHeight="25.0" prefWidth="294.0" promptText="Confirm Password" />
-      <Label fx:id="l10" layoutX="9.0" layoutY="393.0" text="Phone Number :">
+      <TextField fx:id="t7" layoutX="253.0" layoutY="596.0" prefHeight="30.0" prefWidth="325.0" promptText="Confirm Password">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label fx:id="l10" layoutX="64.0" layoutY="669.0" text="Phone Number :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="t8" layoutX="164.0" layoutY="394.0" prefHeight="25.0" prefWidth="287.0" promptText="Contract" />
+      <TextField fx:id="t8" layoutX="250.0" layoutY="661.0" prefHeight="38.0" prefWidth="325.0" promptText="Contract">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
 
-      <Button fx:id="back" layoutX="634.0" layoutY="480.0" mnemonicParsing="false" onAction="#onbackclick" text="Back" textFill="#3365c9">
+      <Button fx:id="back" layoutX="1160.0" layoutY="821.0" mnemonicParsing="false" onAction="#onbackclick" prefHeight="52.0" prefWidth="101.0" text="Back" textFill="#3365c9">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
          <effect>
-            <ColorAdjust brightness="-0.09" contrast="0.31" />
+            <DropShadow spread="0.31" />
          </effect>
       </Button>
    </children>

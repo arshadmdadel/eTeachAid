@@ -50,7 +50,7 @@ public class parentcontroller {
 
             FileWriter f = new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt");
             PrintWriter write = new PrintWriter(f);
-            write.println("intstitute||" + username + "||" + email + "||" + password);
+            write.println("Parent :||" + username + "||" + email + "||" + password);
             write.close();
             f.close();
             PrintWriter wr = new PrintWriter(new FileWriter("C://Users//Nirab//Desktop//eTeachAid-master//eTeachAid-master//src//main//resources//com//example//edutech//Parentinfo.txt"));

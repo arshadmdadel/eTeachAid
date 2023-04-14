@@ -32,7 +32,7 @@ public class UsernameController {
     void submitbtn(ActionEvent event) throws IOException {
         username=usernametf.getText();
         email=emailtf.getText();
-        BufferedReader read=new BufferedReader(new FileReader("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt"));
+        BufferedReader read=new BufferedReader(new FileReader("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//Accountinformation.txt"));
         while (true){
             String line= read.readLine();
 
