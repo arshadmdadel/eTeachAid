@@ -15,7 +15,7 @@
 
 <BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.TuitionDashboardController">
    <top>
-      <AnchorPane prefHeight="80.0" prefWidth="1300.0" style="-fx-background-color: #38ACEC;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="78.0" prefWidth="1300.0" style="-fx-background-color: #38ACEC; -fx-border-color: white;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="25.0" layoutY="26.0" prefHeight="35.0" prefWidth="123.0" text="eTeachAid" textAlignment="JUSTIFY" textFill="#012e54" wrapText="true">
                <font>
@@ -51,7 +51,7 @@
             </Label>
          </children>
          <effect>
-            <DropShadow height="44.45" radius="15.13" width="18.07">
+            <DropShadow height="31.26" radius="11.8325" width="18.07">
                <color>
                   <Color opacity="0.5610687136650085" />
                </color>
@@ -60,7 +60,7 @@
       </AnchorPane>
    </top>
    <left>
-      <VBox prefHeight="720.0" prefWidth="224.0" style="-fx-background-color: #38ACEC;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="481.0" prefWidth="227.0" style="-fx-background-color: #38ACEC;" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" onMouseClicked="#appliedtuition" prefHeight="50.0" prefWidth="165.0" spacing="10.0" style="-fx-background-color: #38ACEC; -fx-border-color: white;">
                <children>
@@ -164,7 +164,7 @@
             </AnchorPane>
          </children>
          <effect>
-            <DropShadow height="0.0" radius="23.8" width="97.2">
+            <DropShadow height="48.6" radius="35.95" width="97.2">
                <color>
                   <Color opacity="0.4923664331436157" />
                </color>

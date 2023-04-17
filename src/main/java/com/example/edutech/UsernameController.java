@@ -32,7 +32,7 @@ public class UsernameController {
     void submitbtn(ActionEvent event) throws IOException {
         username=usernametf.getText();
         email=emailtf.getText();
-        BufferedReader read=new BufferedReader(new FileReader("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt"));
+        BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/Accountinformation.txt"));
         while (true){
             String line= read.readLine();
 
@@ -41,7 +41,7 @@ public class UsernameController {
                  if (x == 1) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("Parent.fxml"));
                      Parent root = loader.load();
-                     InstituteAccountController d = loader.getController();
+                     parentcontroller d = loader.getController();
                      d.setText(username,email);
                      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                      msgStage.setScene(new Scene(root));
@@ -49,7 +49,7 @@ public class UsernameController {
                     } else if (x == 2) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("Coaching.fxml"));
                      Parent root = loader.load();
-                     InstituteAccountController d = loader.getController();
+                     Caochingcontroller d = loader.getController();
                      d.setText(username,email);
                      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                      msgStage.setScene(new Scene(root));
@@ -57,7 +57,7 @@ public class UsernameController {
                     else if (x == 3) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("student.fxml"));
                      Parent root = loader.load();
-                     InstituteAccountController d = loader.getController();
+                     Studentcontroller d = loader.getController();
                      d.setText(username,email);
                      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                      msgStage.setScene(new Scene(root));
@@ -72,9 +72,12 @@ public class UsernameController {
 
                     }
                     else if (x == 5) {
-                        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Tutor.fxml")));
-                        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                        loginStage.setScene(new Scene(root));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Tutor.fxml"));
+                     Parent root = loader.load();
+                     TutorController d = loader.getController();
+                     d.setText(username,email);
+                     Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                     msgStage.setScene(new Scene(root));
 
                     }
                     break;
@@ -82,8 +85,10 @@ public class UsernameController {
                 else
                 {
                     String []parts =line.split("||");
-                    if (username.isEmpty()==true)
-                    if(parts[1].equals(username)||parts[1].equals(email)){
+                    if (username.isEmpty()||email.isEmpty()){
+                        notification.setText(" please entry the information ");
+                    }
+                    if(parts[1].equals(username)||parts[2].equals(email)){
                         notification.setText("THis information already used \n please try another");
                         break;
                     }
