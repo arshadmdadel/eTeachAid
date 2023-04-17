@@ -32,7 +32,7 @@ public class UsernameController {
     void submitbtn(ActionEvent event) throws IOException {
         username=usernametf.getText();
         email=emailtf.getText();
-        BufferedReader read=new BufferedReader(new FileReader("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//Accountinformation.txt"));
+        BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/Accountinformation.txt"));
         while (true){
             String line= read.readLine();
 
@@ -41,7 +41,7 @@ public class UsernameController {
                  if (x == 1) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("Parent.fxml"));
                      Parent root = loader.load();
-                     InstituteAccountController d = loader.getController();
+                     parentcontroller d = loader.getController();
                      d.setText(username,email);
                      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                      msgStage.setScene(new Scene(root));
@@ -49,7 +49,7 @@ public class UsernameController {
                     } else if (x == 2) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("Coaching.fxml"));
                      Parent root = loader.load();
-                     InstituteAccountController d = loader.getController();
+                     Caochingcontroller d = loader.getController();
                      d.setText(username,email);
                      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                      msgStage.setScene(new Scene(root));
@@ -57,7 +57,7 @@ public class UsernameController {
                     else if (x == 3) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("student.fxml"));
                      Parent root = loader.load();
-                     InstituteAccountController d = loader.getController();
+                     Studentcontroller d = loader.getController();
                      d.setText(username,email);
                      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                      msgStage.setScene(new Scene(root));
@@ -74,7 +74,7 @@ public class UsernameController {
                     else if (x == 5) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("Tutor.fxml"));
                      Parent root = loader.load();
-                     InstituteAccountController d = loader.getController();
+                    TutorController d = loader.getController();
                      d.setText(username,email);
                      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                      msgStage.setScene(new Scene(root));
