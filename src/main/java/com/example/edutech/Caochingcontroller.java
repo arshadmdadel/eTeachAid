@@ -61,13 +61,13 @@ public class Caochingcontroller {
         String coaching =coachingtf.getText();
         if (password.equals(cnfpassword)) {
 
-            FileWriter f = new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt");
+            FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt");
             PrintWriter write = new PrintWriter(f);
-            write.println("intstitute||" + username + "||" + email + "||" + password);
+            write.println("intstitute%s%d" + username + "%s%d" + email + "%s%d" + password);
             write.close();
             f.close();
-            PrintWriter wr = new PrintWriter(new FileWriter("D://Project//eTeachAid//src//main//resources//com//example//edutech//Coachinginformation.txt"));
-            wr.println(username + "||" + email + "||" + password + "||" + name + "||" + address + "||" + contact + "||" +coaching);
+            PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/Coachinginformation.txt"));
+            wr.println(username + "%s%d" + email + "%s%d" + password + "%s%d" + name + "%s%d" + address + "%s%d" + contact + "%s%d" +coaching);
             wr.close();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
             Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();

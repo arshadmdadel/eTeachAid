@@ -8,11 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 
 public class parentcontroller {
@@ -26,11 +31,48 @@ public class parentcontroller {
     @FXML
     private TextField nametf;
     @FXML
+    private Button chooseimage;
+    @FXML
     private TextField contacttf;
     @FXML
     private TextField emailtf;
+    @FXML
+    private TextField stdclasstf;
+
+    @FXML
+    private TextField stdnametf;
     String username,email;
 
+
+    public void handleCollectImage(ActionEvent event) {
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
+        fileChooser.setFileFilter(filter);
+        int result = fileChooser.showOpenDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            String fileName = username+".png";
+            Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
+            try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
+                 OutputStream outputStream = new FileOutputStream(destination.toFile())) {
+                byte[] buffer = new byte[4096];
+                int length;
+                while ((length = inputStream.read(buffer)) > 0) {
+                    outputStream.write(buffer, 0, length);
+                }
+                System.out.println("Picture has been stored successfully.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            // Load the image from a file
+
+
+            // Set the image to the image view
+
+        }
+
+
+    }
     void setText(String username,String email){
         this.username=username;
         this.email=email;
@@ -41,20 +83,22 @@ public class parentcontroller {
     public void submit(ActionEvent event) throws IOException{
         UsernameController x=new UsernameController();
         String address=null;
-        String name=nametf.getText();
+        String Name=nametf.getText();
         String password=passwordtf.getText();
         String cnfpassword=cnfpasswordtf.getText();
         String contact=contacttf.getText();
+        String STDName = stdnametf.getText();
+        String STDClass = stdclasstf.getText();
         emailtf.setText(email);
         if (password.equals(cnfpassword)) {
 
-            FileWriter f = new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt");
+            FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt");
             PrintWriter write = new PrintWriter(f);
-            write.println("Parent :||" + username + "||" + email + "||" + password);
+            write.println("Parent%s%d" + username + "%s%d" + email + "%s%d" + password);
             write.close();
             f.close();
-            PrintWriter wr = new PrintWriter(new FileWriter("D://Project//eTeachAid//src//main//resources//com//example//edutech//Parentinfo.txt"));
-            wr.println(username + "||" + email + "||" + password + "||" + name + "||" + address + "||" + contact + "||");
+            PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/Parentinfo.txt"));
+            wr.println(username + "%s%d" + email + "%s%d" + password + "%s%d" + Name + "%s%d" + address + "%s%d" + contact + "%s%d" +STDName+ "%s%d" +STDClass+ "%s%d");
             wr.close();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
             Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();

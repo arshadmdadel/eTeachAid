@@ -10,10 +10,13 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.*;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 
 public class Studentcontroller {
@@ -89,6 +92,9 @@ public class Studentcontroller {
   @FXML
   private TextField t9;
 
+  @FXML
+  private Button chooseimage;
+
   String username;
   String email;
   String gender;
@@ -97,6 +103,35 @@ public class Studentcontroller {
     this.username=username;
     this.email=email;
     t5.setText(email);
+  }
+  public void handleCollectImage(ActionEvent event) {
+    JFileChooser fileChooser = new JFileChooser();
+    FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
+    fileChooser.setFileFilter(filter);
+    int result = fileChooser.showOpenDialog(null);
+    if (result == JFileChooser.APPROVE_OPTION) {
+      File selectedFile = fileChooser.getSelectedFile();
+      String fileName = username+".png";
+      Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
+      try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
+           OutputStream outputStream = new FileOutputStream(destination.toFile())) {
+        byte[] buffer = new byte[4096];
+        int length;
+        while ((length = inputStream.read(buffer)) > 0) {
+          outputStream.write(buffer, 0, length);
+        }
+        System.out.println("Picture has been stored successfully.");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      // Load the image from a file
+
+
+      // Set the image to the image view
+
+    }
+
+
   }
 
   @FXML
@@ -111,7 +146,6 @@ public class Studentcontroller {
       return;
     }
 
-
     String name=t1.getText();
     String clas=t2.getText();
     String age=t3.getText();
@@ -122,13 +156,13 @@ public class Studentcontroller {
     String phone=t8.getText();
     String address=t9.getText();
     if(pass.equals(confirmpass)){
-      FileWriter f = new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//Accountinformation.txt",true);
+      FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt",true);
       PrintWriter write = new PrintWriter(f);
-      write.println("Student||" + username + "||" + email + "||" + pass);
+      write.println("Student%s%d" + username + "%s%d" + email + "%s%d" + pass);
       write.close();
       f.close();
-      PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
-      wr.print(username + "||" + email + "||" + pass + "||" + name + "||" + address + "||" + phone + "||" + age+"||"+ clas +"||"+ gender +"||");
+      PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt",true));
+      wr.print(username + "%s%d" + email + "%s%d" + pass + "%s%d" + name + "%s%d" + address + "%s%d" + phone + "%s%d" + age+"%s%d"+ clas +"%s%d"+ gender +"%s%d");
       wr.close();
     }
 

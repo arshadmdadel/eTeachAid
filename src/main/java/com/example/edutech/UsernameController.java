@@ -84,7 +84,7 @@ public class UsernameController {
                 }
                 else
                 {
-                    String []parts =line.split("||");
+                    String []parts =line.split("%s%d");
                     if (username.isEmpty()||email.isEmpty()){
                         notification.setText(" please entry the information ");
                     }
