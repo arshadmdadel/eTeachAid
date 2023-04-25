@@ -96,6 +96,12 @@ public class UsernameController {
                 
         }read.close();
     }
+    @FXML
+    void BackBtn(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
+        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        loginStage.setScene(new Scene(root));
+    }
 
 
 }

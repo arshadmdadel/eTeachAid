@@ -104,14 +104,14 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: #38ACEC; -fx-border-color: white;">
+            <HBox alignment="CENTER" onMouseClicked="#message" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: #38ACEC; -fx-border-color: white;">
                <children>
                   <ImageView fitHeight="41.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/conversation.png" />
                      </image>
                   </ImageView>
-                  <Label onContextMenuRequested="#message" prefHeight="50.0" prefWidth="156.0" text="  Message">
+                  <Label prefHeight="50.0" prefWidth="156.0" text="  Message">
                      <font>
                         <Font name="Tahoma Bold" size="14.0" />
                      </font>

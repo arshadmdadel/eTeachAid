@@ -84,13 +84,13 @@ public class InstituteAccountController {
         String job=jobtf.getText();
         if (password.equals(cnfpassword)) {
 
-            FileWriter f = new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt",true);
+            FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt",true);
             PrintWriter write = new PrintWriter(f);
-            write.println("intstitute||" + username + "||" + email + "||" + password);
+            write.println("intstitute" + username + "%s%d" + email + "%s%d" + password);
             write.close();
             f.close();
-            PrintWriter wr = new PrintWriter(new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//InstituteAccountinfo.txt"),true);
-            wr.println(username + "||" + email + "||" + password + "||" + name + "||" + address + "||" + contact + "||" + job);
+            PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/InstituteAccountinfo.txt"),true);
+            wr.println(username + "%s%d" + email + "%s%d" + password + "%s%d" + name + "%s%d" + address + "%s%d" + contact + "%s%d" + job);
             wr.close();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
             Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
