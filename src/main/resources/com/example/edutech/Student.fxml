@@ -146,6 +146,7 @@
             <DropShadow spread="0.31" />
          </effect>
       </Button>
-      <Button fx:id="chooseimage" layoutX="1235.0" layoutY="599.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="30.0" prefWidth="154.0" text="Choose Your Image" />
+      <Button fx:id="chooseimage" layoutX="1140.0" layoutY="602.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="30.0" prefWidth="154.0" text="Choose Your Image" />
+      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="1349.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

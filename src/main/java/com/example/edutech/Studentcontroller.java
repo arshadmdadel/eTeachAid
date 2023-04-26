@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
@@ -93,6 +95,9 @@ public class Studentcontroller {
   private TextField t9;
 
   @FXML
+  private ImageView image;
+
+  @FXML
   private Button chooseimage;
 
   String username;
@@ -104,7 +109,7 @@ public class Studentcontroller {
     this.email=email;
     t5.setText(email);
   }
-  public void handleCollectImage(ActionEvent event) {
+  public void handleCollectImage(ActionEvent event) throws FileNotFoundException {
     JFileChooser fileChooser = new JFileChooser();
     FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
     fileChooser.setFileFilter(filter);
@@ -125,10 +130,10 @@ public class Studentcontroller {
         e.printStackTrace();
       }
       // Load the image from a file
-
+      Image imageshow = new Image(new FileInputStream(fileName));
 
       // Set the image to the image view
-
+      image.setImage(imageshow);
     }
 
 
