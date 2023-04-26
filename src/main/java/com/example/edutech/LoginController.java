@@ -71,17 +71,22 @@ public class LoginController {
             return;
         }
 
-        Reader fr = new FileReader("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//Accountinformation.txt");
+        FileReader fr = new FileReader("src/main/resources/com/example/edutech/Accountinformation.txt");
         BufferedReader br = new BufferedReader(fr);
 
 
         while (true) {
             String line = br.readLine();
             if (line == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText("Password or username doesn't match");
+                alert.showAndWait();
                 break;
             }
             if (line.length() != 0) {
-                String[] parts = line.split("||");
+                String[] parts = line.split("%s%d");
                 String acc=parts[0];
                  username = parts[1];
                  password = parts[3];
@@ -95,14 +100,7 @@ public class LoginController {
                     loginStage.setScene(new Scene(root));
                     break;
                 }
-                else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText("Error");
-                    alert.setContentText("Password or username doesn't match");
-                    alert.showAndWait();
-                    return;
-                }
+
                 }
 
 

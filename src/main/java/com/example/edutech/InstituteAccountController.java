@@ -86,6 +86,7 @@ public class InstituteAccountController {
 
             FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt",true);
             PrintWriter write = new PrintWriter(f);
+
             write.println("intstitute%s%d" + username + "%s%d" + email + "%s%d" + password);
             write.close();
             f.close();
