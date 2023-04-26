@@ -86,7 +86,11 @@ public class InstituteAccountController {
 
             FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt",true);
             PrintWriter write = new PrintWriter(f);
+<<<<<<< HEAD
             write.println("intstitute" + username + "%s%d" + email + "%s%d" + password);
+=======
+            write.println("intstitute%s%d" + username + "%s%d" + email + "%s%d" + password);
+>>>>>>> d7f99be3380f7142b772ce33e1695c5ec7d9b0d8
             write.close();
             f.close();
             PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/InstituteAccountinfo.txt"),true);
