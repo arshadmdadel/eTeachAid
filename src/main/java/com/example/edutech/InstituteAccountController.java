@@ -84,12 +84,12 @@ public class InstituteAccountController {
         String job=jobtf.getText();
         if (password.equals(cnfpassword)) {
 
-            FileWriter f = new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt");
+            FileWriter f = new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//Accountinformation.txt",true);
             PrintWriter write = new PrintWriter(f);
             write.println("intstitute||" + username + "||" + email + "||" + password);
             write.close();
             f.close();
-            PrintWriter wr = new PrintWriter(new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//InstituteAccountinfo.txt"));
+            PrintWriter wr = new PrintWriter(new FileWriter("C://Users//User//Downloads//Compressed//Aoop//Aoop//src//main//resources//com//example//edutech//InstituteAccountinfo.txt"),true);
             wr.println(username + "||" + email + "||" + password + "||" + name + "||" + address + "||" + contact + "||" + job);
             wr.close();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));

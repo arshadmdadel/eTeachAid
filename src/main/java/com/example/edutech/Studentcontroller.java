@@ -122,12 +122,12 @@ public class Studentcontroller {
     String phone=t8.getText();
     String address=t9.getText();
     if(pass.equals(confirmpass)){
-      FileWriter f = new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//Accountinformation.txt",true);
+      FileWriter f = new FileWriter("src/main/resources/com/example/edutech/student.txt",true);
       PrintWriter write = new PrintWriter(f);
       write.println("Student||" + username + "||" + email + "||" + pass);
       write.close();
       f.close();
-      PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
+      PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt",true));
       wr.print(username + "||" + email + "||" + pass + "||" + name + "||" + address + "||" + phone + "||" + age+"||"+ clas +"||"+ gender +"||");
       wr.close();
     }

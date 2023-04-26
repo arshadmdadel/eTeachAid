@@ -61,6 +61,7 @@ public class LoginController {
     @FXML
     void signinbtn(ActionEvent event) throws IOException {
 
+
         if (usertxtfeidl.getText().isEmpty() || passwordtextfield.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -70,7 +71,7 @@ public class LoginController {
             return;
         }
 
-        Reader fr = new FileReader("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//Accountinformation.txt");
+        Reader fr = new FileReader("src/main/resources/com/example/edutech/Accountinformation.txt");
         BufferedReader br = new BufferedReader(fr);
 
 
@@ -80,30 +81,29 @@ public class LoginController {
                 break;
             }
             if (line.length() != 0) {
-                String[] parts = line.split("||");
-
-
-                String username = parts[1];
-                this.username = username;
-                String pass = parts[3];
-                this.password = pass;
+                String[] parts = line.split("%s%d");
+                String acc=parts[0];
+                 username = parts[1];
+                 password = parts[3];
                 String email = parts[2];
-            }
 
 
-                if (usertxtfeidl.getText().equals(this.username) && passwordtextfield.getText().equals(this.password)) {
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
+
+                if (usertxtfeidl.getText().equals(this.username)||usertxtfeidl.getText().equals(email) && passwordtextfield.getText().equals(this.password)) {
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
                     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                     loginStage.setScene(new Scene(root));
+                    break;
+                }
 
-                } else {
+                else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
                     alert.setHeaderText("Error");
                     alert.setContentText("Password or username doesn't match");
                     alert.showAndWait();
-                    return;
 
+                }
                 }
 
 

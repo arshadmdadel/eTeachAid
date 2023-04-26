@@ -74,7 +74,7 @@ public class UsernameController {
                     else if (x == 5) {
                      FXMLLoader loader = new FXMLLoader(getClass().getResource("Tutor.fxml"));
                      Parent root = loader.load();
-                    TutorController d = loader.getController();
+                     TutorController d = loader.getController();
                      d.setText(username,email);
                      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                      msgStage.setScene(new Scene(root));
@@ -84,7 +84,10 @@ public class UsernameController {
                 }
                 else
                 {
-                    String []parts =line.split("||");
+                    String []parts =line.split("%s%d");
+                    if (username.isEmpty()||email.isEmpty()){
+                        notification.setText(" please entry the information ");
+                    }
                     if(parts[1].equals(username)||parts[2].equals(email)){
                         notification.setText("THis information already used \n please try another");
                         break;

@@ -109,14 +109,14 @@ public class TutorController {
         String confirmpass = conpass.getText();
         String Address = address.getText();
         if (password.equals(confirmpass)) {
-            FileWriter f = new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//Accountinformation.txt", true);
+            FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt", true);
             PrintWriter write = new PrintWriter(f);
-            write.println("Tutor||" + username + "||" + Email + "||" + password);
+            write.println("Tutor %s%D" + username + "%s%d" + Email + "%s%d" + password);
             write.close();
             f.close();
 
-            PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//tutor.txt", true));
-            wr.print("Tutor : ||" + Name + "||" + Email + "||" + Age + "||" + Institue + "||" + profession + "||" + Address + "||" + Gender);
+            PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt", true));
+            wr.print("Tutor : %s%d" + Name + "%s%d" + Email + "%s%d" + Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender);
             wr.close();
 
 

@@ -176,7 +176,7 @@ public class studentnextController {
 
         String dsicrp=des.getText();
         String expsal=salary.getText();
-        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
+        PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt",true));
         wr.println("Salary:||" + expsal + "||||" + dsicrp);
         wr.close();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
@@ -189,7 +189,7 @@ public class studentnextController {
 
     String name;
     void filewrite(String name) throws IOException{
-        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
+        PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt",true));
         wr.write(name+"||");
         wr.close();
 
