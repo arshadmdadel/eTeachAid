@@ -31,8 +31,6 @@ public class parentcontroller {
     @FXML
     private TextField nametf;
     @FXML
-    private Button chooseimage;
-    @FXML
     private TextField contacttf;
     @FXML
     private TextField emailtf;

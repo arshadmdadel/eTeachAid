@@ -36,7 +36,7 @@
       <TextField fx:id="contacttf" layoutX="23.0" layoutY="174.0" prefHeight="41.0" prefWidth="263.0" promptText="Phone Number" style="-fx-border-color: Black;" />
       <PasswordField fx:id="cnfpasswordtf" layoutX="23.0" layoutY="286.0" prefHeight="41.0" prefWidth="263.0" promptText="Re-Enter The Password" />
       <PasswordField fx:id="passwordtf" layoutX="23.0" layoutY="233.0" prefHeight="41.0" prefWidth="263.0" promptText="Enter The Password" />
-      <Button fx:id="chooseimage" layoutX="456.0" layoutY="401.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="34.0" prefWidth="132.0" text="Choose Your Image" />
+      <Button layoutX="456.0" layoutY="401.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="34.0" prefWidth="132.0" text="Choose Your Image" />
       <TextField fx:id="stdnametf" layoutX="717.0" layoutY="88.0" prefHeight="41.0" prefWidth="263.0" promptText="Student Name" style="-fx-border-color: Black;" />
       <TextField fx:id="stdclasstf" layoutX="716.0" layoutY="140.0" prefHeight="41.0" prefWidth="263.0" promptText="Student Class" style="-fx-border-color: Black;" />
    </children>
