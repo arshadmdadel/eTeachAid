@@ -71,13 +71,20 @@ public class LoginController {
             return;
         }
 
-        Reader fr = new FileReader("src/main/resources/com/example/edutech/Accountinformation.txt");
+
+        FileReader fr = new FileReader("src/main/resources/com/example/edutech/Accountinformation.txt");
+
         BufferedReader br = new BufferedReader(fr);
 
 
         while (true) {
             String line = br.readLine();
             if (line == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText("Password or username doesn't match");
+                alert.showAndWait();
                 break;
             }
             if (line.length() != 0) {
@@ -87,14 +94,23 @@ public class LoginController {
                  password = parts[3];
                 String email = parts[2];
 
-
-
-                if (usertxtfeidl.getText().equals(this.username)||usertxtfeidl.getText().equals(email) && passwordtextfield.getText().equals(this.password)) {
+                if (usertxtfeidl.getText().equals(this.username)||usertxtfeidl.getText().equals(email)) {
+                    if (passwordtextfield.getText().equals(this.password)) {
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
                     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                     loginStage.setScene(new Scene(root));
                     break;
                 }
+                    else{
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Error");
+                        alert.setHeaderText("Error");
+                        alert.setContentText("Password or username doesn't match");
+                        alert.showAndWait();
+                    }
+
+                    }
+
 
                 else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -104,6 +120,7 @@ public class LoginController {
                     alert.showAndWait();
 
                 }
+
                 }
 
 

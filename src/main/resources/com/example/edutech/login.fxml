@@ -16,9 +16,9 @@
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.LoginController">
    <children>
-      <ImageView fx:id="signin" fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="signin" fitHeight="750.0" fitWidth="1300.0" layoutX="-5.0" pickOnBounds="true">
          <image>
             <Image url="@images/signinblank.png" />
          </image>
@@ -79,7 +79,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <Button layoutX="1447.0" layoutY="60.0" mnemonicParsing="false" onAction="#signupbtn" style="-fx-background-radius: 90; -fx-background-color: white;" text="Sign up" textFill="#29b6f6">
+      <Button layoutX="1090.0" layoutY="32.0" mnemonicParsing="false" onAction="#signupbtn" style="-fx-background-radius: 90; -fx-background-color: white;" text="Sign up" textFill="#29b6f6">
          <font>
             <Font name="Tahoma Bold" size="14.0" />
          </font>
@@ -96,7 +96,7 @@
             <Font name="Perpetua Titling MT Bold" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="1447.0" layoutY="804.0" mnemonicParsing="false" onAction="#backbtn" prefHeight="30.0" prefWidth="71.0" style="-fx-background-radius: 90; -fx-background-color: white;" text="Back" textFill="#29b6f6">
+      <Button layoutX="1086.0" layoutY="698.0" mnemonicParsing="false" onAction="#backbtn" prefHeight="30.0" prefWidth="71.0" style="-fx-background-radius: 90; -fx-background-color: white;" text="Back" textFill="#29b6f6">
          <font>
             <Font name="Tahoma Bold" size="14.0" />
          </font>
@@ -117,7 +117,7 @@
             <ColorAdjust />
          </effect>
       </Label>
-      <Ellipse fill="#10dee5f5" layoutX="341.0" layoutY="254.0" radiusX="94.0" radiusY="32.0" stroke="BLACK" strokeType="INSIDE">
+      <Ellipse fill="#12ffffcc" layoutX="341.0" layoutY="254.0" radiusX="94.0" radiusY="32.0" stroke="BLACK" strokeType="INSIDE">
          <effect>
             <DropShadow />
          </effect>

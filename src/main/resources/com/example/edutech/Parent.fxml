@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane accessibleRole="IMAGE_VIEW" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.parentcontroller">
+<AnchorPane accessibleRole="IMAGE_VIEW" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.parentcontroller">
    <children>
-      <ImageView fitHeight="891.0" fitWidth="1600.0" layoutX="-14.0" layoutY="5.0" pickOnBounds="true">
+      <ImageView fitHeight="747.0" fitWidth="1296.0" layoutY="-3.0" pickOnBounds="true">
          <image>
             <Image url="@images/webform.png" />
          </image>
@@ -36,5 +36,12 @@
       <TextField fx:id="contacttf" layoutX="23.0" layoutY="174.0" prefHeight="41.0" prefWidth="263.0" promptText="Phone Number" style="-fx-border-color: Black;" />
       <PasswordField fx:id="cnfpasswordtf" layoutX="23.0" layoutY="286.0" prefHeight="41.0" prefWidth="263.0" promptText="Re-Enter The Password" />
       <PasswordField fx:id="passwordtf" layoutX="23.0" layoutY="233.0" prefHeight="41.0" prefWidth="263.0" promptText="Enter The Password" />
+      <Button layoutX="36.0" layoutY="377.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="41.0" prefWidth="153.0" text="Choose Your Image">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <TextField fx:id="stdnametf" layoutX="717.0" layoutY="88.0" prefHeight="41.0" prefWidth="263.0" promptText="Student Name" style="-fx-border-color: Black;" />
+      <TextField fx:id="stdclasstf" layoutX="716.0" layoutY="140.0" prefHeight="41.0" prefWidth="263.0" promptText="Student Class" style="-fx-border-color: Black;" />
+      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="320.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

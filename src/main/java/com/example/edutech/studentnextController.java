@@ -176,8 +176,10 @@ public class studentnextController {
 
         String dsicrp=des.getText();
         String expsal=salary.getText();
-        PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt",true));
-        wr.println("Salary:||" + expsal + "||||" + dsicrp);
+
+        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
+        wr.println("Salary:%s%d" + expsal + "%s%d%s%d" + dsicrp);
+
         wr.close();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
@@ -189,8 +191,12 @@ public class studentnextController {
 
     String name;
     void filewrite(String name) throws IOException{
-        PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt",true));
-        wr.write(name+"||");
+
+
+
+        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
+        wr.write(name+"%s%d");
+
         wr.close();
 
     }

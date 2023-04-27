@@ -7,11 +7,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 
 public class TutorController {
@@ -39,6 +44,9 @@ public class TutorController {
     private CheckBox female;
 
     @FXML
+    private Button chooseimage;
+
+    @FXML
     private TextField institue;
 
     @FXML
@@ -46,6 +54,10 @@ public class TutorController {
 
     @FXML
     private TextField name;
+
+
+    @FXML
+    private ImageView image;
 
 
     @FXML
@@ -59,6 +71,39 @@ public class TutorController {
     String E;
 
     String Gender;
+
+
+
+     @FXML
+     public void handleCollectImage(ActionEvent event) throws FileNotFoundException {
+         JFileChooser fileChooser = new JFileChooser();
+         FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
+         fileChooser.setFileFilter(filter);
+         int result = fileChooser.showOpenDialog(null);
+         if (result == JFileChooser.APPROVE_OPTION) {
+             File selectedFile = fileChooser.getSelectedFile();
+             String fileName = username+".png";
+             Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
+             try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
+                  OutputStream outputStream = new FileOutputStream(destination.toFile())) {
+                 byte[] buffer = new byte[4096];
+                 int length;
+                 while ((length = inputStream.read(buffer)) > 0) {
+                     outputStream.write(buffer, 0, length);
+                 }
+                 System.out.println("Picture has been stored successfully.");
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+             // Load the image from a file
+             Image imageshow = new Image(new FileInputStream(fileName));
+
+             // Set the image to the image view
+             image.setImage(imageshow);
+         }
+
+
+     }
 
     void setText(String username, String email) {
         this.username = username;
@@ -88,6 +133,7 @@ public class TutorController {
     }
 
 
+
     @FXML
     void onnextclick(ActionEvent event) throws IOException {
 
@@ -111,12 +157,16 @@ public class TutorController {
         if (password.equals(confirmpass)) {
             FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt", true);
             PrintWriter write = new PrintWriter(f);
-            write.println("Tutor %s%D" + username + "%s%d" + Email + "%s%d" + password);
+
+            write.println("Tutor%s%d" + username + "%s%d" + Email + "%s%d" + password);
+
             write.close();
             f.close();
 
             PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt", true));
-            wr.print("Tutor : %s%d" + Name + "%s%d" + Email + "%s%d" + Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender);
+
+            wr.print("Tutor%s%d" + Name + "%s%d" + Email + "%s%d" + Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender);
+
             wr.close();
 
 

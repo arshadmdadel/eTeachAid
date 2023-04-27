@@ -187,7 +187,9 @@ public class TutornextController {
         String Experience=exprn.getText();
         String area=parea.getText();
         PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt",true));
-        wr.println("Tutor:||" + area + "||" + Experience);
+
+        wr.println("Tutor:%s%d" + area + "%s%d" + Experience);
+
         wr.close();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
@@ -213,7 +215,9 @@ public class TutornextController {
 
     void filewrite(String name) throws IOException{
         PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt",true));
-        wr.write(name+"||");
+
+        wr.write(name+"%s%d");
+
         wr.close();
 
     }

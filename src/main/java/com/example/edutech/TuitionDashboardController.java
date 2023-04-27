@@ -58,8 +58,8 @@ public class TuitionDashboardController {
     }
 
     @FXML
-    void message(ContextMenuEvent event) {
-
+    void message(MouseEvent event) {
+        loadpage("Message");
     }
 
     @FXML

@@ -15,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.StudentaccountController">
+<AnchorPane prefHeight="703.0" prefWidth="1543.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.StudentaccountController">
    <children>
-      <ImageView fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="723.0" fitWidth="1040.0" layoutX="303.0" pickOnBounds="true">
          <image>
             <Image url="@images/studenaccount.jpg" />
          </image>
@@ -25,9 +25,9 @@
             <BoxBlur iterations="2" />
          </effect>
       </ImageView>
-      <AnchorPane opacity="0.78" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: white;">
+      <AnchorPane layoutX="6.0" layoutY="7.0" opacity="0.78" prefHeight="745.0" prefWidth="1300.0" style="-fx-background-color: white;">
          <children>
-            <Label alignment="CENTER" layoutX="675.0" layoutY="179.0" prefHeight="28.0" prefWidth="253.0" text=" Account Info" textFill="#0f99fffa" underline="true">
+            <Label alignment="CENTER" layoutX="675.0" layoutY="120.0" prefHeight="28.0" prefWidth="253.0" text=" Account Info" textFill="#0f99fffa" underline="true">
                <font>
                   <Font name="Bauhaus 93" size="24.0" />
                </font>
@@ -47,47 +47,47 @@
                   <ColorAdjust />
                </effect>
             </Label>
-            <TextField fx:id="nametf" layoutX="250.0" layoutY="301.0" prefHeight="25.0" prefWidth="231.0">
+            <TextField fx:id="nametf" layoutX="250.0" layoutY="276.0" prefHeight="25.0" prefWidth="231.0">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField fx:id="classtf" layoutX="244.0" layoutY="382.0" prefHeight="25.0" prefWidth="231.0">
+            <TextField fx:id="classtf" layoutX="244.0" layoutY="360.0" prefHeight="25.0" prefWidth="231.0">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField fx:id="agetf" layoutX="244.0" layoutY="465.0" prefHeight="25.0" prefWidth="231.0">
+            <TextField fx:id="agetf" layoutX="244.0" layoutY="445.0" prefHeight="25.0" prefWidth="231.0">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField fx:id="gendertf" layoutX="749.0" layoutY="301.0" prefHeight="25.0" prefWidth="231.0">
+            <TextField fx:id="gendertf" layoutX="837.0" layoutY="271.0" prefHeight="25.0" prefWidth="231.0">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField fx:id="contacttf" layoutX="749.0" layoutY="389.0" prefHeight="25.0" prefWidth="231.0">
+            <TextField fx:id="contacttf" layoutX="833.0" layoutY="357.0" prefHeight="25.0" prefWidth="231.0">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField fx:id="addresstf" layoutX="749.0" layoutY="465.0" prefHeight="25.0" prefWidth="231.0">
+            <TextField fx:id="addresstf" layoutX="833.0" layoutY="435.0" prefHeight="25.0" prefWidth="231.0">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField fx:id="emailtf" layoutX="244.0" layoutY="547.0" prefHeight="25.0" prefWidth="231.0">
+            <TextField fx:id="emailtf" layoutX="244.0" layoutY="529.0" prefHeight="25.0" prefWidth="231.0">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <TextField fx:id="institutetf" layoutX="749.0" layoutY="540.0" prefHeight="25.0" prefWidth="231.0">
+            <TextField fx:id="institutetf" layoutX="836.0" layoutY="514.0" prefHeight="25.0" prefWidth="231.0">
                <effect>
                   <DropShadow />
                </effect>
             </TextField>
-            <Button layoutX="754.0" layoutY="729.0" mnemonicParsing="false" onAction="#saveall" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #7986cb;" text="Save all">
+            <Button layoutX="754.0" layoutY="704.0" mnemonicParsing="false" onAction="#saveall" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #7986cb;" text="Save all">
                <font>
                   <Font name="Tahoma Bold" size="14.0" />
                </font>
@@ -119,7 +119,7 @@
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
             </Text>
-            <Ellipse fill="#0f9bffa7" layoutX="168.0" layoutY="314.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
+            <Ellipse fill="#0f9bffa7" layoutX="168.0" layoutY="284.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
                <effect>
                   <DropShadow spread="0.43">
                      <color>
@@ -128,7 +128,7 @@
                   </DropShadow>
                </effect>
             </Ellipse>
-            <Ellipse fill="#0f9bffa7" layoutX="168.0" layoutY="402.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
+            <Ellipse fill="#0f9bffa7" layoutX="168.0" layoutY="374.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
                <effect>
                   <DropShadow spread="0.43">
                      <color>
@@ -137,7 +137,7 @@
                   </DropShadow>
                </effect>
             </Ellipse>
-            <Ellipse fill="#0f9bffa7" layoutX="168.0" layoutY="478.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
+            <Ellipse fill="#0f9bffa7" layoutX="168.0" layoutY="455.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
                <effect>
                   <DropShadow spread="0.43">
                      <color>
@@ -146,7 +146,7 @@
                   </DropShadow>
                </effect>
             </Ellipse>
-            <Ellipse fill="#0f9bffa7" layoutX="168.0" layoutY="560.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
+            <Ellipse fill="#0f9bffa7" layoutX="168.0" layoutY="544.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
                <effect>
                   <DropShadow spread="0.43">
                      <color>
@@ -155,7 +155,7 @@
                   </DropShadow>
                </effect>
             </Ellipse>
-            <Ellipse fill="#0f9bffa7" layoutX="673.0" layoutY="314.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
+            <Ellipse fill="#0f9bffa7" layoutX="673.0" layoutY="287.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
                <effect>
                   <DropShadow spread="0.43">
                      <color>
@@ -164,7 +164,7 @@
                   </DropShadow>
                </effect>
             </Ellipse>
-            <Ellipse fill="#0f9bffa7" layoutX="673.0" layoutY="553.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
+            <Ellipse fill="#0f9bffa7" layoutX="673.0" layoutY="531.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
                <effect>
                   <DropShadow spread="0.43">
                      <color>
@@ -173,7 +173,7 @@
                   </DropShadow>
                </effect>
             </Ellipse>
-            <Ellipse fill="#0f9bffa7" layoutX="673.0" layoutY="400.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
+            <Ellipse fill="#0f9bffa7" layoutX="673.0" layoutY="373.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
                <effect>
                   <DropShadow spread="0.43">
                      <color>
@@ -182,37 +182,37 @@
                   </DropShadow>
                </effect>
             </Ellipse>
-            <Text layoutX="141.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+            <Text layoutX="141.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="142.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class :">
+            <Text layoutX="142.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class :">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="149.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age :">
+            <Text layoutX="149.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age :">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="150.0" layoutY="563.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :">
+            <Text layoutX="150.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="638.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender :">
+            <Text layoutX="638.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender :">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="632.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact :" wrappingWidth="82.921875">
+            <Text layoutX="632.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact :" wrappingWidth="82.921875">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
             </Text>
-            <Ellipse fill="#0f9bffa7" layoutX="673.0" layoutY="478.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
+            <Ellipse fill="#0f9bffa7" layoutX="671.0" layoutY="456.0" radiusX="48.0" radiusY="14.0" stroke="BLACK" strokeType="INSIDE">
                <effect>
                   <DropShadow spread="0.43">
                      <color>
@@ -221,12 +221,12 @@
                   </DropShadow>
                </effect>
             </Ellipse>
-            <Text layoutX="632.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :" wrappingWidth="82.921875">
+            <Text layoutX="632.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :" wrappingWidth="82.921875">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="632.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insitute :" wrappingWidth="82.921875">
+            <Text layoutX="634.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insitute :" wrappingWidth="82.921875">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="14.0" />
                </font>
