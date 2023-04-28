@@ -82,7 +82,7 @@
       <TextArea fx:id="conpasstf" layoutX="238.0" layoutY="380.0" prefHeight="44.0" prefWidth="389.0" />
       <TextArea fx:id="passtf" layoutX="183.0" layoutY="325.0" prefHeight="44.0" prefWidth="443.0" />
       <TextArea fx:id="phonetf" layoutX="177.0" layoutY="424.0" prefHeight="44.0" prefWidth="443.0" />
-      <TextArea fx:id="addresstf" layoutX="26.0" layoutY="493.0" prefHeight="72.0" prefWidth="433.0" />
+      <TextArea fx:id="address" layoutX="26.0" layoutY="493.0" prefHeight="72.0" prefWidth="433.0" />
       <Button layoutX="568.0" layoutY="553.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="116.0" text="Save Changes" />
    </children>
 </AnchorPane>

@@ -3,16 +3,17 @@ package com.example.edutech;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 
-import java.awt.*;
+;
 import java.io.IOException;
 
 public class studentedit {
 
 
 
-        @FXML
-        private TextArea addresstf;
+    @FXML
+    private TextArea address;
 
         @FXML
         private TextArea agetf;
@@ -52,8 +53,8 @@ public class studentedit {
         String pass=passtf.getText();
         String confirmpass=conpasstf.getText();
         String phone=phonetf.getText();
-        String address=addresstf.getText();
-        
+        String Address=address.getText();
+
     }
 
     }
