@@ -19,12 +19,18 @@ public class StartingController {
     private ImageView myimageview;
 
     @FXML
-    void about(MouseEvent event) {
+    void about(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("About.fxml")));
+        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        loginStage.setScene(new Scene(root));
 
     }
 
     @FXML
-    void contact(MouseEvent event) {
+    void contact(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Contact.fxml")));
+        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        loginStage.setScene(new Scene(root));
 
     }
 

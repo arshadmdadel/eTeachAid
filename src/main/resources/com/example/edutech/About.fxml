@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.AboutController">
+   <children>
+      <ImageView fitHeight="825.0" fitWidth="1225.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/webhomeblank.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="536.0" layoutY="28.0" text="About Us" underline="true">
+         <font>
+            <Font name="Bodoni MT Black" size="41.0" />
+         </font>
+      </Label>
+      <Text layoutX="14.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.  Mission and values: Explain the core principles that drive your tuition website, such as a commitment to providing quality education or personalized instruction." wrappingWidth="751.13671875">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.  Expertise: Highlight the qualifications and experience of your tutors or instructors, including their educational backgrounds and teaching experience." wrappingWidth="693.13671875">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3.   Approach: Explain the teaching approach or methodology used by your website, such as a focus on individualized attention or a customized curriculum." wrappingWidth="674.13671875">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="18.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.   Services: Describe the types of services and programs offered by your website, such as tutoring in specific subjects or test preparation courses." wrappingWidth="620.13671875">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6.  Differentiators: Highlight what sets your tuition website apart from competitors, such as innovative teaching methods or a track record of success." wrappingWidth="592.13671875">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Text>
+      <Text layoutX="18.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5.   Credentials: Share any relevant credentials or certifications that your website or tutors have obtained, such as accreditation from a recognized educational organization." wrappingWidth="584.13671875">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Text>
+      <Label layoutX="571.0" layoutY="665.0" text="Powerd By">
+         <font>
+            <Font name="Britannic Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="530.0" layoutY="702.0" text="Team Guidence">
+         <font>
+            <Font name="Britannic Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="945.0" layoutY="725.0" mnemonicParsing="false" onAction="#back" prefHeight="48.0" prefWidth="132.0" text="Back">
+         <font>
+            <Font name="Book Antiqua Bold" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

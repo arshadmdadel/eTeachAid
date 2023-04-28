@@ -1,3 +1,1 @@
-Student%s%dnirab123%s%dnirab@gmail.com%s%d123
-Student%s%dnull%s%dnirab@gmail.com%s%d123
-Student%s%dnull%s%dnirab@gmail.com%s%d123
+Tutor%s%dabir10%s%dabir@gmail.com%s%d123
