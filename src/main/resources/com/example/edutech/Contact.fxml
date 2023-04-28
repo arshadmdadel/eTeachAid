@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.ContactController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/web%2011.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="322.0" layoutY="94.0" prefHeight="20.0" prefWidth="256.0" text="Contact Us" underline="true">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="154.0" prefHeight="17.0" prefWidth="491.0" text="Email :  eteachaid123@gmail.com">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="187.0" prefHeight="17.0" prefWidth="491.0" text="Phone:  9998752064">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="222.0" prefHeight="17.0" prefWidth="578.0" text="Address:   123 Main StAnytown, USA 12345">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="253.0" prefHeight="17.0" prefWidth="585.0" text="Facebook:   https://www.example.com/">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="702.0" layoutY="456.0" mnemonicParsing="false" onAction="#back" prefHeight="44.0" prefWidth="136.0" text="Back">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

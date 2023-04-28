@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+Tutor%s%dasif ahmed%s%dtushar@gmail.com%s%d25%s%dUIU%s%dstudent%s%dasfasdfdsgdfgf%s%dMaleV-VIII%s%dMORNING%s%dGENERAL SCIENCE%s%dHIGHER MATH%s%dBIOLOGY%s%dTutor:%s%dnotunbazar%s%dasdajsfkldajfhkdbdkbkdkvdv
+Tutor%s%darshadmdadel%s%darshad@gmail.com%s%d1234%s%dAdel%s%d15%s%dulab%s%dstudent%s%drampura%s%dMale%s%dPreferClass I-IV%s%dPreferClass V-VIII%s%dPreferClass IX-X%s%dPreferTime MORNING%s%dPreferTime EVENING%s%dPreferSubject GENERAL SCIENCE%s%dPreferSubject GENERAL MATH%s%dPreferSubject HIGHER MATH%s%dPreferSubject CHEMISTRY%s%dPreferArea rampura%s%dExperience 5 year
+Tutor%s%dabir10%s%dabir@gmail.com%s%d123%s%dabir%s%d24%s%dUIU%s%dstudent%s%dasdasfdfdf%s%dMale%s%dPreferClass I-IV%s%dPreferTime MORNING%s%dPreferSubject GENERAL SCIENCE%s%dPreferArea asdsad%s%dExperience asdasdasd
+=======
+>>>>>>> 1f41a3c60a410cd1475304a4013e450ac4a21d29
