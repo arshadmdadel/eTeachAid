@@ -29,7 +29,10 @@ public class StartingController {
     }
 
     @FXML
-    void services(MouseEvent event) {
+    void services(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("termsandconditions.fxml")));
+        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        loginStage.setScene(new Scene(root));
 
     }
 

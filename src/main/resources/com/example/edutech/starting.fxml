@@ -82,7 +82,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <Label alignment="CENTER" layoutX="1010.0" layoutY="55.0" onMouseClicked="#services" text="Services" textAlignment="JUSTIFY" underline="true">
+      <Label alignment="CENTER" layoutX="1010.0" layoutY="55.0" onMouseClicked="#services" text="Terms And Conditions" textAlignment="JUSTIFY" underline="true">
          <font>
             <Font name="Tahoma Bold" size="14.0" />
          </font>
@@ -98,7 +98,7 @@
             <ColorAdjust />
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="1100.0" layoutY="55.0" onMouseClicked="#contact" prefHeight="18.0" prefWidth="59.0" text="Contact" textAlignment="JUSTIFY" underline="true">
+      <Label alignment="CENTER" layoutX="1187.0" layoutY="55.0" onMouseClicked="#contact" prefHeight="18.0" prefWidth="59.0" text="Contact" textAlignment="JUSTIFY" underline="true">
          <font>
             <Font name="Tahoma Bold" size="14.0" />
          </font>

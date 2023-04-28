@@ -110,7 +110,7 @@ public class parentcontroller {
     }
 
     public void goback(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("starting.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow(); // then cast to stage to get the window
         loginStage.setScene(new Scene(root));
     }
