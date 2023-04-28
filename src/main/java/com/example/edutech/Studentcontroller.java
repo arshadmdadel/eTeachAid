@@ -3,6 +3,7 @@ package com.example.edutech;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,12 +17,14 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class Studentcontroller {
+public class Studentcontroller implements Initializable {
 
 
   @FXML
@@ -178,7 +181,7 @@ public class Studentcontroller {
       String Code=a.generateRandomCode();
       String Time=a.time();
       PrintWriter p= new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
-      p.print(Time+"%s%d"+Code+"%s%d"+username+"%s%d"+name+"%s%d"+phone+"%s%d"+address+"%s%d"+clas+"%s%d"+gender+"%s%d");
+      p.print(Time+"%s%d"+Code+"%s%d"+username+"%s%d"+name+"%s%d"+phone+"%s%d"+address+"%s%d"+clas+"%s%d"+gender+"%s%d+");
       p.close();
     }
 
@@ -206,6 +209,8 @@ gender="male";
   }
 
 
+  @Override
+  public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
+  }
 }

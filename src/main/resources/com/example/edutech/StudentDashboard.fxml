@@ -28,7 +28,7 @@
                   <ColorAdjust />
                </effect>
             </Label>
-            <Circle fx:id="imagefield" fill="DODGERBLUE" layoutX="1158.0" layoutY="43.0" radius="28.0" stroke="#eeeeee" strokeType="INSIDE" strokeWidth="0.0">
+            <Circle fx:id="imagefield" fill="DODGERBLUE" layoutX="1158.0" layoutY="36.0" radius="28.0" stroke="#eeeeee" strokeType="INSIDE" strokeWidth="0.0">
                <effect>
                   <DropShadow spread="0.28">
                      <color>
@@ -74,14 +74,14 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" onMouseClicked="#Searchforajob" prefHeight="50.0" prefWidth="165.0" spacing="2.0" style="-fx-background-color: #38ACEC; -fx-border-color: white;">
+            <HBox alignment="CENTER" onMouseClicked="#Tutorrequest" prefHeight="50.0" prefWidth="165.0" spacing="2.0" style="-fx-background-color: #38ACEC; -fx-border-color: white;">
                <children>
-                  <ImageView fitHeight="41.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/briefcase.png" />
+                        <Image url="@images/icons8-classroom-80.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="48.0" prefWidth="141.0" text="  Search for a job">
+                  <Label prefHeight="48.0" prefWidth="144.0" text=" Tutor Request">
                      <font>
                         <Font name="Tahoma Bold" size="14.0" />
                      </font>

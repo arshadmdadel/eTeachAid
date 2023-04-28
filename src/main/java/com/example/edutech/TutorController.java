@@ -3,6 +3,7 @@ package com.example.edutech;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,12 +15,14 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class TutorController {
+public class TutorController implements Initializable {
 
 
     @FXML
@@ -65,6 +68,9 @@ public class TutorController {
 
     @FXML
     private TextField work;
+
+    @FXML
+    private TextField result;
 
     String username;
 
@@ -157,6 +163,7 @@ public class TutorController {
         String password = pass.getText();
         String confirmpass = conpass.getText();
         String Address = address.getText();
+        String resu=result.getText();
         if (password.equals(confirmpass)) {
             FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt", true);
             PrintWriter write = new PrintWriter(f);
@@ -167,7 +174,7 @@ public class TutorController {
             f.close();
 
             PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt", true));
-            wr.print("Tutor%s%d"+username+"%s%d"+ Email + "%s%d"+password+"%s%d"+Name+"%s%d"+ Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender+"%s%d");
+            wr.print(resu+"%s%d"+username+"%s%d"+ Email + "%s%d"+password+"%s%d"+Name+"%s%d"+ Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender+"%s%d");
 
             wr.close();
 
@@ -177,5 +184,40 @@ public class TutorController {
             loginStage.setScene(new Scene(root));
         }
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            Getsetusername a=new Getsetusername();
+            String Username=a.getUsername();
+            BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
+            while (true){
+                String line=read.readLine();
+                if (line==null){
+                    break;
+                }
+                else{
+                    String []parts=line.split("%s%d");
+                    if (parts[1].equals(Username)){
+                        email.setText(parts[2]);
+                        pass.setText(parts[3]);
+                        conpass.setText(parts[3]);
+                        name.setText(parts[4]);
+                        age.setText(parts[5]);
+                        institue.setText(parts[6]);
+                        work.setText(parts[7]);
+                        address.setText(parts[8]);
+                        if (parts[9].equalsIgnoreCase("male")){
+                            male.setSelected(true);}
+                        else {female.setSelected(true);}
+
+                        break;
+                    }
+                }
+            } read.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -78,6 +78,8 @@ public class TutorAccinfoCOntroller implements Initializable {
 
     @FXML
     private TextField workexp;
+    @FXML
+    private TextField result;
 
     @FXML
     void female(ActionEvent event) {
@@ -192,8 +194,8 @@ public class TutorAccinfoCOntroller implements Initializable {
                 else{
                     String []parts=line.split("%s%d");
                     if (parts[1].equals(Username)){
+                        result.setText(parts[0]);
                         username.setText(parts[1]);
-
                         email.setText(parts[2]);
                         pass.setText(parts[3]);
                         conpass.setText(parts[3]);

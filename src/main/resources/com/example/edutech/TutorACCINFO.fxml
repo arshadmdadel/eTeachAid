@@ -85,6 +85,20 @@
                         </DropShadow>
                      </effect>
                   </TextField>
+                  <Label prefHeight="27.0" prefWidth="69.0" text="Result :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="result" prefHeight="25.0" prefWidth="191.0" promptText="result">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="110.0" prefHeight="34.0" prefWidth="600.0" spacing="10.0">
