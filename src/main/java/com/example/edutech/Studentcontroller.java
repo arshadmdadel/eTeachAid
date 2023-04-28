@@ -151,6 +151,8 @@ public class Studentcontroller {
       alert.showAndWait();
       return;
     }
+    Getsetusername z=new Getsetusername();
+    z.setUsername(username);
 
     String name=t1.getText();
     String clas=t2.getText();

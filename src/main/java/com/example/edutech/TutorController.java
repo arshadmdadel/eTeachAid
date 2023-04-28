@@ -146,6 +146,8 @@ public class TutorController {
             alert.showAndWait();
             return;
         }
+        Getsetusername a=new Getsetusername();
+        a.setUsername(username);
 
         String Name = name.getText();
         String profession = work.getText();

@@ -7,7 +7,7 @@ public class Getsetusername {
 
     public void setUsername(String setU) throws IOException {
         PrintWriter write= new PrintWriter(new FileWriter("src/main/java/com/example/edutech/Accessusername.txt"));
-        write.println(setU+"");
+        write.print(setU+"");
         write.close();
     }
 

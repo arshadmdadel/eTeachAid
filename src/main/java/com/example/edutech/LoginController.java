@@ -94,10 +94,8 @@ public class LoginController {
                  password = parts[3];
                 String email = parts[2];
 
-
-
-                if (usertxtfeidl.getText().equals(this.username)||usertxtfeidl.getText().equals(email) ) {
-                    if(passwordtextfield.getText().equals(this.password)){
+                if (usertxtfeidl.getText().equals(this.username)||usertxtfeidl.getText().equals(email) &&passwordtextfield.getText().equals(this.password)) {
+                    if (passwordtextfield.getText().equals(this.password)) {
                         Getsetusername a=new Getsetusername();
                         a.setUsername(username);
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
@@ -105,35 +103,19 @@ public class LoginController {
                     loginStage.setScene(new Scene(root));
                     break;}
                 }
-                    else{
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Error");
-                        alert.setHeaderText("Error");
-                        alert.setContentText("Password or username doesn't match");
-                        alert.showAndWait();
-                    }
+
 
                     }
-
-
-                else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText("Error");
-                    alert.setContentText("Password or username doesn't match");
-                    alert.showAndWait();
-
-                }
-
-                }
 
 //                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
 //                Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
 //                loginStage.setScene(new Scene(root));
+
+            }
         br.close();
         fr.close();
 
-            }
+        }
 
 
             @FXML

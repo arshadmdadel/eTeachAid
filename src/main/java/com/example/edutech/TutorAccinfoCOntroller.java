@@ -7,10 +7,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -79,7 +85,37 @@ public class TutorAccinfoCOntroller implements Initializable {
     }
 
     @FXML
-    void handleCollectImage(ActionEvent event) {
+    void handleCollectImage(ActionEvent event) throws FileNotFoundException {
+        {
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
+            fileChooser.setFileFilter(filter);
+            int result = fileChooser.showOpenDialog(null);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+                String fileName = username+".png";
+                Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
+                try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
+                     OutputStream outputStream = new FileOutputStream(destination.toFile())) {
+                    byte[] buffer = new byte[4096];
+                    int length;
+                    while ((length = inputStream.read(buffer)) > 0) {
+                        outputStream.write(buffer, 0, length);
+                    }
+                    System.out.println("Picture has been stored successfully.");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                // Load the image from a file
+                Image imageshow = new Image(new FileInputStream(fileName));
+
+                // Set the image to the image view
+                imagefield.setImage(imageshow);
+            }
+
+
+        }
 
     }
 
@@ -157,6 +193,7 @@ public class TutorAccinfoCOntroller implements Initializable {
                     String []parts=line.split("%s%d");
                     if (parts[1].equals(Username)){
                         username.setText(parts[1]);
+
                         email.setText(parts[2]);
                         pass.setText(parts[3]);
                         conpass.setText(parts[3]);
