@@ -71,7 +71,9 @@ public class LoginController {
             return;
         }
 
+
         FileReader fr = new FileReader("src/main/resources/com/example/edutech/Accountinformation.txt");
+
         BufferedReader br = new BufferedReader(fr);
 
 
@@ -103,18 +105,35 @@ public class LoginController {
                     loginStage.setScene(new Scene(root));
                     break;}
                 }
+                    else{
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Error");
+                        alert.setHeaderText("Error");
+                        alert.setContentText("Password or username doesn't match");
+                        alert.showAndWait();
+                    }
+
+                    }
+
+
+                else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Error");
+                    alert.setContentText("Password or username doesn't match");
+                    alert.showAndWait();
+
+                }
 
                 }
 
 //                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
 //                Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
 //                loginStage.setScene(new Scene(root));
-
-            }
         br.close();
         fr.close();
 
-        }
+            }
 
 
             @FXML

@@ -190,7 +190,9 @@ public class studentnextController {
     String name;
     void filewrite(String name) throws IOException{
         PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
+
         wr.write(name+"%s%d");
+
         wr.close();
 
     }

@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -16,10 +17,7 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -363,7 +361,10 @@ public class TuitionDashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
+        try {        Getsetusername a=new Getsetusername();
+            String fileName=a.getUsername();
+            Image imageshow = new Image(new FileInputStream(fileName+".png"));
+            imagefield.setFill(new ImagePattern(imageshow));
             vbox.getChildren().clear();
             bp.setCenter(scroll);
             List<Tuitionpost> tuitionappliedd=new ArrayList<>(tuitionappliedd());
@@ -383,8 +384,5 @@ public class TuitionDashboardController implements Initializable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
-        //imagefield.setFill(new ImagePattern(img));
     }
 }

@@ -13,14 +13,14 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.Studentcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1294.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.Studentcontroller">
    <children>
-      <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
+      <ImageView fitHeight="750.0" fitWidth="1294.0" pickOnBounds="true">
          <image>
             <Image url="@../../../hello.jpeg" />
          </image>
       </ImageView>
-      <Label fx:id="l1" layoutX="436.0" layoutY="36.0" prefHeight="62.0" prefWidth="463.0" text="Student-- Information." textAlignment="JUSTIFY" underline="true">
+      <Label fx:id="l1" layoutX="436.0" layoutY="4.0" prefHeight="39.0" prefWidth="395.0" text="Student-- Information." textAlignment="JUSTIFY" underline="true">
          <font>
             <Font name="Copperplate Gothic Bold" size="29.0" />
          </font>
@@ -33,7 +33,7 @@
          </effect>
       </Label>
 
-      <Button fx:id="next" layoutX="821.0" layoutY="686.0" mnemonicParsing="false" onAction="#onnextclick" prefHeight="52.0" prefWidth="101.0" text="Next" textFill="#3365c9">
+      <Button fx:id="next" layoutX="821.0" layoutY="657.0" mnemonicParsing="false" onAction="#onnextclick" prefHeight="52.0" prefWidth="101.0" text="Next" textFill="#3365c9">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -42,7 +42,7 @@
          </effect>
       </Button>
 
-      <Button fx:id="back" layoutX="1030.0" layoutY="686.0" mnemonicParsing="false" onAction="#onbackclick" prefHeight="52.0" prefWidth="101.0" text="Back" textFill="#3365c9">
+      <Button fx:id="back" layoutX="1030.0" layoutY="651.0" mnemonicParsing="false" onAction="#onbackclick" prefHeight="52.0" prefWidth="101.0" text="Back" textFill="#3365c9">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -50,10 +50,11 @@
             <DropShadow spread="0.31" />
          </effect>
       </Button>
-      <Button fx:id="chooseimage" layoutX="899.0" layoutY="508.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="30.0" prefWidth="154.0" text="Choose Your Image" />
-      <VBox layoutX="87.0" layoutY="98.0" prefHeight="648.0" prefWidth="581.0" spacing="20.0">
+
+      <Button fx:id="chooseimage" layoutX="899.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="30.0" prefWidth="154.0" text="Choose Your Image" />
+      <VBox layoutX="23.0" layoutY="53.0" prefHeight="573.0" prefWidth="645.0" spacing="20.0">
          <children>
-            <HBox prefHeight="49.0" prefWidth="558.0" spacing="100.0">
+            <HBox prefHeight="4.0" prefWidth="569.0" spacing="100.0">
                <children>
                   <Label fx:id="l2" text="Name :">
                      <font>
@@ -198,5 +199,7 @@
             </TextField>
          </children>
       </VBox>
+      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="870.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" />
+
    </children>
 </AnchorPane>

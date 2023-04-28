@@ -213,7 +213,9 @@ public class TutornextController {
 
     void filewrite(String name) throws IOException{
         PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt",true));
+
         wr.write(name+"%s%d");
+
         wr.close();
 
     }

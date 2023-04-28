@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -55,6 +57,10 @@ public class TutorController {
 
 
     @FXML
+    private ImageView image;
+
+
+    @FXML
     private TextField pass;
 
     @FXML
@@ -68,8 +74,9 @@ public class TutorController {
 
     String Name ;
 
+
      @FXML
-     public void handleCollectImage(ActionEvent event) {
+     public void handleCollectImage(ActionEvent event) throws FileNotFoundException {
          JFileChooser fileChooser = new JFileChooser();
          FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
          fileChooser.setFileFilter(filter);
@@ -90,10 +97,10 @@ public class TutorController {
                  e.printStackTrace();
              }
              // Load the image from a file
-
+             Image imageshow = new Image(new FileInputStream(fileName));
 
              // Set the image to the image view
-
+             image.setImage(imageshow);
          }
 
 
@@ -140,7 +147,7 @@ public class TutorController {
             return;
         }
 
-        String Name=name.getText();
+        String Name = name.getText();
         String profession = work.getText();
         String Age = age.getText();
         String Institue = institue.getText();
@@ -151,12 +158,15 @@ public class TutorController {
         if (password.equals(confirmpass)) {
             FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt", true);
             PrintWriter write = new PrintWriter(f);
+
             write.println("Tutor%s%d" + username + "%s%d" + Email + "%s%d" + password);
+
             write.close();
             f.close();
 
             PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt", true));
             wr.print("Tutor%s%d"+username+"%s%d"+ Email + "%s%d"+password+"%s%d"+Name+"%s%d"+ Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender+"%s%d");
+
             wr.close();
 
 
