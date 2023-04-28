@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 tushar||tushar@gmail.com||123||asif ahmed tushar||asfaksfbkabfiweukbfiebfge||0167734110||5||8||male||MALE||MORNING||GENERAL SCIENCE||PHYSICS||Salary:||5000||||asdfasfasdfasdfewfe
 tonmoy110%s%dtonmoy@gmail.com%s%d123%s%dtonmoy%s%dasdasfasdfdg%s%d01677341110%s%d15%s%d6%s%dmale%s%dMALE%s%dMORNING%s%dPHYSICS%s%dCHEMISTRY%s%dSalary:%s%d5000%s%d%s%dasdasdasfadfdfd
+=======
+>>>>>>> 689c5d4c8e2bec38ab03d817739db9cf8676baac
+
+Student%s%dbaki123%s%dbaki@gmail.com%s%d123%s%dbaki%s%dasdsfadfsdg%s%d0123658%s%d20%s%d9%s%dmale%s%d
+Student%s%dnirab123%s%dnirab@gmail.com%s%d123%s%dnirab%s%dasdasffads%s%d123168796%s%d12%s%d6%s%dmale%s%d
+Student%s%dnull%s%dnirab@gmail.com%s%d123%s%dnirab%s%dasdfsfdfgdghfh%s%d12358487%s%d12%s%d9%s%dmale%s%d
+Student%s%dnull%s%dnirab@gmail.com%s%d123%s%dnirab%s%dasdasfsdfgsdgdf%s%d21354646%s%d15%s%d12%s%dmale%s%d

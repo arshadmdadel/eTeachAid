@@ -1,10 +1,14 @@
 package com.example.edutech;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-public class AcceptutionController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AppliedtuitionController implements Initializable {
 
     @FXML
     private Label Class;
@@ -44,9 +48,12 @@ public class AcceptutionController {
         prefertuition.setText(tuitionpost.getPrefertutor());
         subject.setText(tuitionpost.getPrefersubject());
         details.setText(tuitionpost.getDescription());
-        number.setText(tuitionpost.getNumber());
-        adress.setText(tuitionpost.getAddress());
-
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
+
+

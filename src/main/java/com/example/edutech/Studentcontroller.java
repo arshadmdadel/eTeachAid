@@ -129,6 +129,7 @@ public class Studentcontroller {
       } catch (IOException e) {
         e.printStackTrace();
       }
+
       // Load the image from a file
       Image imageshow = new Image(new FileInputStream(fileName));
 
@@ -169,10 +170,14 @@ public class Studentcontroller {
       write.close();
       f.close();
       PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt",true));
-
-      wr.print(username + "%s%d" + email + "%s%d" + pass + "%s%d" + name + "%s%d" + address + "%s%d" + phone + "%s%d" + age+"%s%d"+ clas +"%s%d"+ gender +"%s%d");
-
+      wr.print("\nStudent%s%d"+username + "%s%d" + email + "%s%d" + pass + "%s%d" + name + "%s%d" + address + "%s%d" + phone + "%s%d" + age+"%s%d"+ clas +"%s%d"+ gender +"%s%d");
       wr.close();
+      CodeandTime a=new CodeandTime();
+      String Code=a.generateRandomCode();
+      String Time=a.time();
+      PrintWriter p= new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
+      p.print(Time+"%s%d"+Code+"%s%d"+username+"%s%d"+name+"%s%d"+phone+"%s%d"+address+"%s%d"+clas+"%s%d"+gender+"%s%d");
+      p.close();
     }
 
     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Studentnext.fxml")));

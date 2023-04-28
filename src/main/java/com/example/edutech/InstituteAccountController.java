@@ -91,7 +91,7 @@ public class InstituteAccountController {
             write.close();
             f.close();
             PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/InstituteAccountinfo.txt"),true);
-            wr.println(username + "%s%d" + email + "%s%d" + password + "%s%d" + name + "%s%d" + address + "%s%d" + contact + "%s%d" + job);
+            wr.println("intstitute%s%d"+username + "%s%d" + email + "%s%d" + password + "%s%d" + name + "%s%d" + address + "%s%d" + contact + "%s%d" + job);
             wr.close();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
             Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();

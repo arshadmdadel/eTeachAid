@@ -72,6 +72,7 @@ public class TutorController {
 
     String Gender;
 
+    String Name ;
 
 
      @FXML
@@ -105,10 +106,10 @@ public class TutorController {
 
      }
 
-    void setText(String username, String email) {
+    void setText(String username, String mail) {
         this.username = username;
-        this.E = email;
-
+        this.E = mail;
+        email.setText(mail);
     }
 
 
@@ -164,8 +165,7 @@ public class TutorController {
             f.close();
 
             PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt", true));
-
-            wr.print("Tutor%s%d" + Name + "%s%d" + Email + "%s%d" + Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender);
+            wr.print("Tutor%s%d"+username+"%s%d"+ Email + "%s%d"+password+"%s%d"+Name+"%s%d"+ Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender+"%s%d");
 
             wr.close();
 
