@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Tutor%s%dabir10%s%dabir@gmail.com%s%d123
+=======
+Student%s%dnirab%s%dnirab@gmail.com%s%d123
+>>>>>>> 1f41a3c60a410cd1475304a4013e450ac4a21d29

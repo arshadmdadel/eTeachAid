@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Student%s%dbaki123%s%dbaki@gmail.com%s%d123%s%dbaki%s%dasdsfadfsdg%s%d0123658%s%d20%s%d9%s%dmale%s%d
 Student%s%dnirab123%s%dnirab@gmail.com%s%d123%s%dnirab%s%dasdasffads%s%d123168796%s%d12%s%d6%s%dmale%s%d
 Student%s%dnull%s%dnirab@gmail.com%s%d123%s%dnirab%s%dasdfsfdfgdghfh%s%d12358487%s%d12%s%d9%s%dmale%s%d
@@ -7,3 +8,7 @@ Student%s%dnull%s%dnirab@gmail.com%s%d123%s%dnirab%s%dasdasfsdfgsdgdf%s%d2135464
 Student%s%dmina11%s%dmina@gmail.com%s%d123%s%dmina%s%dasdasdasfsf%s%d132154%s%d2%s%d5%s%dmale%s%d
 Student%s%dmina11%s%dmina@gmail.com%s%d123%s%dmina%s%dasdasdasfsf%s%d132154%s%d2%s%d5%s%dmale%s%d
 Student%s%drahat%s%drahat@gmail.com%s%d123%s%drahat%s%dasdasdasdasd%s%d01677341110%s%d16%s%d9%s%dmale%s%d
+=======
+
+Student%s%dnirab%s%dnirab@gmail.com%s%d123%s%dNirab%s%dakhdgfaisdjf%s%d145987%s%d15%s%d9%s%dmale%s%d
+>>>>>>> 1f41a3c60a410cd1475304a4013e450ac4a21d29
