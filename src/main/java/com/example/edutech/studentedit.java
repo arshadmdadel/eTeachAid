@@ -12,9 +12,11 @@ import javafx.scene.image.ImageView;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ResourceBundle;
 
 public class studentedit {
 
@@ -47,10 +49,10 @@ public class studentedit {
         @FXML
         private TextArea phonetf;
         @FXML
-        private RadioButton genderfemale;
+        private RadioButton female;
 
         @FXML
-        private RadioButton gendermale;
+        private RadioButton male;
 
     @FXML
     private Label username;
@@ -58,7 +60,7 @@ public class studentedit {
     @FXML
     private ImageView image;
 
-    public void submit(ActionEvent event) throws IOException {
+
         String name=nametf.getText();
         String clas=classtf.getText();
         String age=agetf.getText();
@@ -69,8 +71,8 @@ public class studentedit {
         String phone=phonetf.getText();
         String Address=address.getText();
 
-    }
-    void handleCollectImage(ActionEvent event) throws FileNotFoundException {
+
+    void handleCollectImage(ActionEvent event) throws FileNotFoundException
         {
             JFileChooser fileChooser = new JFileChooser();
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
@@ -98,11 +100,68 @@ public class studentedit {
                 // Set the image to the image view
                 image.setImage(imageshow);
             }
-
-
         }
 
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            Getsetusername a=new Getsetusername();
+            String Username=a.getUsername();
+            BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/student.txt"));
+            while (true){
+                String line=read.readLine();
+                if (line==null){
+                    break;
+                }
+                else{
+                    String []parts=line.split("%s%d");
+                    if (parts[1].equals(Username)){
+                        username.setText(parts[1]);
+                        emailtf.setText(parts[2]);
+                        passtf.setText(parts[3]);
+                        conpasstf.setText(parts[3]);
+                        nametf.setText(parts[4]);
+                        address.setText(parts[5]);
+                        phonetf.setText(parts[6]);
+                        agetf.setText(parts[7]);
+                        classtf.setText(parts[8]);
+                        if (parts[9].equalsIgnoreCase("male")){
+                            male.setSelected(true);}
+                        else {female.setSelected(true);}
+
+                        for (int i = 10; i < parts.length; i++) {
+                            if (parts[i].startsWith("PreferSubject")) {
+                                String subString = parts[i].replaceFirst("PreferSubject", " ");
+                                subjct = subjct.concat(subString);
+                            } else if (parts[i].startsWith("PreferTime")) {
+                                String timeString = parts[i].replaceFirst("PreferTime", " ");
+                                time = time.concat(timeString);
+                            } else if (parts[i].startsWith("PreferClass")) {
+                                String genString = parts[i].replaceFirst("PreferClass", " ");
+                                clas = clas.concat(genString);
+                            } else if (parts[i].startsWith("PreferArea")) {
+                                String salaryString = parts[i].replaceFirst("PreferArea", " ");
+                                area = area.concat(salaryString);
+                            } else if (parts[i].startsWith("Experience")) {
+                                String desyString = parts[i].replaceFirst("Experience", " ");
+                                expre = desyString;
+                            }
+
+
+                        }
+                        prefersub.setText(subjct);
+                        preferarea.setText(area);
+                        classs.setText(clas);
+                        prefertime.setText(time);
+                        workexp.setText(expre);
+                        break;
+                    }
+                }
+            } read.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
+
 
     }
 
