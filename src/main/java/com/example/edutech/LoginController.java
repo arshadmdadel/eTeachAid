@@ -98,6 +98,8 @@ public class LoginController {
                     if (passwordtextfield.getText().equals(this.password)) {
                         Getsetusername a=new Getsetusername();
                         a.setUsername(username);
+                        BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/Accountinformation.txt.txt"));
+                        if ()
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
                     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                     loginStage.setScene(new Scene(root));

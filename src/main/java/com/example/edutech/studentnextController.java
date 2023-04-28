@@ -130,7 +130,7 @@ public class studentnextController {
 
     @FXML
     void eng(ActionEvent event) throws IOException {
-      filewrite("PreferSubject ENglish");
+      filewrite("PreferSubject ENGLISH");
     }
 
     @FXML

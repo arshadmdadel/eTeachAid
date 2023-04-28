@@ -12,9 +12,9 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.Studentnext2Controller">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="975.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="600.0" fitWidth="983.0" layoutX="-2.0" pickOnBounds="true">
          <image>
-            <Image url="@images/web%202.png" />
+            <Image url="@images/flooring-white-space-scene-desk.jpg" />
          </image>
       </ImageView>
       <Label layoutX="321.0" layoutY="32.0" text="student pefer info next" underline="true">

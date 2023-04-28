@@ -12,9 +12,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Objects;
 
 public class Studentnext2Controller {
@@ -74,43 +72,45 @@ public class Studentnext2Controller {
     private TextField salary;
 
     String gender;
+    String Subject = "";
+    String Time = "";
+    String Gender = "";
 
     @FXML
     void BIO(ActionEvent event) throws IOException {
-        filewrite("PreferSubject BIOLOGY");
-
+        Subject = Subject.concat("PreferSubject BIOLOGY %s%d");
 
     }
 
     @FXML
     void CHEM(ActionEvent event) throws IOException {
-        filewrite("PreferSubject CHEMISTRY");
+        Subject = Subject.concat("PreferSubject CHEMISTRY %s%d");
 
     }
 
     @FXML
     void GM(ActionEvent event) throws IOException {
-        filewrite("PreferSubject GENERAL MATH");
+        Subject = Subject.concat("PreferSubject GENERAL MATH %s%d");
     }
 
     @FXML
     void GS(ActionEvent event) throws IOException {
-        filewrite("PreferSubject GENERAL SCIENCE");
+        Subject = Subject.concat("PreferSubject GENERAL SCIENCE %s%d");
     }
 
     @FXML
     void HM(ActionEvent event) throws IOException {
-        filewrite("PreferSubject HIGHER MATH");
+        Subject = Subject.concat("PreferSubject HIGHER MATH %s%d");
     }
 
     @FXML
     void PHY(ActionEvent event) throws IOException {
-        filewrite("PreferSubject PHYSICS");
+        Subject = Subject.concat("PreferSubject PHYSICS %s%d");
     }
 
     @FXML
     void SS(ActionEvent event) throws IOException {
-        filewrite("PreferSubject SOCIAL SCIENCE");
+        Subject = Subject.concat("PreferSubject SOCIAL SCIENCE %s%d");
     }
 
     @FXML
@@ -124,36 +124,36 @@ public class Studentnext2Controller {
 
     @FXML
     void bang(ActionEvent event) throws IOException {
-        filewrite("PreferSubject BANGLA");
+        Subject = Subject.concat("PreferSubject BANGLA %s%d");
     }
 
 
 
     @FXML
     void eng(ActionEvent event) throws IOException {
-        filewrite("PreferSubject ENglish");
+        Subject = Subject.concat("PreferSubject ENGLISH %s%d");
     }
 
     @FXML
     void evening(ActionEvent event) throws IOException {
-        filewrite("PreferTime Evening");
+        Time = Time.concat("PreferTime Evening %s%d");
     }
 
     @FXML
     void female(ActionEvent event) throws IOException {
-        filewrite("PreferGender FEMALE");
+        Gender = Gender.concat("PreferGender FEMALE %s%d");
 
     }
 
     @FXML
     void male(ActionEvent event) throws IOException {
-        filewrite("PreferGender MALE");
+        Gender = Gender.concat("PreferGender MALE %s%d");
 
     }
 
     @FXML
     void morning(ActionEvent event) throws IOException {
-        filewrite("PreferTime MORNING");
+        Time = Time.concat("PreferTime Morning %s%d");
 
     }
 
@@ -173,9 +173,47 @@ public class Studentnext2Controller {
             alert.showAndWait();
             return;
         }
+        Getsetusername a = new Getsetusername();
+        String username = a.getUsername();
+        CodeandTime b = new CodeandTime();
+        String time = b.time();
+
+        try {
+            Getsetusername a=new Getsetusername();
+            String Username=a.getUsername();
+            BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/student.txt"));
+            while (true){
+                String line=read.readLine();
+                if (line==null){
+                    break;
+                }
+                else{
+                    String []parts=line.split("%s%d");
+                    if (parts[1].equals(Username)){
+                        username.setText(parts[1]);
+                        emailtf.setText(parts[2]);
+                        passtf.setText(parts[3]);
+                        conpasstf.setText(parts[3]);
+                        nametf.setText(parts[4]);
+                        address.setText(parts[5]);
+                        phonetf.setText(parts[6]);
+                        agetf.setText(parts[7]);
+                        classtf.setText(parts[8]);
+                        if (parts[9].equalsIgnoreCase("male")){
+                            male.setSelected(true);}
+                        else {female.setSelected(true);}
+
+
+
+                        break;
+                    }
+                }
+            } read.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         String dsicrp=des.getText();
-
         String expsal=salary.getText();
         PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
         wr.println("%s%dPreferSalary " + expsal + "%s%dPreferDescription " + dsicrp);
@@ -188,14 +226,9 @@ public class Studentnext2Controller {
     }
 
 
-    String name;
-    void filewrite(String name) throws IOException{
-        PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
 
-        wr.write(name+"%s%d");
 
-        wr.close();
 
-    }
+
 
 }
