@@ -1,14 +1,312 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.edutech.TutorAccinfoCOntroller"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="988.0" style="-fx-background-color: #f0fdff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.TutorAccinfoCOntroller">
+   <children>
+      <ImageView fitHeight="601.0" fitWidth="988.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/volume-abstract-graphic-loneliness-desk.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="327.0" layoutY="14.0" lineSpacing="2.0" text="Tutor Information." textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="171.0" />
+      <Button fx:id="next" layoutX="419.0" layoutY="557.0" mnemonicParsing="false" onAction="#onnextclick" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #9bddff; -fx-background-radius: 10;" text="Save All Changes">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.43893128633499146" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="chooseimage" layoutX="819.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #9bddff; -fx-background-radius: 10;" text="Choose Your Image">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.572519063949585" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+      <VBox layoutX="106.0" layoutY="51.0" prefHeight="486.0" prefWidth="702.0" spacing="5.0">
+         <children>
+            <HBox prefHeight="36.0" prefWidth="610.0" spacing="70.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="75.0" text="Name :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="name" prefHeight="30.0" prefWidth="591.0" promptText="name">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="615.0" spacing="75.0">
+               <children>
+                  <Label prefHeight="57.0" prefWidth="50.0" text=" Age  :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="age" prefHeight="25.0" prefWidth="83.0" promptText="age">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="110.0" prefHeight="34.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="115.0" text="Profession :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="work" prefHeight="34.0" prefWidth="581.0" promptText="work">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="210.0" prefHeight="36.0" prefWidth="613.0" spacing="30.0">
+               <children>
+                  <Label prefHeight="53.0" prefWidth="97.0" text="Institute  :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="institue" prefHeight="34.0" prefWidth="581.0" promptText="place">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="310.0" prefHeight="36.0" prefWidth="609.0" spacing="65.0">
+               <children>
+                  <Label prefHeight="43.0" prefWidth="60.0" text="Email :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="email" prefHeight="34.0" prefWidth="581.0" promptText="email">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="410.0" prefHeight="26.0" prefWidth="615.0" spacing="45.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="77.0" text="Gender :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="male" mnemonicParsing="false" onAction="#male" prefHeight="0.0" prefWidth="76.0" text="Male">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="female" mnemonicParsing="false" onAction="#female" prefHeight="0.0" prefWidth="114.0" text="Female">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="742.0" spacing="20.0">
+               <children>
+                  <Label prefHeight="37.0" prefWidth="105.0" text="Password :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pass" prefHeight="34.0" prefWidth="588.0" promptText="password">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="212.0" prefHeight="36.0" prefWidth="742.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="122.0" text="Confirm Pass :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="conpass" prefHeight="34.0" prefWidth="585.0" promptText="confirm password">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="312.0" prefHeight="36.0" prefWidth="742.0" spacing="40.0">
+               <children>
+                  <Label prefHeight="57.0" prefWidth="79.0" text="Address :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="address" alignment="TOP_LEFT" prefHeight="33.0" prefWidth="587.0" promptText="address">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="36.0" prefWidth="742.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="142.0" text="Prefer Area :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="preferarea" alignment="TOP_LEFT" prefHeight="33.0" prefWidth="611.0" promptText="Prefer Area :">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="331.0" prefHeight="36.0" prefWidth="742.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="132.0" text="Prefer time :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="prefertime" alignment="TOP_LEFT" prefHeight="33.0" prefWidth="598.0" promptText="Prefer time :">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="327.0" prefHeight="36.0" prefWidth="742.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="191.0" text="Prefer Subject :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="prefersub" alignment="TOP_LEFT" prefHeight="33.0" prefWidth="595.0" promptText="Prefer Subject :">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="299.0" prefHeight="36.0" prefWidth="742.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="182.0" text="Work Experience :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="workexp" alignment="TOP_LEFT" prefHeight="33.0" prefWidth="587.0" promptText="Work Experience :">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="421.0" prefHeight="36.0" prefWidth="742.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="191.0" text="Prefer Class :">
+                     <font>
+                        <Font name="Britannic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="classs" alignment="TOP_LEFT" prefHeight="33.0" prefWidth="595.0" promptText="Prefer Subject :">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fx:id="imagefield" fitHeight="132.0" fitWidth="132.0" focusTraversable="true" layoutX="833.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="username" alignment="CENTER" layoutX="823.0" layoutY="284.0" prefHeight="17.0" prefWidth="150.0" />
+   </children>
 </AnchorPane>

@@ -72,6 +72,7 @@ public class TutorController {
 
     String Gender;
 
+    String Name ;
 
 
      @FXML
@@ -105,10 +106,10 @@ public class TutorController {
 
      }
 
-    void setText(String username, String email) {
+    void setText(String username, String mail) {
         this.username = username;
-        this.E = email;
-
+        this.E = mail;
+        email.setText(mail);
     }
 
 
@@ -145,6 +146,8 @@ public class TutorController {
             alert.showAndWait();
             return;
         }
+        Getsetusername a=new Getsetusername();
+        a.setUsername(username);
 
         String Name = name.getText();
         String profession = work.getText();
@@ -157,12 +160,15 @@ public class TutorController {
         if (password.equals(confirmpass)) {
             FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt", true);
             PrintWriter write = new PrintWriter(f);
+
             write.println("Tutor%s%d" + username + "%s%d" + Email + "%s%d" + password);
+
             write.close();
             f.close();
 
             PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt", true));
-            wr.print("Tutor%s%d" + Name + "%s%d" + Email + "%s%d" + Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender);
+            wr.print("Tutor%s%d"+username+"%s%d"+ Email + "%s%d"+password+"%s%d"+Name+"%s%d"+ Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender+"%s%d");
+
             wr.close();
 
 

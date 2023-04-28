@@ -76,40 +76,40 @@ public class studentnextController {
 
     @FXML
     void BIO(ActionEvent event) throws IOException {
-       filewrite("BIOLOGY");
+       filewrite("PreferSubject BIOLOGY");
 
 
     }
 
     @FXML
     void CHEM(ActionEvent event) throws IOException {
-      filewrite("CHEMISTRY");
+      filewrite("PreferSubject CHEMISTRY");
 
     }
 
     @FXML
     void GM(ActionEvent event) throws IOException {
-       filewrite("GENERAL MATH");
+       filewrite("PreferSubject GENERAL MATH");
     }
 
     @FXML
     void GS(ActionEvent event) throws IOException {
-      filewrite("GENERAL SCIENCE");
+      filewrite("PreferSubject GENERAL SCIENCE");
     }
 
     @FXML
     void HM(ActionEvent event) throws IOException {
-     filewrite("HIGHER MATH");
+     filewrite("PreferSubject HIGHER MATH");
     }
 
     @FXML
     void PHY(ActionEvent event) throws IOException {
-        filewrite("PHYSICS");
+        filewrite("PreferSubject PHYSICS");
     }
 
     @FXML
     void SS(ActionEvent event) throws IOException {
-      filewrite("SOCIAL SCIENCE");
+      filewrite("PreferSubject SOCIAL SCIENCE");
     }
 
     @FXML
@@ -123,42 +123,41 @@ public class studentnextController {
 
     @FXML
     void bang(ActionEvent event) throws IOException {
-       filewrite("BANGLA");
+       filewrite("PreferSubject BANGLA");
     }
 
 
 
     @FXML
     void eng(ActionEvent event) throws IOException {
-      filewrite("ENglish");
+      filewrite("PreferSubject ENglish");
     }
 
     @FXML
     void evening(ActionEvent event) throws IOException {
-        filewrite("Evening");
+        filewrite("PreferTime Evening");
     }
 
     @FXML
     void female(ActionEvent event) throws IOException {
-        filewrite("FEMALE");
+        filewrite("PreferGender FEMALE");
 
     }
 
     @FXML
     void male(ActionEvent event) throws IOException {
-        filewrite("MALE");
+        filewrite("PreferGender MALE");
 
     }
 
     @FXML
     void morning(ActionEvent event) throws IOException {
-        filewrite("MORNING");
+        filewrite("PreferTime MORNING");
 
     }
 
     @FXML
     void other(ActionEvent event) throws IOException {
-        filewrite("OTHERS");
 
     }
 
@@ -175,11 +174,12 @@ public class studentnextController {
         }
 
         String dsicrp=des.getText();
+
         String expsal=salary.getText();
-        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
-        wr.println("Salary:%s%d" + expsal + "%s%d%s%d" + dsicrp);
+        PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
+        wr.println("%s%dPreferSalary " + expsal + "%s%dPreferDescription " + dsicrp);
         wr.close();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         loginStage.setScene(new Scene(root));
 
@@ -189,8 +189,10 @@ public class studentnextController {
 
     String name;
     void filewrite(String name) throws IOException{
-        PrintWriter wr = new PrintWriter(new FileWriter("C://Users//USER//project work//eTeachAid-Asif//src//main//resources//com//example//edutech//student.txt",true));
+        PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
+
         wr.write(name+"%s%d");
+
         wr.close();
 
     }

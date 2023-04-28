@@ -33,7 +33,7 @@
          </effect>
       </Label>
 
-      <Button fx:id="next" layoutX="821.0" layoutY="657.0" mnemonicParsing="false" onAction="#onnextclick" prefHeight="52.0" prefWidth="101.0" text="Next" textFill="#3365c9">
+      <Button fx:id="next" layoutX="350.0" layoutY="667.0" mnemonicParsing="false" onAction="#onnextclick" prefHeight="52.0" prefWidth="101.0" text="Next" textFill="#3365c9">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -42,7 +42,7 @@
          </effect>
       </Button>
 
-      <Button fx:id="back" layoutX="1030.0" layoutY="651.0" mnemonicParsing="false" onAction="#onbackclick" prefHeight="52.0" prefWidth="101.0" text="Back" textFill="#3365c9">
+      <Button fx:id="back" layoutX="603.0" layoutY="667.0" mnemonicParsing="false" onAction="#onbackclick" prefHeight="52.0" prefWidth="101.0" text="Back" textFill="#3365c9">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -52,7 +52,7 @@
       </Button>
 
       <Button fx:id="chooseimage" layoutX="899.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleCollectImage" prefHeight="30.0" prefWidth="154.0" text="Choose Your Image" />
-      <VBox layoutX="23.0" layoutY="53.0" prefHeight="573.0" prefWidth="645.0" spacing="20.0">
+      <VBox layoutX="218.0" layoutY="54.0" prefHeight="573.0" prefWidth="645.0" spacing="20.0">
          <children>
             <HBox prefHeight="4.0" prefWidth="569.0" spacing="100.0">
                <children>
