@@ -85,7 +85,7 @@ public class LoginController {
                 alert.showAndWait();
                 break;
             }
-            if (line.length() != 0) {
+            else if (line.length() != 0) {
                 String[] parts = line.split("%s%d");
                 String acc=parts[0];
                  username = parts[1];
@@ -94,15 +94,17 @@ public class LoginController {
 
 
 
-                if (usertxtfeidl.getText().equals(this.username)||usertxtfeidl.getText().equals(email) && passwordtextfield.getText().equals(this.password)) {
+                if (usertxtfeidl.getText().equals(this.username)||usertxtfeidl.getText().equals(email) ) {
+                    if(passwordtextfield.getText().equals(this.password)){
+                        Getsetusername a=new Getsetusername();
+                        a.setUsername(username);
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
                     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                     loginStage.setScene(new Scene(root));
-                    break;
+                    break;}
                 }
 
                 }
-
 
 //                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
 //                Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
