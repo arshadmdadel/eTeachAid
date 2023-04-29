@@ -130,7 +130,7 @@ public class studentnextController {
 
     @FXML
     void eng(ActionEvent event) throws IOException {
-      filewrite("PreferSubject ENglish");
+      filewrite("PreferSubject ENGLISH");
     }
 
     @FXML
@@ -177,9 +177,9 @@ public class studentnextController {
 
         String expsal=salary.getText();
         PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
-        wr.println("%s%dPreferSalary " + expsal + "%s%dPreferDescription " + dsicrp);
+        wr.println("PreferSalary " + expsal + "%s%dPreferDescription " + dsicrp);
         wr.close();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StudentDashboard.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         loginStage.setScene(new Scene(root));
 

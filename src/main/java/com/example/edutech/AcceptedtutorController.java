@@ -9,8 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AcceptedtutorController {
 
@@ -52,12 +53,15 @@ public class AcceptedtutorController {
 
     @FXML
     private Label tuitionid;
+    String na = "";
 
     @FXML
     private TextArea workexperience;
+
     void setData(Tutordetais tutordetais) throws FileNotFoundException {
         subject.setText(tutordetais.getclass());
         tuitionid.setText(tutordetais.getTuitionid());
+        na = tutordetais.getTuitionid();
         result.setText(tutordetais.getResult());
         prefertime.setText(tutordetais.getPrefertime());
         profession.setText(tutordetais.getProfession());
@@ -67,15 +71,54 @@ public class AcceptedtutorController {
         Salary.setText(tutordetais.getSalary());
         adress.setText(tutordetais.getAdress());
         Class.setText(tutordetais.getclass());
-        String r=tutordetais.getRectangle();
+        String r = tutordetais.getRectangle();
         Image imageshow = new Image(new FileInputStream(r));
         rectangle.setFill(new ImagePattern(imageshow));
     }
 
     @FXML
     void decline(ActionEvent event) {
+        String filePath = "src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt";
+        int lineNumber = 0;
+        try {
+            BufferedReader read = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
+            String line = read.readLine();
+            while (line == null) {
+                lineNumber++;
+                line = read.readLine();
+                if (line.contains(na)) {
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+
+            List<String> lines = new ArrayList<>();
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+            String line = reader.readLine();
+            while (line != null) {
+                lines.add(line);
+                line = reader.readLine();
+            }
+            reader.close();
+
+            lines.remove(lineNumber - 1);
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            for (String modifiedLine : lines) {
+                writer.write(modifiedLine);
+                writer.newLine();
+            }
+            writer.close();
+
+
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
 
     }
-
 }
 

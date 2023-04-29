@@ -65,6 +65,7 @@ public class StudentDashboardController implements Initializable {
 
     @FXML
     void Accouninfo(MouseEvent event) {
+        loadpage("studentedit");
 
     }
 
@@ -100,7 +101,7 @@ public class StudentDashboardController implements Initializable {
 
     @FXML
     void createnewpost(MouseEvent event) {
-        loadpage("");
+        loadpage("studentnext2");
 
     }
 
@@ -201,179 +202,165 @@ public class StudentDashboardController implements Initializable {
 
 
 
-
     private List<Tutordetais> accepttutor() throws IOException{
-        BufferedReader readr =new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
-        Getsetusername a=new Getsetusername();
-        String usernam=a.getUsername();
-        String tuiionid="";
-        String tuitorid="";
-        while (true){
-            String line=readr.readLine();
-            if (line==null){
-                break;
-            } else {
-                String []parts =line.split("%s%d");
-                if (parts[1].startsWith("Accept")){
-                    String subString = parts[1].replaceFirst("Accept", " ");
-                    tuiionid = tuiionid.concat(subString);
-                    tuitorid=tuitorid.concat(parts[0]+" ");
-                }
-            }
-        }readr.close();
         List<Tutordetais> ls = new ArrayList<>();
         Tutordetais tutordetais;
         BufferedReader reade = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/studenttuituionpost.txt"));
+        Getsetusername a=new Getsetusername();
+        String usernam=a.getUsername();
         while (true) {
             String line = reade.readLine();
             if (line == null) {
                 break;
             } else {
+                if (line.contains(usernam)){
+                    String []part=line.split("%s%d");
 
-                String[] parts = line.split("%s%d");
-                if (tuiionid.contains(parts[1])){
-
-                    BufferedReader Read = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
+                    BufferedReader readr =new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
+                    Getsetusername b=new Getsetusername();
                     while (true){
-                        String Line= Read.readLine();
-                        if (Line==null){
+                        String l=readr.readLine();
+                        if (l==null){
                             break;
-                        }else {
+                        } else {
+                            if (l.contains(part[1]) && l.contains("Accept")){
 
-                            tutordetais = new Tutordetais();
-                            String subjct = "";
-                            String time = "";
-                            String classs = "";
-                            String exp = "";
+                                BufferedReader Read = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
+                                while (true){
+                                    String ll= Read.readLine();
+                                    if (ll==null){
+                                        break;
+                                    }else {
 
-                            String []pat=line.split("%s%d");
-                            if(tuitorid.contains(parts[0])){
-                                tutordetais.setResult(pat[0]);
-                                tutordetais.setName("Name  : "+pat[4]);
-                                tutordetais.setSalary(pat[6]);
-                                tutordetais.setProfession(pat[7]);
-                                tutordetais.setAdress("Address  : "+pat[8]);
-                                tutordetais.setPrefertuition(pat[9]+"       Age: "+pat[5]);
-                                for (int i = 10; i < parts.length; i++) {
-                                    if (parts[i].startsWith("PreferSubject")) {
-                                        String subString = parts[i].replaceFirst("PreferSubject", " ");
-                                        subjct = subjct.concat(subString);
-                                    } else if (parts[i].startsWith("PreferTime")) {
-                                        String timeString = parts[i].replaceFirst("PreferTime", " ");
-                                        time = time.concat(timeString);
-                                    } else if (parts[i].startsWith("PreferClass")) {
-                                        String genString = parts[i].replaceFirst("PreferClass", " ");
-                                        classs = classs.concat(genString);
-                                    } else if (parts[i].startsWith("Experience")) {
-                                        String salaryString = parts[i].replaceFirst("Experience", " ");
-                                        exp = exp.concat(salaryString);
+                                        tutordetais = new Tutordetais();
+                                        String subjct = "";
+                                        String time = "";
+                                        String classs = "";
+                                        String exp = "";
+
+                                        String []pat=line.split("%s%d");
+                                        if(l.contains(pat[1])){
+                                            tutordetais.setName(pat[1]);
+                                            tutordetais.setResult(pat[0]);
+                                            tutordetais.setSalary(pat[6]);
+                                            tutordetais.setProfession(pat[7]);
+                                            tutordetais.setPrefertuition(pat[9]+"       Age: "+pat[5]);
+                                            for (int i = 10; i < pat.length; i++) {
+                                                if (pat[i].startsWith("PreferSubject")) {
+                                                    String subString = pat[i].replaceFirst("PreferSubject", " ");
+                                                    subjct = subjct.concat(subString);
+                                                } else if (pat[i].startsWith("PreferTime")) {
+                                                    String timeString = pat[i].replaceFirst("PreferTime", " ");
+                                                    time = time.concat(timeString);
+                                                } else if (pat[i].startsWith("PreferClass")) {
+                                                    String genString = pat[i].replaceFirst("PreferClass", " ");
+                                                    classs = classs.concat(genString);
+                                                } else if (pat[i].startsWith("Experience")) {
+                                                    String salaryString = pat[i].replaceFirst("Experience", " ");
+                                                    exp = exp.concat(salaryString);
+                                                }
+
+                                            }
+                                            tutordetais.setNumber("Email :"+pat[2]);
+                                            tutordetais.setSubject(subjct);
+                                            tutordetais.setClass(classs);
+                                            tutordetais.setPrefertime(time);
+                                            ls.add(tutordetais);
+
+
+                                        }
+
+
                                     }
-
-                                    }
-                                tutordetais.setNumber("Email :"+pat[2]);
-                                tutordetais.setSubject(subjct);
-                                tutordetais.setClass(classs);
-                                tutordetais.setPrefertime(time);
-                                tutordetais.setRectangle(pat[1]+"png");
-                                ls.add(tutordetais);
-
-
-                                }
-
-
+                                }Read.close();
                             }
-                        }Read.close();
-                    }
+                        }
+                    }readr.close();
 
                 }
+
             }
-        reade.close();
-        return ls;
+        }reade.close();return ls;
     }
     private List<Tutordetais> requestttutor() throws IOException{
-        BufferedReader readr =new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
-        Getsetusername a=new Getsetusername();
-        String usernam=a.getUsername();
-        String tuiionid="";
-        String tuitorid="";
-        while (true){
-            String line=readr.readLine();
-            if (line==null){
-                break;
-            } else {
-                String []parts =line.split("%s%d");
-                if (parts[1].startsWith("")){
-                    String subString = parts[1].replaceFirst("Appield", " ");
-                    tuiionid = tuiionid.concat(subString);
-                    tuitorid=tuitorid.concat(parts[0]+" ");
-                }
-            }
-        }readr.close();
         List<Tutordetais> ls = new ArrayList<>();
         Tutordetais tutordetais;
         BufferedReader reade = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/studenttuituionpost.txt"));
+        Getsetusername a=new Getsetusername();
+        String usernam=a.getUsername();
         while (true) {
             String line = reade.readLine();
             if (line == null) {
                 break;
             } else {
+                if (line.contains(usernam)){
+                    String []part=line.split("%s%d");
 
-                String[] parts = line.split("%s%d");
-                if (tuiionid.contains(parts[1])){
-
-                    BufferedReader Read = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
+                    BufferedReader readr =new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
+                    Getsetusername b=new Getsetusername();
                     while (true){
-                        String Line= Read.readLine();
-                        if (Line==null){
+                        String l=readr.readLine();
+                        if (l==null){
                             break;
-                        }else {
+                        } else {
+                            if (l.contains(part[1]) && l.contains("Appield")){
 
-                            tutordetais = new Tutordetais();
-                            String subjct = "";
-                            String time = "";
-                            String classs = "";
-                            String exp = "";
+                                BufferedReader Read = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
+                                while (true){
+                                    String ll= Read.readLine();
+                                    if (ll==null){
+                                        break;
+                                    }else {
 
-                            String []pat=line.split("%s%d");
-                            if(tuitorid.contains(parts[0])){
-                                tutordetais.setResult(pat[0]);
-                                tutordetais.setSalary(pat[6]);
-                                tutordetais.setProfession(pat[7]);
-                                tutordetais.setPrefertuition(pat[9]+"       Age: "+pat[5]);
-                                for (int i = 10; i < parts.length; i++) {
-                                    if (parts[i].startsWith("PreferSubject")) {
-                                        String subString = parts[i].replaceFirst("PreferSubject", " ");
-                                        subjct = subjct.concat(subString);
-                                    } else if (parts[i].startsWith("PreferTime")) {
-                                        String timeString = parts[i].replaceFirst("PreferTime", " ");
-                                        time = time.concat(timeString);
-                                    } else if (parts[i].startsWith("PreferClass")) {
-                                        String genString = parts[i].replaceFirst("PreferClass", " ");
-                                        classs = classs.concat(genString);
-                                    } else if (parts[i].startsWith("Experience")) {
-                                        String salaryString = parts[i].replaceFirst("Experience", " ");
-                                        exp = exp.concat(salaryString);
+                                        tutordetais = new Tutordetais();
+                                        String subjct = "";
+                                        String time = "";
+                                        String classs = "";
+                                        String exp = "";
+
+                                        String []pat=line.split("%s%d");
+                                        if(l.contains(pat[1])){
+                                            tutordetais.setName(pat[1]);
+                                            tutordetais.setResult(pat[0]);
+                                            tutordetais.setSalary(pat[6]);
+                                            tutordetais.setProfession(pat[7]);
+                                            tutordetais.setPrefertuition(pat[9]+"       Age: "+pat[5]);
+                                            for (int i = 10; i < pat.length; i++) {
+                                                if (pat[i].startsWith("PreferSubject")) {
+                                                    String subString = pat[i].replaceFirst("PreferSubject", " ");
+                                                    subjct = subjct.concat(subString);
+                                                } else if (pat[i].startsWith("PreferTime")) {
+                                                    String timeString = pat[i].replaceFirst("PreferTime", " ");
+                                                    time = time.concat(timeString);
+                                                } else if (pat[i].startsWith("PreferClass")) {
+                                                    String genString = pat[i].replaceFirst("PreferClass", " ");
+                                                    classs = classs.concat(genString);
+                                                } else if (pat[i].startsWith("Experience")) {
+                                                    String salaryString = pat[i].replaceFirst("Experience", " ");
+                                                    exp = exp.concat(salaryString);
+                                                }
+
+                                            }
+                                            tutordetais.setNumber("Email :"+pat[2]);
+                                            tutordetais.setSubject(subjct);
+                                            tutordetais.setClass(classs);
+                                            tutordetais.setPrefertime(time);
+                                            ls.add(tutordetais);
+
+
+                                        }
+
+
                                     }
-
-                                }
-                                tutordetais.setNumber("Email :"+pat[2]);
-                                tutordetais.setSubject(subjct);
-                                tutordetais.setClass(classs);
-                                tutordetais.setPrefertime(time);
-                                ls.add(tutordetais);
-
-
+                                }Read.close();
                             }
-
-
                         }
-                    }Read.close();
+                    }readr.close();
+
                 }
 
             }
-        }
-        reade.close();
-        return ls;
+        }reade.close();return ls;
     }
 
 

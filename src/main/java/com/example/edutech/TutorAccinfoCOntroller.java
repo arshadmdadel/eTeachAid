@@ -81,6 +81,9 @@ public class TutorAccinfoCOntroller implements Initializable {
     @FXML
     private TextField result;
 
+
+
+
     @FXML
     void female(ActionEvent event) {
 

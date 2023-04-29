@@ -91,11 +91,6 @@
             </DropShadow>
          </effect>
       </Button>
-      <Label layoutX="744.0" layoutY="197.0" text="Tips ;" underline="true">
-         <font>
-            <Font name="Perpetua Titling MT Bold" size="20.0" />
-         </font>
-      </Label>
       <Button layoutX="1086.0" layoutY="698.0" mnemonicParsing="false" onAction="#backbtn" prefHeight="30.0" prefWidth="71.0" style="-fx-background-radius: 90; -fx-background-color: white;" text="Back" textFill="#29b6f6">
          <font>
             <Font name="Tahoma Bold" size="14.0" />

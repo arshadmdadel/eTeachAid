@@ -79,6 +79,7 @@ public class TutorController implements Initializable {
     String Gender;
 
     String Name ;
+    String filename="";
 
 
      @FXML
@@ -89,8 +90,8 @@ public class TutorController implements Initializable {
          int result = fileChooser.showOpenDialog(null);
          if (result == JFileChooser.APPROVE_OPTION) {
              File selectedFile = fileChooser.getSelectedFile();
-             String fileName = username+".png";
-             Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
+              filename = username+".png";
+             Path destination = Paths.get( filename); // Specify the destination folder where you want to store the picture
              try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
                   OutputStream outputStream = new FileOutputStream(destination.toFile())) {
                  byte[] buffer = new byte[4096];
@@ -103,7 +104,7 @@ public class TutorController implements Initializable {
                  e.printStackTrace();
              }
              // Load the image from a file
-             Image imageshow = new Image(new FileInputStream(fileName));
+             Image imageshow = new Image(new FileInputStream(filename));
 
              // Set the image to the image view
              image.setImage(imageshow);
@@ -144,7 +145,7 @@ public class TutorController implements Initializable {
     @FXML
     void onnextclick(ActionEvent event) throws IOException {
 
-        if (name.getText().isEmpty() || pass.getText().isEmpty() || work.getText().isEmpty() || work.getText().isEmpty() || conpass.getText().isEmpty() || work.getText().isEmpty() || institue.getText().isEmpty() || email.getText().isEmpty() || age.getText().isEmpty() || address.getText().isEmpty()  ){
+        if (name.getText().isEmpty() || pass.getText().isEmpty() || work.getText().isEmpty() || work.getText().isEmpty() || conpass.getText().isEmpty() || work.getText().isEmpty() || institue.getText().isEmpty() || email.getText().isEmpty() || age.getText().isEmpty() || address.getText().isEmpty()  || filename.isEmpty() ){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error");

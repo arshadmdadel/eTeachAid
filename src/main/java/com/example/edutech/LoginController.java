@@ -13,10 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.util.Objects;
 
 public class LoginController {
@@ -98,10 +95,18 @@ public class LoginController {
                     if (passwordtextfield.getText().equals(this.password)) {
                         Getsetusername a=new Getsetusername();
                         a.setUsername(username);
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
+                        if (parts[0].equals("Tutor")){
+                        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
                     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                     loginStage.setScene(new Scene(root));
                     break;}
+                        else if (parts[0].equals("Student")){
+                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StudentDashboard.fxml")));
+                            Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                            loginStage.setScene(new Scene(root));
+                            break;
+                        }
+                    }
                 }
 
 

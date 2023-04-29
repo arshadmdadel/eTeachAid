@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -44,6 +45,7 @@ public class parentcontroller {
     @FXML
     private TextField stdnametf;
     String username,email;
+    String filename="";
 
 
     public void handleCollectImage(ActionEvent event) throws FileNotFoundException {
@@ -53,8 +55,8 @@ public class parentcontroller {
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
-            String fileName = username+".png";
-            Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
+             filename = username+".png";
+            Path destination = Paths.get( filename); // Specify the destination folder where you want to store the picture
             try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
                  OutputStream outputStream = new FileOutputStream(destination.toFile())) {
                 byte[] buffer = new byte[4096];
@@ -67,7 +69,7 @@ public class parentcontroller {
                 e.printStackTrace();
             }
             // Load the image from a file
-            Image imageshow = new Image(new FileInputStream(fileName));
+            Image imageshow = new Image(new FileInputStream(filename));
 
             // Set the image to the image view
             image.setImage(imageshow);
@@ -83,6 +85,18 @@ public class parentcontroller {
 
 
     public void submit(ActionEvent event) throws IOException{
+
+        if (nametf.getText().isEmpty() || passwordtf.getText().isEmpty() || cnfpasswordtf.getText().isEmpty() || contacttf.getText().isEmpty() || stdnametf.getText().isEmpty() || stdclasstf.getText().isEmpty() || emailtf.getText().isEmpty() || filename.isEmpty()  ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("Please fill all the fields");
+            alert.showAndWait();
+            return;
+        }
+
+
+
         UsernameController x=new UsernameController();
         String address=null;
         String Name=nametf.getText();
@@ -110,7 +124,7 @@ public class parentcontroller {
     }
 
     public void goback(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("starting.fxml")));
         Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow(); // then cast to stage to get the window
         loginStage.setScene(new Scene(root));
     }

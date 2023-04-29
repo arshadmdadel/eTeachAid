@@ -107,6 +107,8 @@ public class Studentcontroller implements Initializable {
   String email;
   String gender;
 
+  String filename="";
+
   void setText(String username,String email){
     this.username=username;
     this.email=email;
@@ -119,8 +121,8 @@ public class Studentcontroller implements Initializable {
     int result = fileChooser.showOpenDialog(null);
     if (result == JFileChooser.APPROVE_OPTION) {
       File selectedFile = fileChooser.getSelectedFile();
-      String fileName = username+".png";
-      Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
+       filename = username+".png";
+      Path destination = Paths.get( filename); // Specify the destination folder where you want to store the picture
       try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
            OutputStream outputStream = new FileOutputStream(destination.toFile())) {
         byte[] buffer = new byte[4096];
@@ -134,7 +136,7 @@ public class Studentcontroller implements Initializable {
       }
 
       // Load the image from a file
-      Image imageshow = new Image(new FileInputStream(fileName));
+      Image imageshow = new Image(new FileInputStream(filename));
 
       // Set the image to the image view
       image.setImage(imageshow);
@@ -146,13 +148,12 @@ public class Studentcontroller implements Initializable {
   @FXML
   void onnextclick(ActionEvent event) throws IOException {
 
-    if (t1.getText().isEmpty() || t2.getText().isEmpty() || t3.getText().isEmpty() || t4.getText().isEmpty() || t5.getText().isEmpty() || t6.getText().isEmpty() || t7.getText().isEmpty() || t8.getText().isEmpty() || t9.getText().isEmpty()  ){
+    if (t1.getText().isEmpty() || t2.getText().isEmpty() || t3.getText().isEmpty() || t4.getText().isEmpty() || t5.getText().isEmpty() || t6.getText().isEmpty() || t7.getText().isEmpty() || t8.getText().isEmpty() || t9.getText().isEmpty() || filename.isEmpty()  ){
       Alert alert = new Alert(Alert.AlertType.ERROR);
       alert.setTitle("Error");
       alert.setHeaderText("Error");
       alert.setContentText("Please fill all the fields");
       alert.showAndWait();
-      return;
     }
     Getsetusername z=new Getsetusername();
     z.setUsername(username);
@@ -183,11 +184,12 @@ public class Studentcontroller implements Initializable {
       PrintWriter p= new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
       p.print(Time+"%s%d"+Code+"%s%d"+username+"%s%d"+name+"%s%d"+phone+"%s%d"+address+"%s%d"+clas+"%s%d"+gender+"%s%d+");
       p.close();
+      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Studentnext.fxml")));
+      Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+      loginStage.setScene(new Scene(root));
     }
 
-    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Studentnext.fxml")));
-    Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-    loginStage.setScene(new Scene(root));
+
   }
 
   @FXML
