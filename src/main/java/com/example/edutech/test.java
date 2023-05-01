@@ -77,7 +77,7 @@ public class test {
                                 }
                                 tutordetais.setNumber("Email :"+pat[2]);
                                 tutordetais.setSubject(subjct);
-                                tutordetais.setClass(classs);
+                                tutordetais.setlass(classs);
                                 tutordetais.setPrefertime(time);
                                 ls.add(tutordetais);
 

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 
@@ -12,23 +13,15 @@ import java.io.*;
 
 public class TutorRequestController {
 
-    @FXML
-    private Button Apply;
 
     @FXML
-    private Label Class;
+    private Button Apply;
 
     @FXML
     private Label Salary;
 
     @FXML
-    private Label adress;
-
-    @FXML
-    private Label name;
-
-    @FXML
-    private Label number;
+    private TextField cla;
 
     @FXML
     private Label prefertime;
@@ -52,24 +45,25 @@ public class TutorRequestController {
     private TextArea workexperience;
     String ap,usenam;
     void setData(Tutordetais tutordetais) throws FileNotFoundException {
-        subject.setText(tutordetais.getclass());
-        tuitionid.setText(tutordetais.getTuitionid());
-        ap=tutordetais.getTuitionid();
-        result.setText(tutordetais.getResult());
-        prefertime.setText(tutordetais.getPrefertime());
         profession.setText(tutordetais.getProfession());
+        tuitionid.setText(tutordetais.getTuitionid());
+        subject.setText(tutordetais.getSubject());
         prefertuition.setText(tutordetais.getPrefertuition());
-        name.setText(tutordetais.getName());
+        prefertime.setText(tutordetais.getPrefertime());
+        subject.setText(tutordetais.getSubject());
+        workexperience.setText(tutordetais.getWorkexperience());
+        result.setText(tutordetais.getResult());
+        cla.setText(tutordetais.getlass());
         Salary.setText(tutordetais.getSalary());
-        Class.setText(tutordetais.getclass());
-        usenam=tutordetais.getName();
+        ap=tutordetais.getTuitionid();
+        usenam=tutordetais.getUsername();
     }
 
     @FXML
     void Accept(ActionEvent event) throws IOException {
         Apply.setVisible(false);
         PrintWriter write = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt",true));
-        write.println(usenam+"%s%dAppield "+ap);
+        write.println(usenam+"%s%dAccept "+ap);
         write.close();
     }
 

@@ -16,10 +16,8 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.IOException;
+import java.beans.Statement;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,10 +37,18 @@ public class StudentDashboardController implements Initializable {
 
     @FXML
     private VBox vbox;
+    public static  String use="";
+    public void setText(String use){
+        this.use=use;
+    }
 
     @FXML
     void Acceptetutor(MouseEvent event) throws IOException {
-
+        Getsetusername a=new Getsetusername();
+        String fileName=use;
+        System.out.println(use);
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
             vbox.getChildren().clear();
             bp.setCenter(scroll);
             List<Tutordetais> accepttutor=new ArrayList<>(accepttutor());
@@ -64,13 +70,21 @@ public class StudentDashboardController implements Initializable {
     }
 
     @FXML
-    void Accouninfo(MouseEvent event) {
+    void Accouninfo(MouseEvent event) throws IOException {
+        Getsetusername a=new Getsetusername();
+        String fileName=a.getUsername();
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
         loadpage("studentedit");
 
     }
 
     @FXML
     void Tutorrequest(MouseEvent event) throws IOException {
+        Getsetusername a=new Getsetusername();
+        String fileName=a.getUsername();
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
         vbox.getChildren().clear();
         bp.setCenter(scroll);
         List<Tutordetais> requestttutor=new ArrayList<>(requestttutor());
@@ -112,6 +126,10 @@ public class StudentDashboardController implements Initializable {
 
     @FXML
     void postedtuition(MouseEvent event) throws IOException {
+        Getsetusername a=new Getsetusername();
+        String fileName=a.getUsername();
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
         vbox.getChildren().clear();
         bp.setCenter(scroll);
         List<Tuitionpost> potedTuition=new ArrayList<>(potedTuition());
@@ -238,11 +256,16 @@ public class StudentDashboardController implements Initializable {
                                         String classs = "";
                                         String exp = "";
 
-                                        String []pat=line.split("%s%d");
+                                        String []pat=ll.split("%s%d");
                                         if(l.contains(pat[1])){
-                                            tutordetais.setName(pat[1]);
+                                            tutordetais.setTuitionid(part[1]);
+                                            tutordetais.setUsername(pat[1]);
+                                            tutordetais.setRectangle(pat[1]+".png");
+                                            tutordetais.setNumber(pat[2]);
+                                            tutordetais.setName(pat[4]);
                                             tutordetais.setResult(pat[0]);
                                             tutordetais.setSalary(pat[6]);
+                                            tutordetais.setAdress(pat[8]);
                                             tutordetais.setProfession(pat[7]);
                                             tutordetais.setPrefertuition(pat[9]+"       Age: "+pat[5]);
                                             for (int i = 10; i < pat.length; i++) {
@@ -261,10 +284,10 @@ public class StudentDashboardController implements Initializable {
                                                 }
 
                                             }
-                                            tutordetais.setNumber("Email :"+pat[2]);
                                             tutordetais.setSubject(subjct);
-                                            tutordetais.setClass(classs);
+                                            tutordetais.setlass(classs);
                                             tutordetais.setPrefertime(time);
+                                            tutordetais.setWorkexperience(exp);
                                             ls.add(tutordetais);
 
 
@@ -288,22 +311,38 @@ public class StudentDashboardController implements Initializable {
         BufferedReader reade = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/studenttuituionpost.txt"));
         Getsetusername a=new Getsetusername();
         String usernam=a.getUsername();
+
         while (true) {
             String line = reade.readLine();
             if (line == null) {
                 break;
-            } else {
+            } else { String id="";
+
                 if (line.contains(usernam)){
                     String []part=line.split("%s%d");
+                    FileInputStream fis = new FileInputStream("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt");
+                         BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+
+                        String linE;String []k=line.split("%s%d");
+                        while ((linE = br.readLine()) != null) {
+                            if (linE.contains("%s%dAccept "+part[1])){
+                                id=id.concat(linE+" "); }
+                            // process line
+                        }fis.close();br.close();
+
+
+
+
 
                     BufferedReader readr =new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
-                    Getsetusername b=new Getsetusername();
+
                     while (true){
                         String l=readr.readLine();
                         if (l==null){
                             break;
-                        } else {
+                        } else {String []p=l.split("%s%d");
                             if (l.contains(part[1]) && l.contains("Appield")){
+
 
                                 BufferedReader Read = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
                                 while (true){
@@ -318,13 +357,15 @@ public class StudentDashboardController implements Initializable {
                                         String classs = "";
                                         String exp = "";
 
-                                        String []pat=line.split("%s%d");
-                                        if(l.contains(pat[1])){
-                                            tutordetais.setName(pat[1]);
+                                        String []pat=ll.split("%s%d");
+                                        if(l.contains(pat[1]) && !id.contains(pat[1])) {
+
+                                                tutordetais.setTuitionid(part[1]);
+                                            tutordetais.setUsername(pat[1]);
                                             tutordetais.setResult(pat[0]);
                                             tutordetais.setSalary(pat[6]);
                                             tutordetais.setProfession(pat[7]);
-                                            tutordetais.setPrefertuition(pat[9]+"       Age: "+pat[5]);
+                                            tutordetais.setPrefertuition(pat[9] + "       Age: " + pat[5]);
                                             for (int i = 10; i < pat.length; i++) {
                                                 if (pat[i].startsWith("PreferSubject")) {
                                                     String subString = pat[i].replaceFirst("PreferSubject", " ");
@@ -341,11 +382,12 @@ public class StudentDashboardController implements Initializable {
                                                 }
 
                                             }
-                                            tutordetais.setNumber("Email :"+pat[2]);
                                             tutordetais.setSubject(subjct);
-                                            tutordetais.setClass(classs);
+                                            tutordetais.setlass(classs);
                                             tutordetais.setPrefertime(time);
+                                            tutordetais.setWorkexperience(exp);
                                             ls.add(tutordetais);
+
 
 
                                         }
@@ -362,7 +404,6 @@ public class StudentDashboardController implements Initializable {
             }
         }reade.close();return ls;
     }
-
 
 
 

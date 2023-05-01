@@ -67,6 +67,8 @@ public class FindnewController implements Initializable {
         subject.setText(tuitionpost.getPrefersubject());
         details.setText(tuitionpost.getDescription());
         applieid=tuitionpost.getId();
+        details.setText(tuitionpost.getDescription());
+        adress.setText(tuitionpost.getAddress());
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

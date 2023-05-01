@@ -151,40 +151,48 @@ public class TutorController implements Initializable {
             alert.setHeaderText("Error");
             alert.setContentText("Please fill all the fields");
             alert.showAndWait();
-            return;
+
         }
-        Getsetusername a=new Getsetusername();
-        a.setUsername(username);
+        else {
+            Getsetusername a = new Getsetusername();
+            a.setUsername(username);
 
-        String Name = name.getText();
-        String profession = work.getText();
-        String Age = age.getText();
-        String Institue = institue.getText();
-        String Email = email.getText();
-        String password = pass.getText();
-        String confirmpass = conpass.getText();
-        String Address = address.getText();
-        String resu=result.getText();
-        if (password.equals(confirmpass)) {
-            FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt", true);
-            PrintWriter write = new PrintWriter(f);
+            String Name = name.getText();
+            String profession = work.getText();
+            String Age = age.getText();
+            String Institue = institue.getText();
+            String Email = email.getText();
+            String password = pass.getText();
+            String confirmpass = conpass.getText();
+            String Address = address.getText();
+            String resu = result.getText();
+            if (password.equals(confirmpass)) {
+                FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt", true);
+                PrintWriter write = new PrintWriter(f);
 
-            write.println("Tutor%s%d" + username + "%s%d" + Email + "%s%d" + password);
+                write.println("Tutor%s%d" + username + "%s%d" + Email + "%s%d" + password);
 
-            write.close();
-            f.close();
+                write.close();
+                f.close();
 
-            PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt", true));
-            wr.print(resu+"%s%d"+username+"%s%d"+ Email + "%s%d"+password+"%s%d"+Name+"%s%d"+ Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender+"%s%d");
+                PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt", true));
+                wr.print(resu + "%s%d" + username + "%s%d" + Email + "%s%d" + password + "%s%d" + Name + "%s%d" + Age + "%s%d" + Institue + "%s%d" + profession + "%s%d" + Address + "%s%d" + Gender + "%s%d");
 
-            wr.close();
+                wr.close();
 
 
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tutornext.fxml")));
-            Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            loginStage.setScene(new Scene(root));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tutornext.fxml")));
+                Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                loginStage.setScene(new Scene(root));
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Fix the Error");
+                alert.setContentText("Password or username doesn't match");
+                alert.showAndWait();
+            }
         }
-
     }
 
     @Override

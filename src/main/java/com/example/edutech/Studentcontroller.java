@@ -148,48 +148,55 @@ public class Studentcontroller implements Initializable {
   @FXML
   void onnextclick(ActionEvent event) throws IOException {
 
-    if (t1.getText().isEmpty() || t2.getText().isEmpty() || t3.getText().isEmpty() || t4.getText().isEmpty() || t5.getText().isEmpty() || t6.getText().isEmpty() || t7.getText().isEmpty() || t8.getText().isEmpty() || t9.getText().isEmpty() || filename.isEmpty()  ){
+    if (t1.getText().isEmpty() || t2.getText().isEmpty() || t3.getText().isEmpty() || t4.getText().isEmpty() || t5.getText().isEmpty() || t6.getText().isEmpty() || t7.getText().isEmpty() || t8.getText().isEmpty() || t9.getText().isEmpty() || filename.isEmpty()) {
       Alert alert = new Alert(Alert.AlertType.ERROR);
       alert.setTitle("Error");
       alert.setHeaderText("Error");
       alert.setContentText("Please fill all the fields");
       alert.showAndWait();
-    }
-    Getsetusername z=new Getsetusername();
+    } else {
+      Getsetusername z = new Getsetusername();
     z.setUsername(username);
 
-    String name=t1.getText();
-    String clas=t2.getText();
-    String age=t3.getText();
-    String institue=t4.getText();
-    email=t5.getText();
-    String pass=t6.getText();
-    String confirmpass=t7.getText();
-    String phone=t8.getText();
-    String address=t9.getText();
-    if(pass.equals(confirmpass)){
+    String name = t1.getText();
+    String clas = t2.getText();
+    String age = t3.getText();
+    String institue = t4.getText();
+    email = t5.getText();
+    String pass = t6.getText();
+    String confirmpass = t7.getText();
+    String phone = t8.getText();
+    String address = t9.getText();
+    if (pass.equals(confirmpass)) {
 
-      FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt",true);
+      FileWriter f = new FileWriter("src/main/resources/com/example/edutech/Accountinformation.txt", true);
 
       PrintWriter write = new PrintWriter(f);
       write.println("Student%s%d" + username + "%s%d" + email + "%s%d" + pass);
       write.close();
       f.close();
-      PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt",true));
-      wr.print("\nStudent%s%d"+username + "%s%d" + email + "%s%d" + pass + "%s%d" + name + "%s%d" + address + "%s%d" + phone + "%s%d" + age+"%s%d"+ clas +"%s%d"+ gender +"%s%d");
+      PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/student.txt", true));
+      wr.println(institue+"%s%d" + username + "%s%d" + email + "%s%d" + pass + "%s%d" + name + "%s%d" + address + "%s%d" + phone + "%s%d" + age + "%s%d" + clas + "%s%d" + gender + "%s%d");
       wr.close();
-      CodeandTime a=new CodeandTime();
-      String Code=a.generateRandomCode();
-      String Time=a.time();
-      PrintWriter p= new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
-      p.print(Time+"%s%d"+Code+"%s%d"+username+"%s%d"+name+"%s%d"+phone+"%s%d"+address+"%s%d"+clas+"%s%d"+gender+"%s%d+");
+      CodeandTime a = new CodeandTime();
+      String Code = a.generateRandomCode();
+      String Time = a.time();
+      PrintWriter p = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt", true));
+      p.print(Time + "%s%d" + Code + "%s%d" + username + "%s%d" + name + "%s%d" + phone + "%s%d" + address + "%s%d" + clas + "%s%d" + gender + "%s%d+");
       p.close();
       Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Studentnext.fxml")));
       Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
       loginStage.setScene(new Scene(root));
     }
+    else {
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("Fix the Error");
+      alert.setContentText("Password or username doesn't match");
+      alert.showAndWait();
+    }
 
-
+  }
   }
 
   @FXML

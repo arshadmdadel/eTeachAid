@@ -99,11 +99,19 @@ public class LoginController {
                         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
                     Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                     loginStage.setScene(new Scene(root));
+
+
                     break;}
                         else if (parts[0].equals("Student")){
-                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StudentDashboard.fxml")));
-                            Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                            loginStage.setScene(new Scene(root));
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentDashboard.fxml"));
+                            Parent root = loader.load();
+                            StudentDashboardController d = loader.getController();
+                            d.setText(username);
+                            Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                            msgStage.setScene(new Scene(root));
+//                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StudentDashboard.fxml")));
+//                            Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+//                            loginStage.setScene(new Scene(root));
                             break;
                         }
                     }

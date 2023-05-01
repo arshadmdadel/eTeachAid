@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.StudentDashboardController">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.StudentDashboardController">
    <top>
       <AnchorPane prefHeight="78.0" prefWidth="1300.0" style="-fx-background-color: #38ACEC; -fx-border-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -182,7 +182,10 @@
    <center>
       <ScrollPane fx:id="scroll" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <VBox fx:id="vbox" prefHeight="600.0" prefWidth="974.0" spacing="10.0" />
+            <VBox fx:id="vbox" prefHeight="600.0" prefWidth="982.0" spacing="10.0">
+               <padding>
+                  <Insets left="5.0" right="10.0" />
+               </padding></VBox>
          </content>
       </ScrollPane>
    </center>

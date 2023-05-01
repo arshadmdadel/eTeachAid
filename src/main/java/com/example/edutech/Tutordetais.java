@@ -10,14 +10,59 @@ public class Tutordetais {
 
     private String Apply;
 
+
     private String Class;
+
+
+    private String Salary;
+
+
+    private String adress;
+
+
+    private String name;
+
+
+    private String number;
+
+
+    private String prefertime;
+
+
+    private String prefertuition;
+
+
+    private String profession;
+
+
+    private String rectangle;
+
+
+    private String result;
+
+
+    private String subject;
+
+
+    private String tuitionid;
+
+
+    private String workexperience;
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getApply() {
         return Apply;
     }
 
-
-    public String getclass() {
+    public String getlass() {
         return Class;
     }
 
@@ -69,45 +114,12 @@ public class Tutordetais {
         return workexperience;
     }
 
-    private String Salary;
-
-
-    private String adress;
-
-
-    private String name;
-
-
-    private String number;
-
-
-    private String prefertime;
-
-
-    private String prefertuition;
-
-
-    private String profession;
-
-
-    private String rectangle;
-
-
-    private String result;
-
-
-    private String subject;
-
-
-    private String tuitionid;
-
-    private String workexperience;
 
     public void setApply(String apply) {
         Apply = apply;
     }
 
-    public void setClass(String aClass) {
+    public void setlass(String aClass) {
         Class = aClass;
     }
 

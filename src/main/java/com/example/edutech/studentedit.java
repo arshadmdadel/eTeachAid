@@ -2,6 +2,7 @@ package com.example.edutech;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -18,7 +19,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
-public class studentedit {
+public class studentedit implements Initializable {
 
 
 
@@ -59,21 +60,32 @@ public class studentedit {
 
     @FXML
     private ImageView image;
+    @FXML
+    void genderfemaleac(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gendermaleac(ActionEvent event) {
+
+    }
 
 
 
 
 
     @FXML
-    void handleCollectImage(ActionEvent event) throws FileNotFoundException
-        {
+    void handleCollectImage(ActionEvent event) throws IOException
+        {   Getsetusername g=new Getsetusername();
+            String na=g.getUsername();
+
             JFileChooser fileChooser = new JFileChooser();
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
             fileChooser.setFileFilter(filter);
             int result = fileChooser.showOpenDialog(null);
             if (result == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = fileChooser.getSelectedFile();
-                String fileName = username+".png";
+                String fileName = na+".png";
                 Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
                 try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
                      OutputStream outputStream = new FileOutputStream(destination.toFile())) {
@@ -99,6 +111,7 @@ public class studentedit {
         try {
             Getsetusername a=new Getsetusername();
             String Username=a.getUsername();
+            System.out.println(StudentDashboardController.use);
             BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/student.txt"));
             while (true){
                 String line=read.readLine();
@@ -117,9 +130,16 @@ public class studentedit {
                         phonetf.setText(parts[6]);
                         agetf.setText(parts[7]);
                         classtf.setText(parts[8]);
+                        institutetf.setText(parts[0]);
                         if (parts[9].equalsIgnoreCase("male")){
                             male.setSelected(true);}
                         else {female.setSelected(true);}
+
+                        // Load the image from a file
+                        Image imageshow = new Image(new FileInputStream(Username+".png"));
+
+                        // Set the image to the image view
+                        image.setImage(imageshow);
 
                         break;
                     }

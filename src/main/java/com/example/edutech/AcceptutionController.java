@@ -44,7 +44,7 @@ public class AcceptutionController {
         prefertuition.setText(tuitionpost.getPrefertutor());
         subject.setText(tuitionpost.getPrefersubject());
         details.setText(tuitionpost.getDescription());
-        number.setText(tuitionpost.getNumber());
+        number.setText("Number :"+tuitionpost.getNumber());
         adress.setText(tuitionpost.getAddress());
 
     }

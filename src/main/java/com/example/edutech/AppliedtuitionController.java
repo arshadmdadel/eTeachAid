@@ -48,6 +48,7 @@ public class AppliedtuitionController implements Initializable {
         prefertuition.setText(tuitionpost.getPrefertutor());
         subject.setText(tuitionpost.getPrefersubject());
         details.setText(tuitionpost.getDescription());
+        adress.setText(tuitionpost.getAddress());
     }
 
     @Override

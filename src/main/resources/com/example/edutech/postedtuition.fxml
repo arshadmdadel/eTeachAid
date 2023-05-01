@@ -28,9 +28,9 @@
                   <Font name="Tahoma Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="tuitionid" prefHeight="57.0" prefWidth="231.0" style="-fx-background-color: transparent;">
+            <Label fx:id="tuitionid" prefHeight="44.0" prefWidth="487.0" style="-fx-background-color: transparent;">
                <font>
-                  <Font name="MT Extra" size="12.0" />
+                  <Font name="Tahoma Bold" size="12.0" />
                </font>
             </Label>
          </children>
@@ -57,7 +57,7 @@
       </HBox>
       <HBox prefHeight="45.0" prefWidth="980.0">
          <children>
-            <Label prefHeight="44.0" prefWidth="98.0" text="Prefer Tuition  :">
+            <Label prefHeight="44.0" prefWidth="98.0" text="Prefer Tuitor  :">
                <font>
                   <Font name="Tahoma Bold" size="12.0" />
                </font>

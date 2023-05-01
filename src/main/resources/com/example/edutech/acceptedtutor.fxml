@@ -4,16 +4,30 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="985.0" style="-fx-background-radius: 20; -fx-background-color: #f0fdff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.AcceptedtutorController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="997.0" spacing="2.0" style="-fx-background-radius: 20; -fx-background-color: #f0fdff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edutech.AcceptedtutorController">
    <children>
-      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="72.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
-      <HBox prefHeight="45.0" prefWidth="988.0">
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="72.0" stroke="#95e5e294" strokeType="INSIDE" strokeWidth="4.0" width="71.0" />
+      <HBox prefHeight="44.0" prefWidth="992.0" style="-fx-border-color: black;">
+         <children>
+            <Label prefHeight="44.0" prefWidth="110.0" text="Tutor Name :">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="name" prefHeight="44.0" prefWidth="340.0" style="-fx-background-color: transparent;" />
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="45.0" prefWidth="988.0" style="-fx-border-color: black;">
          <children>
             <Label prefHeight="44.0" prefWidth="110.0" text="Tutor Profession :">
                <font>
@@ -23,11 +37,6 @@
             <Label fx:id="profession" prefHeight="44.0" prefWidth="292.0" style="-fx-background-color: transparent;">
                <font>
                   <Font name="MT Extra" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="name" prefHeight="44.0" prefWidth="250.0">
-               <font>
-                  <Font name="Tahoma Bold" size="12.0" />
                </font>
             </Label>
             <Label prefHeight="44.0" prefWidth="90.0" text="Tuition Code :">
@@ -45,7 +54,7 @@
             <Insets left="10.0" right="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox prefHeight="45.0" prefWidth="988.0">
+      <HBox prefHeight="45.0" prefWidth="988.0" style="-fx-border-color: black;">
          <children>
             <Label prefHeight="44.0" prefWidth="234.0" text="Prefer Subject   :">
                <font>
@@ -62,7 +71,7 @@
             <Insets left="10.0" right="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox prefHeight="45.0" prefWidth="980.0">
+      <HBox prefHeight="45.0" prefWidth="980.0" style="-fx-border-color: black;">
          <children>
             <Label prefHeight="44.0" prefWidth="105.0" text="Gender              :">
                <font>
@@ -79,17 +88,7 @@
                   <Font name="Tahoma Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="prefertime" layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="169.0" style="-fx-background-color: transparent;">
-               <font>
-                  <Font name="MT Extra" size="12.0" />
-               </font>
-            </Label>
-            <Label prefHeight="44.0" prefWidth="94.0" text="Prefer  CLass :">
-               <font>
-                  <Font name="Tahoma Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="Class" layoutX="342.0" layoutY="10.0" prefHeight="44.0" prefWidth="211.0" style="-fx-background-color: transparent;">
+            <Label fx:id="prefertime" layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="489.0" style="-fx-background-color: transparent;">
                <font>
                   <Font name="MT Extra" size="12.0" />
                </font>
@@ -99,15 +98,41 @@
             <Insets left="10.0" right="10.0" />
          </VBox.margin>
       </HBox>
-      <TextArea fx:id="workexperience" disable="true" editable="false" prefHeight="56.0" prefWidth="978.0" style="-fx-background-color: transparent;" text="&#10;">
+      <HBox prefHeight="52.0" prefWidth="200.0" style="-fx-border-color: black;">
+         <children>
+            <Label prefHeight="44.0" prefWidth="105.0" text="Experience       :">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="workexperience" disable="true" editable="false" prefHeight="50.0" prefWidth="880.0" style="-fx-background-color: transparent; -fx-border-color: black;" text="&#10;">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </TextArea>
+         </children>
          <VBox.margin>
-            <Insets left="5.0" right="5.0" />
+            <Insets left="10.0" right="10.0" />
          </VBox.margin>
-         <font>
-            <Font name="Tahoma Bold" size="12.0" />
-         </font>
-      </TextArea>
-      <HBox prefHeight="45.0" prefWidth="988.0">
+      </HBox>
+      <HBox prefHeight="44.0" prefWidth="992.0" style="-fx-border-color: black;">
+         <children>
+            <Label prefHeight="44.0" prefWidth="94.0" text="Prefer  CLass :">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="Class" prefHeight="40.0" prefWidth="882.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font name="MT Extra" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="45.0" prefWidth="988.0" style="-fx-border-color: black;">
          <children>
             <Label prefHeight="45.0" prefWidth="102.0" text="Institution     :">
                <font>
@@ -119,7 +144,36 @@
                   <Font name="MT Extra" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="number" prefHeight="42.0" prefWidth="238.0">
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="44.0" prefWidth="992.0" style="-fx-border-color: black;">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+         <children>
+            <Label prefHeight="45.0" prefWidth="102.0" text="Address         :">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="adress" prefHeight="44.0" prefWidth="638.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="58.0" prefWidth="977.0" style="-fx-border-color: black;">
+         <children>
+            <Label prefHeight="45.0" prefWidth="89.0" text="Email            :">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="number" prefHeight="48.0" prefWidth="299.0">
                <font>
                   <Font name="Tahoma Bold" size="12.0" />
                </font>
@@ -129,20 +183,12 @@
                   <Font name="Tahoma Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="result" prefHeight="51.0" prefWidth="219.0" />
+            <Label fx:id="result" prefHeight="48.0" prefWidth="465.0" />
          </children>
          <VBox.margin>
             <Insets left="10.0" right="10.0" />
          </VBox.margin>
       </HBox>
-      <Label fx:id="adress" layoutX="10.0" layoutY="76.0" prefHeight="40.0" prefWidth="980.0" style="-fx-background-color: transparent;">
-         <font>
-            <Font name="Tahoma Bold" size="12.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="10.0" right="10.0" />
-         </VBox.margin>
-      </Label>
       <Button fx:id="Apply" alignment="CENTER" mnemonicParsing="false" onAction="#decline" prefHeight="23.0" prefWidth="491.0" style="-fx-background-radius: 5; -fx-background-color: #9bddff;" text="Decline">
          <font>
             <Font name="Tahoma Bold" size="12.0" />
@@ -155,4 +201,7 @@
    <effect>
       <DropShadow />
    </effect>
+   <padding>
+      <Insets top="2.0" />
+   </padding>
 </VBox>

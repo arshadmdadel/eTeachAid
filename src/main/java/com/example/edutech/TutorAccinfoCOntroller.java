@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -90,15 +91,16 @@ public class TutorAccinfoCOntroller implements Initializable {
     }
 
     @FXML
-    void handleCollectImage(ActionEvent event) throws FileNotFoundException {
-        {
+    void handleCollectImage(ActionEvent event) throws IOException {
+        { Getsetusername a=new Getsetusername();
+            String Username=a.getUsername();
             JFileChooser fileChooser = new JFileChooser();
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
             fileChooser.setFileFilter(filter);
             int result = fileChooser.showOpenDialog(null);
             if (result == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = fileChooser.getSelectedFile();
-                String fileName = username+".png";
+                String fileName = Username+".png";
                 Path destination = Paths.get( fileName); // Specify the destination folder where you want to store the picture
                 try (InputStream inputStream = Files.newInputStream(selectedFile.toPath());
                      OutputStream outputStream = new FileOutputStream(destination.toFile())) {
@@ -131,40 +133,40 @@ public class TutorAccinfoCOntroller implements Initializable {
 
     @FXML
     void onnextclick(ActionEvent event) throws IOException {
-        List<String> lines = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            lines.add(line);
-        }
-        reader.close();
-
-        // Find the account information that needs to be modified
-        String accountToModify = "John,Smith,123-45-6789";
-        int indexToModify = -1;
-        for (int i = 0; i < lines.size(); i++) {
-            if (lines.get(i).startsWith(accountToModify)) {
-                indexToModify = i;
-                break;
-            }
-        }
-        if (indexToModify == -1) {
-            System.out.println("Account not found.");
-            return;
-        }
-
-        // Modify the account information
-        String newAccountInfo = "John,Smith,987-65-4321,5000.00";
-        lines.set(indexToModify, newAccountInfo);
-
-        // Write the modified account information back to the file
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt"));
-        for (String modifiedLine : lines) {
-            writer.write(modifiedLine + "\n");
-        }
-        writer.close();
-
-        System.out.println("Account information modified successfully.");
+//        List<String> lines = new ArrayList<>();
+//        BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
+//        String line;
+//        while ((line = reader.readLine()) != null) {
+//            lines.add(line);
+//        }
+//        reader.close();
+//
+//        // Find the account information that needs to be modified
+//        String accountToModify = "John,Smith,123-45-6789";
+//        int indexToModify = -1;
+//        for (int i = 0; i < lines.size(); i++) {
+//            if (lines.get(i).startsWith(accountToModify)) {
+//                indexToModify = i;
+//                break;
+//            }
+//        }
+//        if (indexToModify == -1) {
+//            System.out.println("Account not found.");
+//            return;
+//        }
+//
+//        // Modify the account information
+//        String newAccountInfo = "John,Smith,987-65-4321,5000.00";
+//        lines.set(indexToModify, newAccountInfo);
+//
+//        // Write the modified account information back to the file
+//        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt"));
+//        for (String modifiedLine : lines) {
+//            writer.write(modifiedLine + "\n");
+//        }
+//        writer.close();
+//
+//        System.out.println("Account information modified successfully.");
 
 
     }
@@ -240,6 +242,11 @@ public class TutorAccinfoCOntroller implements Initializable {
                     }
                 }
             } read.close();
+
+            Image imageshow = new Image(new FileInputStream(Username+".png"));
+
+
+            imagefield.setImage(imageshow);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

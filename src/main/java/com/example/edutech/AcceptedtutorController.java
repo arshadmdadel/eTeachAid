@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
@@ -28,7 +29,7 @@ public class AcceptedtutorController {
     private Label adress;
 
     @FXML
-    private Label name;
+    private TextField name;
 
     @FXML
     private Label number;
@@ -53,15 +54,17 @@ public class AcceptedtutorController {
 
     @FXML
     private Label tuitionid;
-    String na = "";
 
     @FXML
     private TextArea workexperience;
+    String na = "";
+    String tutioncode="";
 
     void setData(Tutordetais tutordetais) throws FileNotFoundException {
-        subject.setText(tutordetais.getclass());
+        subject.setText(tutordetais.getSubject());
         tuitionid.setText(tutordetais.getTuitionid());
-        na = tutordetais.getTuitionid();
+        na = tutordetais.getUsername();
+        tutioncode=tutordetais.getTuitionid();
         result.setText(tutordetais.getResult());
         prefertime.setText(tutordetais.getPrefertime());
         profession.setText(tutordetais.getProfession());
@@ -70,26 +73,28 @@ public class AcceptedtutorController {
         name.setText(tutordetais.getName());
         Salary.setText(tutordetais.getSalary());
         adress.setText(tutordetais.getAdress());
-        Class.setText(tutordetais.getclass());
+        Class.setText(tutordetais.getlass());
         String r = tutordetais.getRectangle();
+        workexperience.setText(tutordetais.getWorkexperience());
         Image imageshow = new Image(new FileInputStream(r));
         rectangle.setFill(new ImagePattern(imageshow));
     }
 
     @FXML
     void decline(ActionEvent event) {
+        Apply.setVisible(false);
         String filePath = "src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt";
-        int lineNumber = 0;
+        int lineNumber = 1;
         try {
             BufferedReader read = new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
-            String line = read.readLine();
-            while (line == null) {
-                lineNumber++;
-                line = read.readLine();
-                if (line.contains(na)) {
+
+            while (true) {
+                String dlt=na+"%s%dAccept "+tutioncode;
+                String line = read.readLine();
+                if (line.contains(dlt)) {
                     break;
-                }
-            }
+                } lineNumber++;
+            }read.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

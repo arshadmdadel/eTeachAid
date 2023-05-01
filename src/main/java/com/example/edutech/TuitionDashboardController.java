@@ -42,6 +42,10 @@ public class TuitionDashboardController implements Initializable {
 
     @FXML
     void Acceptetuition(MouseEvent event) throws IOException {
+        Getsetusername a=new Getsetusername();
+        String fileName=a.getUsername();
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
         vbox.getChildren().clear();
         bp.setCenter(scroll);
         List<Tuitionpost> tuitionaccept=new ArrayList<>(tuitionaccept());
@@ -61,12 +65,20 @@ public class TuitionDashboardController implements Initializable {
     }
 
     @FXML
-    void Accouninfo(MouseEvent event) {
+    void Accouninfo(MouseEvent event) throws IOException {
+        Getsetusername a=new Getsetusername();
+        String fileName=a.getUsername();
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
         loadpage("TutorACCINFO");
     }
 
     @FXML
-    void Searchforajob(MouseEvent event) {
+    void Searchforajob(MouseEvent event) throws IOException {
+        Getsetusername a=new Getsetusername();
+        String fileName=a.getUsername();
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
         loadpage("Searchforajob");
     }
 
@@ -77,6 +89,10 @@ public class TuitionDashboardController implements Initializable {
 
     @FXML
     void appliedtuition(MouseEvent event) throws IOException {
+        Getsetusername a=new Getsetusername();
+        String fileName=a.getUsername();
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
         vbox.getChildren().clear();
         bp.setCenter(scroll);
         List<Tuitionpost> tuitionappliedd=new ArrayList<>(tuitionappliedd());
@@ -102,6 +118,10 @@ public class TuitionDashboardController implements Initializable {
 
     @FXML
     void findnewtution(MouseEvent event) throws IOException {
+        Getsetusername a=new Getsetusername();
+        String fileName=a.getUsername();
+        Image imageshow = new Image(new FileInputStream(fileName+".png"));
+        imagefield.setFill(new ImagePattern(imageshow));
         vbox.getChildren().clear();
                 bp.setCenter(scroll);
         List<Tuitionpost> tuitionposts=new ArrayList<>(tuitionposts());
@@ -156,6 +176,7 @@ public class TuitionDashboardController implements Initializable {
                 tuitionpost.setTime(parts[0]);
                 tuitionpost.setId(parts[1]);
                 tuitionpost.setClas(parts[6]);
+                    tuitionpost.setAddress("Address  :  "+parts[5]);
                 for (int i = 7; i < parts.length; i++) {
                     if (parts[i].startsWith("PreferSubject")) {
                         String subString = parts[i].replaceFirst("PreferSubject", " ");
@@ -226,6 +247,7 @@ public class TuitionDashboardController implements Initializable {
                     tuitionpost.setTime(parts[0]);
                     tuitionpost.setId(parts[1]);
                     tuitionpost.setClas(parts[6]);
+                    tuitionpost.setAddress("Address  :  "+parts[5]);
                     for (int i = 7; i < parts.length; i++) {
                         if (parts[i].startsWith("PreferSubject")) {
                             String subString = parts[i].replaceFirst("PreferSubject", " ");
@@ -295,7 +317,7 @@ public class TuitionDashboardController implements Initializable {
                 if (tuiionid.contains(parts[1])){
                     tuitionpost.setTime(parts[0]);
                     tuitionpost.setId(parts[1]+"         Name : "+parts[3]);
-                    tuitionpost.setAddress("Address  :"+parts[5]);
+                    tuitionpost.setAddress("Address  :  "+parts[5]);
                     tuitionpost.setClas(parts[6]);
                     tuitionpost.setNumber(parts[4]);
                     for (int i = 7; i < parts.length; i++) {
