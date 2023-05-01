@@ -39,7 +39,7 @@ public class UsernameController {
                 if(line==null ) {
 
                  if (x == 1) {
-                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Parent.fxml"));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("student.fxml"));
                      Parent root = loader.load();
                      parentcontroller d = loader.getController();
                      d.setText(username,email);

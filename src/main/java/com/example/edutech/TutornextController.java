@@ -77,6 +77,10 @@ public class TutornextController {
 
     @FXML
     private RadioButton two;
+    String username;
+    public void setText(String username){
+        this.username=username;
+    }
 
     @FXML
     void BIO(ActionEvent event) throws IOException {
@@ -189,9 +193,10 @@ public class TutornextController {
         PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/tutor.txt",true));
         wr.println("PreferArea " + area + "%s%dExperience " + Experience);
         wr.close();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
-        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        loginStage.setScene(new Scene(root));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+        Parent root = loader.load();
+        Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        msgStage.setScene(new Scene(root));
 
 
 

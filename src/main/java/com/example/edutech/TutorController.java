@@ -154,8 +154,6 @@ public class TutorController implements Initializable {
 
         }
         else {
-            Getsetusername a = new Getsetusername();
-            a.setUsername(username);
 
             String Name = name.getText();
             String profession = work.getText();
@@ -181,9 +179,10 @@ public class TutorController implements Initializable {
                 wr.close();
 
 
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tutornext.fxml")));
-                Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                loginStage.setScene(new Scene(root));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("tutornext.fxml"));
+                Parent root = loader.load();
+                Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                msgStage.setScene(new Scene(root));
             }
             else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -198,8 +197,8 @@ public class TutorController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            Getsetusername a=new Getsetusername();
-            String Username=a.getUsername();
+
+            String Username=LoginController.use;
             BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/tutor.txt"));
             while (true){
                 String line=read.readLine();

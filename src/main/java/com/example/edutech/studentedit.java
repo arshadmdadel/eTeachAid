@@ -76,8 +76,8 @@ public class studentedit implements Initializable {
 
     @FXML
     void handleCollectImage(ActionEvent event) throws IOException
-        {   Getsetusername g=new Getsetusername();
-            String na=g.getUsername();
+        {
+            String na=LoginController.use;
 
             JFileChooser fileChooser = new JFileChooser();
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
@@ -109,9 +109,8 @@ public class studentedit implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            Getsetusername a=new Getsetusername();
-            String Username=a.getUsername();
-            System.out.println(StudentDashboardController.use);
+            String Username=LoginController.use;
+
             BufferedReader read=new BufferedReader(new FileReader("src/main/resources/com/example/edutech/student.txt"));
             while (true){
                 String line=read.readLine();

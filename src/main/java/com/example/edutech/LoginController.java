@@ -35,6 +35,7 @@ public class LoginController {
 
     @FXML
     private TextField usertxtfeidl;
+    public static  String use="";
 
     @FXML
     void backbtn(ActionEvent event) throws IOException {
@@ -93,20 +94,18 @@ public class LoginController {
 
                 if (usertxtfeidl.getText().equals(this.username)||usertxtfeidl.getText().equals(email) &&passwordtextfield.getText().equals(this.password)) {
                     if (passwordtextfield.getText().equals(this.password)) {
-                        Getsetusername a=new Getsetusername();
-                        a.setUsername(username);
-                        if (parts[0].equals("Tutor")){
-                        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("tuitionDashboard.fxml")));
-                    Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                    loginStage.setScene(new Scene(root));
+                        if (parts[0].equals("Tutor")){this.use=username;
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("tuitionDashboard.fxml"));
+                            Parent root = loader.load();
+                            Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                            msgStage.setScene(new Scene(root));
 
 
                     break;}
                         else if (parts[0].equals("Student")){
+                            System.out.println(username);this.use=username;
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentDashboard.fxml"));
                             Parent root = loader.load();
-                            StudentDashboardController d = loader.getController();
-                            d.setText(username);
                             Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                             msgStage.setScene(new Scene(root));
 //                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StudentDashboard.fxml")));

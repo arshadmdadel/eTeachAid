@@ -155,8 +155,6 @@ public class Studentcontroller implements Initializable {
       alert.setContentText("Please fill all the fields");
       alert.showAndWait();
     } else {
-      Getsetusername z = new Getsetusername();
-    z.setUsername(username);
 
     String name = t1.getText();
     String clas = t2.getText();
@@ -184,9 +182,13 @@ public class Studentcontroller implements Initializable {
       PrintWriter p = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt", true));
       p.print(Time + "%s%d" + Code + "%s%d" + username + "%s%d" + name + "%s%d" + phone + "%s%d" + address + "%s%d" + clas + "%s%d" + gender + "%s%d+");
       p.close();
-      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Studentnext.fxml")));
-      Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-      loginStage.setScene(new Scene(root));
+
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("Studentnext.fxml"));
+      Parent root = loader.load();
+      studentnextController d = loader.getController();
+      d.setText(username);
+      Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+      msgStage.setScene(new Scene(root));
     }
     else {
       Alert alert = new Alert(Alert.AlertType.ERROR);

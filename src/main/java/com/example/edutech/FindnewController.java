@@ -50,8 +50,7 @@ public class FindnewController implements Initializable {
     @FXML
     void applybtn(ActionEvent event) throws IOException {
         Apply.setVisible(false);
-        Getsetusername a=new Getsetusername();
-        String userid=a.getUsername();
+        String userid=LoginController.use;
         PrintWriter write = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt",true));
         write.println(userid+"%s%dAppield "+applieid);
         write.close();

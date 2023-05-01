@@ -174,7 +174,7 @@ public class Studentnext2Controller {
             return;
         }
 
-        Getsetusername a = new Getsetusername();String username=a.getUsername();
+        String username=LoginController.use;
         CodeandTime c=new CodeandTime();
         String Code=c.generateRandomCode();
         String Time=c.time();

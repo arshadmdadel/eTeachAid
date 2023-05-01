@@ -35,15 +35,11 @@ public class TuitionDashboardController implements Initializable {
 
     @FXML
     private VBox vbox;
-    private String usenam;
-    public  void setUsername(String usenam){
-        this.usenam=usenam;
-    }
+
 
     @FXML
     void Acceptetuition(MouseEvent event) throws IOException {
-        Getsetusername a=new Getsetusername();
-        String fileName=a.getUsername();
+        String fileName=LoginController.use;
         Image imageshow = new Image(new FileInputStream(fileName+".png"));
         imagefield.setFill(new ImagePattern(imageshow));
         vbox.getChildren().clear();
@@ -66,8 +62,8 @@ public class TuitionDashboardController implements Initializable {
 
     @FXML
     void Accouninfo(MouseEvent event) throws IOException {
-        Getsetusername a=new Getsetusername();
-        String fileName=a.getUsername();
+
+        String fileName=LoginController.use;
         Image imageshow = new Image(new FileInputStream(fileName+".png"));
         imagefield.setFill(new ImagePattern(imageshow));
         loadpage("TutorACCINFO");
@@ -75,8 +71,7 @@ public class TuitionDashboardController implements Initializable {
 
     @FXML
     void Searchforajob(MouseEvent event) throws IOException {
-        Getsetusername a=new Getsetusername();
-        String fileName=a.getUsername();
+        String fileName=LoginController.use;
         Image imageshow = new Image(new FileInputStream(fileName+".png"));
         imagefield.setFill(new ImagePattern(imageshow));
         loadpage("Searchforajob");
@@ -89,8 +84,7 @@ public class TuitionDashboardController implements Initializable {
 
     @FXML
     void appliedtuition(MouseEvent event) throws IOException {
-        Getsetusername a=new Getsetusername();
-        String fileName=a.getUsername();
+        String fileName=LoginController.use;
         Image imageshow = new Image(new FileInputStream(fileName+".png"));
         imagefield.setFill(new ImagePattern(imageshow));
         vbox.getChildren().clear();
@@ -118,8 +112,7 @@ public class TuitionDashboardController implements Initializable {
 
     @FXML
     void findnewtution(MouseEvent event) throws IOException {
-        Getsetusername a=new Getsetusername();
-        String fileName=a.getUsername();
+        String fileName=LoginController.use;
         Image imageshow = new Image(new FileInputStream(fileName+".png"));
         imagefield.setFill(new ImagePattern(imageshow));
         vbox.getChildren().clear();
@@ -141,8 +134,7 @@ public class TuitionDashboardController implements Initializable {
     }
     private List<Tuitionpost> tuitionposts() throws IOException {
         BufferedReader readr =new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
-        Getsetusername a=new Getsetusername();
-        String usernam=a.getUsername();
+        String usernam=LoginController.use;
         String tuiionid="";
         while (true){
             String line=readr.readLine();
@@ -212,8 +204,7 @@ public class TuitionDashboardController implements Initializable {
     }
     private List<Tuitionpost> tuitionappliedd() throws IOException{
         BufferedReader readr =new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
-        Getsetusername a=new Getsetusername();
-        String usernam=a.getUsername();
+        String usernam=LoginController.use;
         String tuiionid="";
         while (true){
             String line=readr.readLine();
@@ -283,8 +274,8 @@ public class TuitionDashboardController implements Initializable {
     }
     private List<Tuitionpost> tuitionaccept() throws IOException{
         BufferedReader readr =new BufferedReader(new FileReader("src/main/resources/com/example/edutech/ApplytutorandAcceptutor.txt"));
-        Getsetusername a=new Getsetusername();
-        String usernam=a.getUsername();
+
+        String usernam=LoginController.use;
         String tuiionid="";
         while (true){
             String line=readr.readLine();
@@ -383,8 +374,8 @@ public class TuitionDashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {        Getsetusername a=new Getsetusername();
-            String fileName=a.getUsername();
+        try {
+            String fileName=LoginController.use;
             Image imageshow = new Image(new FileInputStream(fileName+".png"));
             imagefield.setFill(new ImagePattern(imageshow));
             vbox.getChildren().clear();

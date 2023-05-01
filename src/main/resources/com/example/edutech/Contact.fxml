@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/web%2011.png" />
+            <Image url="@images/volume-abstract-graphic-loneliness-desk.jpg" />
          </image>
       </ImageView>
       <Label layoutX="322.0" layoutY="94.0" prefHeight="20.0" prefWidth="256.0" text="Contact Us" underline="true">

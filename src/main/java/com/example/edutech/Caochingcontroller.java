@@ -69,7 +69,7 @@ public class Caochingcontroller {
             PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/Coachinginformation.txt"));
             wr.println(username + "%s%d" + email + "%s%d" + password + "%s%d" + name + "%s%d" + address + "%s%d" + contact + "%s%d" +coaching);
             wr.close();
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
             Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             loginStage.setScene(new Scene(root));
         }

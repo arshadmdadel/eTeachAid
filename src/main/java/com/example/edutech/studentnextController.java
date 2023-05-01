@@ -73,6 +73,10 @@ public class studentnextController {
     private TextField salary;
 
     String gender;
+     String username;
+    public void setText(String username){
+        this.username=username;
+    }
 
     @FXML
     void BIO(ActionEvent event) throws IOException {
@@ -171,18 +175,19 @@ public class studentnextController {
             alert.setContentText("Please fill all the fields");
             alert.showAndWait();
             return;
+        }else {
+
+            String dsicrp = des.getText();
+
+            String expsal = salary.getText();
+            PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt", true));
+            wr.println("PreferSalary " + expsal + "%s%dPreferDescription " + dsicrp);
+            wr.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = loader.load();
+            Stage msgStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+            msgStage.setScene(new Scene(root));
         }
-
-        String dsicrp=des.getText();
-
-        String expsal=salary.getText();
-        PrintWriter wr = new PrintWriter(new FileWriter("src/main/resources/com/example/edutech/studenttuituionpost.txt",true));
-        wr.println("PreferSalary " + expsal + "%s%dPreferDescription " + dsicrp);
-        wr.close();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StudentDashboard.fxml")));
-        Stage loginStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        loginStage.setScene(new Scene(root));
-
 
     }
 
